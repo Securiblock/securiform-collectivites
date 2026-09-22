@@ -1,0 +1,105 @@
+.trainings {
+  background: var(--panel);
+}
+
+.tiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.tile {
+  height: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.tile:hover,
+.tile:focus-within {
+  border-color: var(--red);
+}
+
+.tileMedia {
+  aspect-ratio: 4 / 3;
+  display: block;
+}
+
+.tileBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-top: 4px solid var(--red);
+}
+
+.tileBody h3 {
+  margin-bottom: 12px;
+}
+
+.tileBody h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.tileBody h3 a:hover {
+  color: var(--red);
+}
+
+.tileBody p {
+  font-size: var(--small-size);
+  color: var(--muted);
+}
+
+.tileBody ul {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  font-size: var(--small-size);
+}
+
+.tileBody li {
+  border-top: 1px solid var(--line);
+}
+
+.tileBody li a {
+  display: block;
+  padding: 8px 0;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.tileBody li a:hover {
+  color: var(--red);
+}
+
+.tileMore {
+  margin-top: auto;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.tileMore:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) {
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+}

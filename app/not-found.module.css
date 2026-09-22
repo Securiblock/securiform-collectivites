@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+  padding-block: clamp(80px, 14vw, 160px);
+  padding-inline: var(--gutter);
+}
+
+.eyebrow {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--red);
+  letter-spacing: 0.01em;
+}
+
+.title {
+  max-width: 24ch;
+}
+
+.text {
+  max-width: 48ch;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}

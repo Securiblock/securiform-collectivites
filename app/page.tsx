@@ -1,69 +1,146 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { Media } from "@/src/components/ui/Media";
+import { HeroSlider, type HeroSliderSlide } from "@/src/components/home/HeroSlider";
+import { About } from "@/src/components/home/About";
+import { TrainingTiles } from "@/src/components/home/TrainingTiles";
+import { TrainingsByService } from "@/src/components/home/TrainingsByService";
+import { Commitments } from "@/src/components/home/Commitments";
+import { CtaBand } from "@/src/components/home/CtaBand";
+import { heroH1, heroSlides, siteConfig, courses } from "@/src/content/home";
 
-export default function Home() {
+const HERO_IMAGE_SIZES = "(max-width: 900px) 100vw, 50vw";
+
+export const metadata: Metadata = {
+  title: "Formations sécurité pour collectivités | SECURIFORM",
+  description:
+    "Organisme de formation sécurité dédié aux collectivités depuis 2008 : habilitation électrique, conduite R482 à R490, SST, incendie, travaux en hauteur, AIPR.",
+  alternates: {
+    canonical: "/",
+    languages: { "fr-FR": "/" },
+  },
+  openGraph: {
+    title: "SECURIFORM Collectivités – Formations sécurité des agents territoriaux",
+    description:
+      "Habilitation électrique, conduite en sécurité, SST, incendie, travaux en hauteur, AIPR et formations métiers pour les collectivités, partout en France.",
+    url: "/",
+    images: [
+      {
+        url: "/images/og-securiform-collectivites.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Agents territoriaux en formation sécurité avec SECURIFORM Collectivités",
+      },
+    ],
+  },
+};
+
+function buildJsonLd() {
+  const orgId = `${siteConfig.url}/#organisation`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": orgId,
+        name: siteConfig.name,
+        alternateName: siteConfig.legalName,
+        description:
+          "Département de SECURIFORM dédié à la formation sécurité des agents des collectivités locales et territoriales.",
+        url: `${siteConfig.url}/`,
+        logo: `${siteConfig.url}/images/logo-securiform-collectivites.png`,
+        image: `${siteConfig.url}/images/og-securiform-collectivites.jpg`,
+        foundingDate: siteConfig.foundingDate,
+        telephone: "+33320673490",
+        email: siteConfig.email,
+        areaServed: { "@type": "Country", name: "France" },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteConfig.address.streetAddress,
+          postalCode: siteConfig.address.postalCode,
+          addressLocality: siteConfig.address.addressLocality,
+          addressCountry: siteConfig.address.addressCountry,
+        },
+        parentOrganization: {
+          "@type": "Organization",
+          name: siteConfig.parentOrganization.name,
+          url: siteConfig.parentOrganization.url,
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+33320673490",
+          email: siteConfig.email,
+          contactType: "customer service",
+          areaServed: "FR",
+          availableLanguage: "French",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        url: `${siteConfig.url}/`,
+        name: siteConfig.name,
+        inLanguage: "fr-FR",
+        publisher: { "@id": orgId },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${siteConfig.url}/#webpage`,
+        url: `${siteConfig.url}/`,
+        name: "Formations sécurité pour collectivités | SECURIFORM",
+        isPartOf: { "@id": `${siteConfig.url}/#website` },
+        about: { "@id": orgId },
+        inLanguage: "fr-FR",
+      },
+      {
+        "@type": "ItemList",
+        name: "Formations sécurité pour les collectivités",
+        itemListElement: courses.map((course) => ({
+          "@type": "ListItem",
+          position: course.position,
+          item: {
+            "@type": "Course",
+            name: course.name,
+            description: course.description,
+            url: course.url,
+            provider: { "@id": orgId },
+          },
+        })),
+      },
+    ],
+  };
+}
+
+export default function HomePage() {
+  const slides: HeroSliderSlide[] = heroSlides.map((slide, index) => ({
+    id: slide.id,
+    title: slide.title,
+    description: slide.description,
+    codesLabel: slide.codesLabel,
+    codes: slide.codes,
+    ctaLabel: slide.ctaLabel,
+    ctaHref: slide.ctaHref,
+    visual: (
+      <Media
+        src={slide.image.src}
+        alt={slide.image.alt}
+        sizes={HERO_IMAGE_SIZES}
+        priority={index === 0}
+      />
+    ),
+  }));
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd()) }}
+      />
+      <HeroSlider heroH1={heroH1} slides={slides} />
+      <About />
+      <TrainingTiles />
+      <TrainingsByService />
+      <Commitments />
+      <CtaBand />
+    </>
   );
 }

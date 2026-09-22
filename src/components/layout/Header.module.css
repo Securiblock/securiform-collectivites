@@ -1,0 +1,58 @@
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-h);
+  gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.logoMark {
+  width: 44px;
+  height: 44px;
+  flex: none;
+}
+
+.logoText {
+  font-family: var(--font-title);
+  font-weight: 700;
+  line-height: 1;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+}
+
+.logoText small {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--red);
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+}
+
+@media (max-width: 620px) {
+  .logoText {
+    font-size: 22px;
+  }
+
+  .logoMark {
+    width: 38px;
+    height: 38px;
+  }
+}

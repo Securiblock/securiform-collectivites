@@ -1,0 +1,64 @@
+.servicesList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.serviceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: clamp(16px, 4vw, 64px);
+  padding: clamp(22px, 2.6vw, 32px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.serviceRow h3 {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.serviceRow h3 svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--red);
+}
+
+.serviceRow p {
+  margin-bottom: 12px;
+}
+
+.serviceLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.serviceLinks a {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--panel);
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.serviceLinks a:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: var(--white);
+}
+
+@media (max-width: 900px) {
+  .serviceRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw WordPress media originals (downloaded, not committed)
+/wp-uploads
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

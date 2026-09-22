@@ -1,0 +1,46 @@
+.topbar {
+  background: var(--ink);
+  color: #d5dae0;
+  font-size: 15px;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.topbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.topbar a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 40px;
+  flex-wrap: wrap;
+}
+
+.contact {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 620px) {
+  .inner {
+    justify-content: center;
+  }
+
+  .contact {
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .entreprises {
+    display: none;
+  }
+}

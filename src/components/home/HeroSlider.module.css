@@ -1,0 +1,263 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: stretch;
+  gap: 0;
+}
+
+.heroCopy {
+  padding-block: clamp(40px, 6vw, 88px);
+  padding-right: clamp(16px, 3vw, 48px);
+  display: flex;
+  flex-direction: column;
+}
+
+.heroH1 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+
+.heroH1::before {
+  content: "";
+  width: 32px;
+  height: 3px;
+  background: var(--red);
+  flex: none;
+}
+
+.slidesText,
+.slidesMedia {
+  display: grid;
+}
+
+.slideText,
+.slideMedia {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s;
+}
+
+.slideText.isActive,
+.slideMedia.isActive {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slideText h2 {
+  font-size: clamp(32px, 2.6vw + 14px, 50px);
+  margin-bottom: 20px;
+}
+
+.slideText p {
+  max-width: 44ch;
+}
+
+.codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.codes li {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink);
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--white);
+}
+
+.slideActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sliderControls {
+  margin-top: auto;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ctrl {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.ctrl:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dots button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.dots button::before {
+  content: "";
+  width: 22px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  transition:
+    background-color 0.2s,
+    width 0.2s;
+}
+
+.dots button[aria-current="true"]::before {
+  background: var(--red);
+  width: 28px;
+}
+
+.slideCount {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--muted);
+  min-width: 48px;
+}
+
+/* Visuel : chevron de signalisation rouge + image coupée en biais */
+.heroVisual {
+  position: relative;
+  min-height: clamp(420px, 44vw, 620px);
+  margin-right: min(calc(var(--gutter) * -1), calc((100vw - var(--maxw)) / -2 - var(--gutter)));
+}
+
+.slidesMedia {
+  position: absolute;
+  inset: 0;
+}
+
+.slideMedia {
+  position: relative;
+  margin: 0;
+}
+
+.mediaClip {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 8% 100%);
+}
+
+.heroVisual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: var(--red);
+  clip-path: polygon(11% 0, 17.5% 0, 5.5% 100%, 0 100%);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    padding-inline: 0;
+  }
+
+  .heroVisual {
+    order: -1;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    margin-right: 0;
+  }
+
+  .mediaClip {
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
+  }
+
+  .heroVisual::before {
+    clip-path: polygon(0 92%, 100% 78%, 100% 84%, 0 98%);
+  }
+
+  .heroCopy {
+    padding: 28px var(--gutter) 40px;
+  }
+
+  .sliderControls {
+    padding-top: 28px;
+  }
+}
+
+@media (max-width: 620px) {
+  .slideActions :global(.btn) {
+    width: 100%;
+  }
+
+  .sliderControls {
+    gap: 8px;
+  }
+
+  .dots {
+    gap: 2px;
+  }
+
+  .dots button {
+    width: 20px;
+  }
+
+  .dots button::before {
+    width: 16px;
+  }
+
+  .dots button[aria-current="true"]::before {
+    width: 20px;
+  }
+
+  .slideCount {
+    min-width: 36px;
+    font-size: 16px;
+  }
+}

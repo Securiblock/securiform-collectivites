@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoMark } from "@/src/icons/LogoMark";
+import Image from "next/image";
 import { navLinks, headerCta } from "@/src/content/home";
 import { MobileNav } from "./MobileNav";
 import { TopBar } from "./TopBar";
@@ -12,11 +12,14 @@ export function Header() {
       <header className={styles.siteHeader}>
         <div className={`container ${styles.inner}`}>
           <Link className={styles.logo} href="/" aria-label="SECURIFORM Collectivités – accueil">
-            <LogoMark className={styles.logoMark} />
-            <span className={styles.logoText}>
-              SECURIFORM
-              <small>Collectivités</small>
-            </span>
+            <Image
+              src="/images/logos/logo-securiform-collectivite-transparent.png"
+              alt="SECURIFORM Collectivités"
+              width={1147}
+              height={224}
+              className={styles.logoImage}
+              priority
+            />
           </Link>
           <MobileNav navLinks={navLinks} cta={headerCta} />
         </div>

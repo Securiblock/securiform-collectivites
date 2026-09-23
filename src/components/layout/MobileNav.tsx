@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { NavLink } from "@/src/content/home";
 import styles from "./MobileNav.module.css";
 
@@ -13,6 +14,7 @@ type Props = {
 export function MobileNav({ navLinks, cta }: Props) {
   const [open, setOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!open) return;
@@ -54,7 +56,7 @@ export function MobileNav({ navLinks, cta }: Props) {
         <ul>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} aria-current={link.href === "/" ? "page" : undefined}>
+              <Link href={link.href} aria-current={link.href === pathname ? "page" : undefined}>
                 {link.label}
               </Link>
             </li>

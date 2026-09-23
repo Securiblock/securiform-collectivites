@@ -1,0 +1,110 @@
+.hero {
+  padding-bottom: clamp(24px, 3vw, 40px);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--red);
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: var(--small-size);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 2.2vw + 18px, 46px);
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.hero h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 64px;
+  height: 4px;
+  background: var(--red);
+}
+
+.heroText {
+  margin-top: 16px;
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.group {
+  padding-block: clamp(24px, 4vw, 40px);
+}
+
+.groupInner {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: clamp(24px, 4vw, 48px);
+}
+
+.groupTitle {
+  font-size: clamp(19px, 0.5vw + 16px, 21px);
+  color: var(--red);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+.logo {
+  flex: none;
+  width: 120px;
+  height: 44px;
+}
+
+.logoPlaceholder {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--red);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.itemTitle {
+  display: block;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.itemTitle:hover {
+  color: var(--red);
+}
+
+.item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--small-size);
+}
+
+@media (max-width: 700px) {
+  .groupInner {
+    grid-template-columns: 1fr;
+  }
+}

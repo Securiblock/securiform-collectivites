@@ -1,0 +1,31 @@
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, rgba(20, 24, 29, 0.75), rgba(20, 24, 29, 0.85)),
+    url("/images/formations/conduite-caces.webp") center / cover no-repeat;
+  padding-block: clamp(64px, 9vw, 120px);
+}
+
+.heroInner {
+  max-width: 62ch;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #ffb3b3;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: var(--small-size);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(32px, 2.6vw + 16px, 50px);
+}
+
+.hero p:not(.eyebrow) {
+  margin-top: 16px;
+  color: #e4e6e9;
+  max-width: 56ch;
+}

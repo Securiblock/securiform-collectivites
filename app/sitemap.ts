@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
+import { trainingTiles } from "@/src/content/home";
+import { formationLeaves } from "@/src/content/formations-catalog";
 
 const baseUrl = "https://www.securiform-collectivites.fr";
 
-const routes: { path: string; priority: number }[] = [
+const staticRoutes: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
   { path: "/formations/", priority: 0.9 },
   { path: "/vgp/", priority: 0.7 },
@@ -18,7 +20,10 @@ const routes: { path: string; priority: number }[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return routes.map((route) => ({
+  const categoryRoutes = trainingTiles.map((tile) => ({ path: tile.href, priority: 0.6 }));
+  const leafRoutes = formationLeaves.map((leaf) => ({ path: leaf.href, priority: 0.4 }));
+
+  return [...staticRoutes, ...categoryRoutes, ...leafRoutes].map((route) => ({
     url: `${baseUrl}${route.path}`,
     lastModified,
     changeFrequency: "monthly",

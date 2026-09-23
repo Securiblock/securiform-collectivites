@@ -46,17 +46,20 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4px 32px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
-.list li {
-  border-top: 1px solid var(--line);
+.card {
+  padding: 24px;
+  background: var(--panel);
+  border-radius: var(--radius);
+  border-top: 4px solid var(--red);
 }
 
-.list a {
+.cardTitle {
   display: block;
-  padding: 18px 0;
+  margin-bottom: 8px;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 19px;
@@ -64,16 +67,18 @@
   text-decoration: none;
 }
 
-.list a:hover {
+.cardTitle:hover {
   color: var(--red);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--small-size);
 }
 
 @media (max-width: 900px) {
   .heroInner {
-    grid-template-columns: 1fr;
-  }
-
-  .list {
     grid-template-columns: 1fr;
   }
 }

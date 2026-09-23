@@ -5,7 +5,15 @@ export type FormationLeaf = {
   categoryHref: string;
   description: string;
   points: string[];
+  validation: string;
 };
+
+const VALIDATION_CONDUITE = "Délivrance d'une autorisation de conduite interne à l'issue de la formation.";
+const VALIDATION_ELECTRIQUE =
+  "Le titre d'habilitation est délivré par votre employeur, sur la base de l'avis du formateur, conformément à la norme NF C 18-510.";
+const VALIDATION_AIPR = "Résultat du QCM officiel, valable 5 ans quel que soit l'employeur.";
+const VALIDATION_ATTESTATION = "Attestation de formation remise à chaque participant.";
+const VALIDATION_SST = "Certificat de Sauveteur Secouriste du Travail, valable 24 mois (recyclage MAC requis pour le maintien).";
 
 export const formationLeaves: FormationLeaf[] = [
   // Autorisations de conduite et CACES®
@@ -21,6 +29,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Théorie réglementaire et pratique sur engin",
       "Délivrance d'une autorisation de conduite interne",
     ],
+    validation: VALIDATION_CONDUITE,
   },
   {
     href: "/formations/autorisations-de-conduite-et-caces/plates-formes-elevatrices-mobiles-de-personnel/",
@@ -34,6 +43,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Conduite et manœuvres en sécurité",
       "Consignes en cas d'incident",
     ],
+    validation: VALIDATION_CONDUITE,
   },
   {
     href: "/formations/autorisations-de-conduite-et-caces/chariots-de-manutention-automoteurs-a-conducteur-porte-recommandation-r489/",
@@ -47,6 +57,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Prise de poste et vérifications journalières",
       "Manutention et gerbage en sécurité",
     ],
+    validation: VALIDATION_CONDUITE,
   },
   {
     href: "/formations/autorisations-de-conduite-et-caces/formations-a-la-conduite-en-securite-dune-balayeuse/",
@@ -59,6 +70,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Circulation en sécurité sur la voie publique",
       "Entretien courant de la machine",
     ],
+    validation: VALIDATION_CONDUITE,
   },
   {
     href: "/formations/autorisations-de-conduite-et-caces/tondeuse-autoportee/",
@@ -71,6 +83,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Conduite en sécurité sur terrain plat et en pente",
       "Entretien et bonnes pratiques",
     ],
+    validation: VALIDATION_CONDUITE,
   },
   {
     href: "/formations/autorisations-de-conduite-et-caces/micro-tracteur/",
@@ -84,6 +97,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Conduite en sécurité en espace public",
       "Entretien courant",
     ],
+    validation: VALIDATION_CONDUITE,
   },
   {
     href: "/formations/autorisations-de-conduite-et-caces/grues-auxiliaires-de-chargement-de-vehicules-recommandation-r490/",
@@ -97,6 +111,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Élingage et manutention des charges",
       "Consignes de sécurité autour de la zone de travail",
     ],
+    validation: VALIDATION_CONDUITE,
   },
   {
     href: "/formations/autorisations-de-conduite-et-caces/ponts-roulants-recommandation-r484/",
@@ -106,6 +121,7 @@ export const formationLeaves: FormationLeaf[] = [
     description:
       "Conduite en sécurité des ponts roulants à commande depuis le sol ou en cabine, selon la recommandation R484.",
     points: ["Vérifications avant utilisation", "Élingage et manutention des charges", "Communication avec l'équipe au sol"],
+    validation: VALIDATION_CONDUITE,
   },
 
   // Habilitations électriques
@@ -121,6 +137,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Conduite à tenir face à un accident électrique",
       "Conforme à la norme NF C 18-510",
     ],
+    validation: VALIDATION_ELECTRIQUE,
   },
   {
     href: "/formations/formation-2/personnel-electricien/",
@@ -134,6 +151,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Interventions et travaux hors tension",
       "Conforme à la norme NF C 18-510",
     ],
+    validation: VALIDATION_ELECTRIQUE,
   },
   {
     href: "/h0b0-personnel-executant/",
@@ -147,6 +165,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Gestes autorisés et interdits",
       "Conforme à la norme NF C 18-510",
     ],
+    validation: VALIDATION_ELECTRIQUE,
   },
   {
     href: "/be-manoeuvre/",
@@ -156,6 +175,7 @@ export const formationLeaves: FormationLeaf[] = [
     description:
       "Habilitation BE Manœuvre pour le personnel réalisant des manœuvres simples sur des installations électriques basse tension.",
     points: ["Manœuvres autorisées sur l'installation", "Procédure en cas d'anomalie", "Conforme à la norme NF C 18-510"],
+    validation: VALIDATION_ELECTRIQUE,
   },
 
   // AIPR
@@ -170,6 +190,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Identification des réseaux sensibles",
       "Préparation à l'examen QCM officiel",
     ],
+    validation: VALIDATION_AIPR,
   },
   {
     href: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/encadrants/",
@@ -182,6 +203,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Consignes à faire respecter sur le chantier",
       "Préparation à l'examen QCM officiel",
     ],
+    validation: VALIDATION_AIPR,
   },
   {
     href: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/operateurs/",
@@ -194,6 +216,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Conduite à tenir en cas d'incident",
       "Préparation à l'examen QCM officiel",
     ],
+    validation: VALIDATION_AIPR,
   },
 
   // Travaux en hauteur
@@ -208,6 +231,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Points d'ancrage et lignes de vie",
       "Conduite à tenir après une chute",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/travaux-en-hauteur/echafaudages/echafaudages-fixes-et-roulants-recommandations-r408-et-r457/",
@@ -220,6 +244,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Vérifications avant utilisation",
       "Recommandations R408 et R457",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
 
   // Secourisme et incendie
@@ -234,6 +259,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Gestes de premiers secours",
       "Formation initiale ou MAC selon votre situation",
     ],
+    validation: VALIDATION_SST,
   },
   {
     href: "/formations/secourisme-et-incendie/manipulation-de-defibrillateur/",
@@ -246,6 +272,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Utiliser un défibrillateur en sécurité",
       "Articulation avec les gestes de premiers secours",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formation-a-la-manipulation-dextincteurs/",
@@ -258,6 +285,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Manipulation pratique sur feu réel",
       "Consignes d'alerte et d'évacuation",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/secourisme-et-incendie/evacuation/",
@@ -270,6 +298,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Consignes d'évacuation et points de rassemblement",
       "Exercice pratique d'évacuation",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
 
   // Risques liés au poste de travail
@@ -284,6 +313,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Mise en place et dépose en sécurité",
       "Positionnement des agents sur le chantier",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/risques-lies-au-poste-de-travail/formation-a-lutilisation-dune-tronconneuse/",
@@ -296,6 +326,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Techniques de coupe en sécurité",
       "Entretien courant de la tronçonneuse",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/risques-lies-au-poste-de-travail/gestes-et-postures/",
@@ -308,6 +339,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Bonnes pratiques de manutention manuelle",
       "Aménagements simples du poste",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/risques-lies-au-poste-de-travail/formations-aux-risques-routiers-et-eco-conduite/risques-routiers/",
@@ -320,6 +352,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Principes de l'éco-conduite",
       "Mise en pratique sur route",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/risques-lies-au-poste-de-travail/port-des-e-p-i-equipements-de-protection-individuelle/",
@@ -332,6 +365,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Bonnes pratiques de port et d'entretien",
       "Obligations de l'agent et de l'employeur",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/risques-lies-au-poste-de-travail/vigilance-partagee/",
@@ -344,6 +378,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Repérage des situations à risque",
       "Réflexes à adopter en équipe",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/risques-lies-au-poste-de-travail/responsabilite-et-devoir-en-cas-daccident/",
@@ -356,6 +391,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Conduite à tenir sur les lieux de l'accident",
       "Suites administratives et déclaratives",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
 
   // Formations métiers
@@ -370,6 +406,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Gestes et postures adaptés",
       "Vigilance partagée avec le conducteur",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/formations-metiers/agent-daccueil-en-dechetterie/",
@@ -382,6 +419,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Tri et sécurité sur le site",
       "Gestion des situations difficiles",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
   {
     href: "/formations/formations-metiers/agent-de-nettoyage-urbain/",
@@ -394,6 +432,7 @@ export const formationLeaves: FormationLeaf[] = [
       "Utilisation du matériel de nettoiement",
       "Gestes et postures adaptés",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
 
   // Établissements recevant du public (rattaché à Secourisme et incendie)
@@ -408,5 +447,6 @@ export const formationLeaves: FormationLeaf[] = [
       "Extinction d'un début d'incendie",
       "Articulation avec le plan d'évacuation",
     ],
+    validation: VALIDATION_ATTESTATION,
   },
 ];

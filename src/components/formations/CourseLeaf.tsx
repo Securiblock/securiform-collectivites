@@ -18,18 +18,36 @@ export function CourseLeaf({ entry }: { entry: FormationLeaf }) {
       </section>
 
       <section className="section">
-        <div className={`container ${styles.body}`}>
-          <p className={styles.description}>{entry.description}</p>
+        <div className={`container ${styles.grid}`}>
+          <div>
+            <p className={styles.description}>{entry.description}</p>
 
-          <ul className={styles.points}>
-            {entry.points.map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
+            <h2 className={styles.subhead}>Objectifs de la formation</h2>
+            <ul className={styles.points}>
+              {entry.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
 
-          <Link className="btn btn-ghost" href={entry.categoryHref}>
-            Voir toutes les formations {entry.categoryLabel.toLowerCase()}
-          </Link>
+            <Link className="btn btn-ghost" href={entry.categoryHref}>
+              Voir toutes les formations « {entry.categoryLabel} »
+            </Link>
+          </div>
+
+          <aside className={styles.sidebar}>
+            <div>
+              <h3>Modalités</h3>
+              <p>Formation organisée directement dans vos services, en groupe de 6 à 10 stagiaires.</p>
+            </div>
+            <div>
+              <h3>Intervention</h3>
+              <p>Partout en France.</p>
+            </div>
+            <div>
+              <h3>Validation</h3>
+              <p>{entry.validation}</p>
+            </div>
+          </aside>
         </div>
       </section>
 

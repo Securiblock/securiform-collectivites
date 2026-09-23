@@ -273,7 +273,12 @@ export const trainingTiles: TrainingTile[] = [
     image: { src: "/images/formations/travaux-en-hauteur.webp", alt: "" },
     links: [
       { label: "Port du harnais anti-chute", href: "/formations/travaux-en-hauteur/port-du-harnais-anti-chute/" },
+<<<<<<< HEAD
       { label: "Échafaudages fixes et roulants (R408 / R457)", href: "/formations/travaux-en-hauteur/echafaudages/echafaudages-fixes-et-roulants-recommandations-r408-et-r457/" },
+=======
+      { label: "Échafaudages fixes (R408)", href: "/formations/travaux-en-hauteur/echafaudages/echafaudages-fixes-recommandation-r408/" },
+      { label: "Échafaudages roulants (R457)", href: "/formations/travaux-en-hauteur/echafaudages/echafaudages-roulants-recommandation-r457/" },
+>>>>>>> origin/main
     ],
     moreLabel: "Toutes les formations en hauteur",
   },

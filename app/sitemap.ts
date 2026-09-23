@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-<<<<<<< HEAD
 import { trainingTiles } from "@/src/content/home";
 import { formationLeaves } from "@/src/content/formations-catalog";
 
@@ -30,16 +29,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: route.priority,
   }));
-=======
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://www.securiform-collectivites.fr/",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-  ];
->>>>>>> origin/main
 }

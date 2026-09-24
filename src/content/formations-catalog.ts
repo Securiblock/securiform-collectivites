@@ -5,6 +5,8 @@ export type FormationLeaf = {
   categoryHref: string;
   description: string;
   points: string[];
+  duration?: string;
+  groupSize?: string;
   validation: string;
 };
 
@@ -23,12 +25,13 @@ export const formationLeaves: FormationLeaf[] = [
     categoryLabel: "Autorisations de conduite et CACES®",
     categoryHref: "/formations/autorisations-de-conduite-et-caces/",
     description:
-      "Conduite en sécurité des engins de chantier (pelles, chargeuses, tombereaux, engins de compactage) selon la recommandation R482 de la CNAM.",
+      "Conduite en sécurité des engins de chantier de catégories A à F selon la recommandation R482 de la CNAM.",
     points: [
-      "Catégories d'engins selon les besoins de vos services",
-      "Théorie réglementaire et pratique sur engin",
-      "Délivrance d'une autorisation de conduite interne",
+      "Conduire en sécurité des engins de chantier de catégories A à F",
+      "Obtenir une attestation de capacité ou CACES® (certificat d'aptitude à la conduite en sécurité)",
     ],
+    duration: "À définir selon le nombre de stagiaires et leur niveau de pratique",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_CONDUITE,
   },
   {
@@ -37,12 +40,13 @@ export const formationLeaves: FormationLeaf[] = [
     categoryLabel: "Autorisations de conduite et CACES®",
     categoryHref: "/formations/autorisations-de-conduite-et-caces/",
     description:
-      "Conduite en sécurité des plates-formes élévatrices mobiles de personnel (PEMP) de catégorie A, selon la recommandation R486.",
+      "Conduite en toute sécurité des plates-formes élévatrices mobiles de personnel (PEMP) de catégories A et B, selon la recommandation R486-A.",
     points: [
-      "Vérifications avant utilisation",
-      "Conduite et manœuvres en sécurité",
-      "Consignes en cas d'incident",
+      "Conduire en sécurité une PEMP de catégorie A ou B",
+      "Obtenir une attestation de capacité ou CACES® (certificat d'aptitude à la conduite en sécurité)",
     ],
+    duration: "À définir selon le nombre de stagiaires et leur niveau de pratique",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_CONDUITE,
   },
   {
@@ -51,12 +55,13 @@ export const formationLeaves: FormationLeaf[] = [
     categoryLabel: "Autorisations de conduite et CACES®",
     categoryHref: "/formations/autorisations-de-conduite-et-caces/",
     description:
-      "Conduite en sécurité des chariots de manutention automoteurs à conducteur porté, selon la recommandation R489.",
+      "Conduite en sécurité des chariots automoteurs de manutention à conducteur porté de catégories 1 à 7, selon la recommandation R489.",
     points: [
-      "Catégories de chariots selon vos équipements",
-      "Prise de poste et vérifications journalières",
-      "Manutention et gerbage en sécurité",
+      "Conduire en sécurité des chariots de manutention à conducteur porté, catégories 1 à 7",
+      "Obtenir une attestation de capacité ou CACES® (certificat d'aptitude à la conduite en sécurité)",
     ],
+    duration: "À définir selon le nombre de stagiaires et leur niveau de pratique",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_CONDUITE,
   },
   {
@@ -66,10 +71,11 @@ export const formationLeaves: FormationLeaf[] = [
     categoryHref: "/formations/autorisations-de-conduite-et-caces/",
     description: "Conduite en sécurité d'une balayeuse de voirie, adaptée aux missions de propreté urbaine.",
     points: [
-      "Prise en main de la balayeuse et de ses équipements",
-      "Circulation en sécurité sur la voie publique",
-      "Entretien courant de la machine",
+      "Conduire en sécurité une balayeuse",
+      "Obtenir une attestation de capacité ou CACES® (certificat d'aptitude à la conduite en sécurité)",
     ],
+    duration: "À définir selon le nombre de stagiaires et leur niveau de pratique",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_CONDUITE,
   },
   {
@@ -78,11 +84,9 @@ export const formationLeaves: FormationLeaf[] = [
     categoryLabel: "Autorisations de conduite et CACES®",
     categoryHref: "/formations/autorisations-de-conduite-et-caces/",
     description: "Conduite en sécurité d'une tondeuse autoportée pour l'entretien des espaces verts.",
-    points: [
-      "Vérifications avant utilisation",
-      "Conduite en sécurité sur terrain plat et en pente",
-      "Entretien et bonnes pratiques",
-    ],
+    points: ["Conduire en sécurité une tondeuse autoportée", "Obtenir une attestation de capacité"],
+    duration: "À définir selon le nombre de stagiaires et leur niveau de pratique",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_CONDUITE,
   },
   {
@@ -90,13 +94,13 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Micro-tracteurs",
     categoryLabel: "Autorisations de conduite et CACES®",
     categoryHref: "/formations/autorisations-de-conduite-et-caces/",
-    description:
-      "Conduite en sécurité d'un micro-tracteur et de ses équipements, pour l'entretien des espaces verts et espaces publics.",
+    description: "Conduite en sécurité d'un micro-tracteur pour l'entretien des espaces verts et espaces publics.",
     points: [
-      "Attelage et utilisation des équipements",
-      "Conduite en sécurité en espace public",
-      "Entretien courant",
+      "Conduire en sécurité un micro-tracteur",
+      "Obtenir une attestation de capacité ou CACES® (certificat d'aptitude à la conduite en sécurité)",
     ],
+    duration: "À définir selon le nombre de stagiaires et leur niveau de pratique",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_CONDUITE,
   },
   {
@@ -105,12 +109,13 @@ export const formationLeaves: FormationLeaf[] = [
     categoryLabel: "Autorisations de conduite et CACES®",
     categoryHref: "/formations/autorisations-de-conduite-et-caces/",
     description:
-      "Conduite en sécurité des grues auxiliaires de chargement de véhicules, selon la recommandation R490.",
+      "Conduite en sécurité des grues auxiliaires de chargement de véhicules, à poste fixe et à télécommande, selon la recommandation R490.",
     points: [
-      "Vérifications et mise en station",
-      "Élingage et manutention des charges",
-      "Consignes de sécurité autour de la zone de travail",
+      "Conduire en sécurité une grue auxiliaire de chargement, à poste fixe ou à télécommande",
+      "Obtenir une attestation de capacité ou CACES® (certificat d'aptitude à la conduite en sécurité)",
     ],
+    duration: "À définir selon le nombre de stagiaires et leur niveau de pratique",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_CONDUITE,
   },
   {
@@ -118,9 +123,13 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Ponts roulants (R484)",
     categoryLabel: "Autorisations de conduite et CACES®",
     categoryHref: "/formations/autorisations-de-conduite-et-caces/",
-    description:
-      "Conduite en sécurité des ponts roulants à commande depuis le sol ou en cabine, selon la recommandation R484.",
-    points: ["Vérifications avant utilisation", "Élingage et manutention des charges", "Communication avec l'équipe au sol"],
+    description: "Conduite en sécurité des ponts roulants à commande au sol, selon la recommandation R484.",
+    points: [
+      "Conduire en sécurité un pont roulant à commande au sol",
+      "Obtenir une attestation de capacité ou CACES® (certificat d'aptitude à la conduite en sécurité)",
+    ],
+    duration: "À définir selon le nombre de stagiaires et leur niveau de pratique",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_CONDUITE,
   },
 
@@ -131,12 +140,13 @@ export const formationLeaves: FormationLeaf[] = [
     categoryLabel: "Habilitations électriques",
     categoryHref: "/formations/formation-2/",
     description:
-      "Habilitation électrique du personnel non électricien (B0, H0, H0V), pour les agents intervenant à proximité d'installations électriques sans réaliser d'opérations électriques.",
+      "Habilitation BS : remplacement à l'identique de fusibles, d'accessoires d'éclairage, de prises de courant, d'interrupteurs, raccordement d'éléments de matériel sur un circuit en attente et réarmement de dispositifs de protection.",
     points: [
-      "Risques électriques et distances de sécurité",
-      "Conduite à tenir face à un accident électrique",
-      "Conforme à la norme NF C 18-510",
+      "Réaliser en toute sécurité ces opérations d'ordre électrique élémentaires (habilitation BS)",
+      "Conforme à la norme NF C 18-510/A1",
     ],
+    duration: "2 jours",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ELECTRIQUE,
   },
   {
@@ -145,12 +155,14 @@ export const formationLeaves: FormationLeaf[] = [
     categoryLabel: "Habilitations électriques",
     categoryHref: "/formations/formation-2/",
     description:
-      "Habilitation électrique du personnel électricien (B1, B2, BR, BC), pour les agents réalisant des interventions et travaux électriques en basse tension.",
+      "Réaliser en toute sécurité des travaux d'ordre électrique en basse et/ou haute tensions, et/ou être chargé de consignation (indices B1, B1V, B2, B2V, BR, BC, H1V, H2, H2V, HC).",
     points: [
       "Consignation et déconsignation d'une installation",
-      "Interventions et travaux hors tension",
-      "Conforme à la norme NF C 18-510",
+      "Interventions et travaux d'ordre électrique en basse et/ou haute tensions",
+      "Conforme à la norme NF C 18-510/A1",
     ],
+    duration: "À définir selon le niveau d'habilitation visé",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ELECTRIQUE,
   },
   {
@@ -159,12 +171,10 @@ export const formationLeaves: FormationLeaf[] = [
     categoryLabel: "Habilitations électriques",
     categoryHref: "/formations/formation-2/",
     description:
-      "Habilitation H0B0 pour le personnel exécutant des opérations d'ordre non électrique à proximité de pièces nues sous tension.",
-    points: [
-      "Périmètres de sécurité électrique",
-      "Gestes autorisés et interdits",
-      "Conforme à la norme NF C 18-510",
-    ],
+      "Réaliser des travaux d'ordre non électrique en toute sécurité dans un environnement présentant des risques électriques.",
+    points: ["Périmètres et distances de sécurité électrique", "Conforme à la norme NF C 18-510/A1"],
+    duration: "1 jour",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ELECTRIQUE,
   },
   {
@@ -172,9 +182,10 @@ export const formationLeaves: FormationLeaf[] = [
     title: "BE Manœuvre",
     categoryLabel: "Habilitations électriques",
     categoryHref: "/formations/formation-2/",
-    description:
-      "Habilitation BE Manœuvre pour le personnel réalisant des manœuvres simples sur des installations électriques basse tension.",
-    points: ["Manœuvres autorisées sur l'installation", "Procédure en cas d'anomalie", "Conforme à la norme NF C 18-510"],
+    description: "Effectuer en toute sécurité des manœuvres d'exploitation d'ordre électrique en basse tension.",
+    points: ["Manœuvres d'exploitation autorisées sur l'installation", "Conforme à la norme NF C 18-510/A1"],
+    duration: "2 jours",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ELECTRIQUE,
   },
 
@@ -186,10 +197,11 @@ export const formationLeaves: FormationLeaf[] = [
     categoryHref: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/",
     description: "Préparation à l'examen AIPR pour les agents qui conçoivent des projets de travaux à proximité des réseaux.",
     points: [
-      "Réglementation DT-DICT",
-      "Identification des réseaux sensibles",
-      "Préparation à l'examen QCM officiel",
+      "Connaître la réglementation DT-DICT et le guide technique",
+      "Comprendre les enjeux du contrôle des compétences (examen AIPR) au regard des obligations réglementaires",
     ],
+    duration: "1 à 2 jours, dont 1 heure d'examen",
+    groupSize: "8 personnes maximum",
     validation: VALIDATION_AIPR,
   },
   {
@@ -199,10 +211,11 @@ export const formationLeaves: FormationLeaf[] = [
     categoryHref: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/",
     description: "Préparation à l'examen AIPR pour les agents qui encadrent des chantiers à proximité des réseaux.",
     points: [
-      "Réglementation DT-DICT",
-      "Consignes à faire respecter sur le chantier",
-      "Préparation à l'examen QCM officiel",
+      "Connaître la réglementation DT-DICT et le guide technique",
+      "Comprendre les enjeux du contrôle des compétences (examen AIPR) au regard des obligations réglementaires",
     ],
+    duration: "1 à 2 jours, dont 1 heure d'examen",
+    groupSize: "8 personnes maximum",
     validation: VALIDATION_AIPR,
   },
   {
@@ -212,10 +225,13 @@ export const formationLeaves: FormationLeaf[] = [
     categoryHref: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/",
     description: "Préparation à l'examen AIPR pour les agents qui interviennent physiquement sur les chantiers à proximité des réseaux.",
     points: [
-      "Reconnaissance des réseaux sur le terrain",
-      "Conduite à tenir en cas d'incident",
-      "Préparation à l'examen QCM officiel",
+      "Appliquer la règle du 1 mètre devant les affleurants",
+      "Rechercher en sécurité les réseaux et branchements en fonction des informations disponibles",
+      "Arrêter les travaux si la position du branchement ou du réseau n'est pas celle attendue",
+      "Connaître la règle des 4A",
     ],
+    duration: "1 jour, dont 1 heure d'examen",
+    groupSize: "8 personnes maximum",
     validation: VALIDATION_AIPR,
   },
 
@@ -225,12 +241,14 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Port du harnais anti-chute",
     categoryLabel: "Travaux en hauteur",
     categoryHref: "/formations/travaux-en-hauteur/",
-    description: "Utilisation du harnais anti-chute et des systèmes d'arrêt de chute pour les interventions en hauteur.",
+    description: "Principes de sécurité relatifs aux accès, aux travaux et aux déplacements en hauteur.",
     points: [
-      "Choix et réglage du harnais",
-      "Points d'ancrage et lignes de vie",
-      "Conduite à tenir après une chute",
+      "Connaître la réglementation sur les travaux en hauteur",
+      "Découvrir les EPI et systèmes de protection contre les chutes de hauteur disponibles sur le marché",
+      "Savoir choisir les EPI adaptés",
     ],
+    duration: "1 jour",
+    groupSize: "8 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
   {
@@ -238,12 +256,16 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Échafaudages fixes et roulants (R408 / R457)",
     categoryLabel: "Travaux en hauteur",
     categoryHref: "/formations/travaux-en-hauteur/",
-    description: "Montage, démontage, utilisation et vérification des échafaudages fixes (R408) et roulants (R457).",
+    description:
+      "Montage, démontage, utilisation et vérification d'échafaudages fixes et roulants, conformément aux recommandations CNAMTS R408 et R457 et au décret 2004-924.",
     points: [
-      "Montage et démontage en sécurité",
-      "Vérifications avant utilisation",
-      "Recommandations R408 et R457",
+      "Monter et démonter des échafaudages fixes et roulants dans le respect des règles de sécurité",
+      "Appliquer une notice de montage",
+      "Maîtriser la vérification et la maintenance des échafaudages",
+      "Superviser une équipe de monteurs",
     ],
+    duration: "1 à 4 jours",
+    groupSize: "8 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
 
@@ -253,12 +275,14 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Sauveteur Secouriste du Travail",
     categoryLabel: "Secourisme et incendie",
     categoryHref: "/formations/secourisme-et-incendie/",
-    description: "Formation initiale et maintien et actualisation des compétences (MAC) Sauveteur Secouriste du Travail.",
+    description:
+      "Intervenir efficacement face à une situation d'accident et mettre en application des compétences de prévention en santé et sécurité au travail.",
     points: [
-      "Protéger, examiner, alerter, secourir",
-      "Gestes de premiers secours",
-      "Formation initiale ou MAC selon votre situation",
+      "Protéger, examiner, alerter et secourir",
+      "Formation initiale ou maintien et actualisation des compétences (MAC) selon votre situation",
     ],
+    duration: "MAC : 1 jour / Formation initiale : 2 jours",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_SST,
   },
   {
@@ -266,12 +290,13 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Manipulation de défibrillateurs",
     categoryLabel: "Secourisme et incendie",
     categoryHref: "/formations/secourisme-et-incendie/",
-    description: "Utilisation d'un défibrillateur automatisé externe (DAE) face à un arrêt cardiaque.",
+    description: "Identifier un arrêt cardio-respiratoire et mettre en œuvre une procédure de réanimation d'urgence.",
     points: [
-      "Reconnaître un arrêt cardiaque",
-      "Utiliser un défibrillateur en sécurité",
-      "Articulation avec les gestes de premiers secours",
+      "Identifier un arrêt cardio-respiratoire",
+      "Mettre en œuvre une réanimation d'urgence et une défibrillation précoce à l'aide d'un défibrillateur",
     ],
+    duration: "2 à 4 heures",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
   {
@@ -279,12 +304,13 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Manipulation d'extincteurs",
     categoryLabel: "Secourisme et incendie",
     categoryHref: "/formations/secourisme-et-incendie/",
-    description: "Utilisation des extincteurs et premiers gestes face à un début d'incendie.",
+    description: "Identifier la naissance et la propagation d'un incendie, et utiliser efficacement les moyens d'extinction.",
     points: [
-      "Les différents types de feux et d'extincteurs",
-      "Manipulation pratique sur feu réel",
-      "Consignes d'alerte et d'évacuation",
+      "Identifier les notions élémentaires et avancées de naissance et de propagation d'un incendie",
+      "Mettre en œuvre et utiliser efficacement les différents moyens d'extinction",
     ],
+    duration: "2 à 4 heures",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
   {
@@ -292,12 +318,14 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Évacuation : guides et serre-files",
     categoryLabel: "Secourisme et incendie",
     categoryHref: "/formations/secourisme-et-incendie/",
-    description: "Rôle des guides et serre-files lors de l'évacuation d'un établissement.",
+    description: "Rôle des guides et serre-files lors de la mise en sécurité et de l'évacuation d'un établissement.",
     points: [
-      "Rôle et positionnement de chacun",
-      "Consignes d'évacuation et points de rassemblement",
-      "Exercice pratique d'évacuation",
+      "Identifier les notions de naissance et de propagation d'un incendie",
+      "Mettre en œuvre les moyens de mise en sécurité des occupants",
+      "Appliquer les étapes d'intervention : reconnaissance, alerte, mise en sécurité, accueil et guidage des secours",
     ],
+    duration: "2 à 4 heures",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
 
@@ -307,12 +335,13 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Signalisation temporaire de chantier",
     categoryLabel: "Risques liés au poste de travail",
     categoryHref: "/formations/risques-lies-au-poste-de-travail/",
-    description: "Mise en place de la signalisation temporaire sur un chantier de voirie.",
+    description: "Définir les risques liés aux chantiers sur voirie et implanter une signalisation adaptée.",
     points: [
-      "Réglementation de la signalisation temporaire",
-      "Mise en place et dépose en sécurité",
-      "Positionnement des agents sur le chantier",
+      "Savoir définir les risques liés aux chantiers sur voirie",
+      "Implanter une signalisation correcte et efficace en fonction du chantier",
     ],
+    duration: "1 jour",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
   {
@@ -320,12 +349,14 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Utilisation d'une tronçonneuse",
     categoryLabel: "Risques liés au poste de travail",
     categoryHref: "/formations/risques-lies-au-poste-de-travail/",
-    description: "Utilisation en sécurité d'une tronçonneuse pour les travaux d'entretien des espaces verts.",
+    description: "Utilisation en sécurité d'une tronçonneuse thermique à chaîne pour les travaux d'entretien des espaces verts.",
     points: [
-      "Équipements de protection individuelle adaptés",
-      "Techniques de coupe en sécurité",
-      "Entretien courant de la tronçonneuse",
+      "Utiliser en sécurité une tronçonneuse thermique à chaîne",
+      "Assurer la maintenance de premier niveau de sa tronçonneuse",
+      "Choisir les EPI adaptés",
     ],
+    duration: "7 heures",
+    groupSize: "8 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
   {
@@ -333,12 +364,13 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Gestes et postures",
     categoryLabel: "Risques liés au poste de travail",
     categoryHref: "/formations/risques-lies-au-poste-de-travail/",
-    description: "Prévention des troubles musculosquelettiques par l'adoption des bons gestes et postures.",
+    description: "Prévenir les accidents liés à la mauvaise manipulation des charges ou de mauvaises positions de travail.",
     points: [
-      "Analyse des postures à risque au poste de travail",
-      "Bonnes pratiques de manutention manuelle",
-      "Aménagements simples du poste",
+      "Prévenir les accidents liés à la manutention manuelle et aux postures de travail",
+      "Apporter des solutions pratiques pour améliorer les manutentions manuelles",
     ],
+    duration: "7 heures",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
   {
@@ -346,12 +378,14 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Risques routiers et éco-conduite",
     categoryLabel: "Risques liés au poste de travail",
     categoryHref: "/formations/risques-lies-au-poste-de-travail/",
-    description: "Prévention du risque routier et sensibilisation à l'éco-conduite pour les agents qui se déplacent au quotidien.",
+    description: "Sensibilisation aux risques routiers professionnels et à l'éco-conduite pour les agents qui se déplacent au quotidien.",
     points: [
-      "Sensibilisation au risque routier professionnel",
-      "Principes de l'éco-conduite",
-      "Mise en pratique sur route",
+      "Sensibiliser les conducteurs aux risques routiers",
+      "Sensibiliser à la pertinence d'une conduite éco-responsable",
+      "Utiliser les instruments de bord du véhicule pour réduire sa consommation",
     ],
+    duration: "4 à 7 heures",
+    groupSize: "6 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
   {
@@ -359,12 +393,10 @@ export const formationLeaves: FormationLeaf[] = [
     title: "Port des EPI",
     categoryLabel: "Risques liés au poste de travail",
     categoryHref: "/formations/risques-lies-au-poste-de-travail/",
-    description: "Bonnes pratiques de port et d'entretien des équipements de protection individuelle.",
-    points: [
-      "Choisir l'EPI adapté au risque",
-      "Bonnes pratiques de port et d'entretien",
-      "Obligations de l'agent et de l'employeur",
-    ],
+    description: "Sensibiliser les agents à l'importance du port des équipements de protection individuelle.",
+    points: ["Sensibiliser à une meilleure prise en compte de l'importance du port des EPI"],
+    duration: "4 heures",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
   {
@@ -443,10 +475,13 @@ export const formationLeaves: FormationLeaf[] = [
     categoryHref: "/formations/secourisme-et-incendie/",
     description: "Formation des équipiers de première intervention (EPI) pour la lutte contre un début d'incendie dans votre établissement.",
     points: [
-      "Reconnaissance des moyens de secours du site",
-      "Extinction d'un début d'incendie",
-      "Articulation avec le plan d'évacuation",
+      "Identifier les notions de naissance et de propagation d'un incendie",
+      "Mettre en œuvre et utiliser efficacement les moyens d'extinction",
+      "Analyser la situation et adopter un comportement préventif face aux risques d'incendie",
+      "Appliquer les étapes d'intervention : reconnaissance, alerte, mise en sécurité, accueil et guidage des secours",
     ],
+    duration: "4 à 7 heures",
+    groupSize: "10 personnes maximum",
     validation: VALIDATION_ATTESTATION,
   },
 ];

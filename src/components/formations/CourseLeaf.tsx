@@ -35,13 +35,21 @@ export function CourseLeaf({ entry }: { entry: FormationLeaf }) {
           </div>
 
           <aside className={styles.sidebar}>
-            <div>
-              <h3>Modalités</h3>
-              <p>Formation organisée directement dans vos services, en groupe de 6 à 10 stagiaires.</p>
-            </div>
+            {entry.duration ? (
+              <div>
+                <h3>Durée</h3>
+                <p>{entry.duration}</p>
+              </div>
+            ) : null}
+            {entry.groupSize ? (
+              <div>
+                <h3>Effectif</h3>
+                <p>{entry.groupSize}</p>
+              </div>
+            ) : null}
             <div>
               <h3>Intervention</h3>
-              <p>Partout en France.</p>
+              <p>Directement dans vos services, partout en France.</p>
             </div>
             <div>
               <h3>Validation</h3>

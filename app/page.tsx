@@ -47,7 +47,7 @@ function buildJsonLd() {
         description:
           "Département de SECURIFORM dédié à la formation sécurité des agents des collectivités locales et territoriales.",
         url: `${siteConfig.url}/`,
-        logo: `${siteConfig.url}/images/logo-securiform-collectivites.png`,
+        logo: `${siteConfig.url}/images/logos/logo-securiform-collectivite-transparent.png`,
         image: `${siteConfig.url}/images/og-securiform-collectivites.jpg`,
         foundingDate: siteConfig.foundingDate,
         telephone: "+33320673490",

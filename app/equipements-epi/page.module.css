@@ -10,13 +10,19 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent 55%, var(--red) 55%, var(--red) 62%, transparent 62%);
+  background: linear-gradient(120deg, transparent 74%, var(--red) 74%, var(--red) 80%, transparent 80%);
   opacity: 0.9;
 }
 
 .hero .container {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .hero::after {
+    display: none;
+  }
 }
 
 .eyebrow {
@@ -41,7 +47,7 @@
 
 .heroText {
   margin-top: 16px;
-  max-width: 56ch;
+  max-width: 46ch;
   color: #d8dbe0;
 }
 
@@ -125,6 +131,47 @@
   height: 100%;
   border-radius: var(--radius);
   overflow: hidden;
+}
+
+.storeCallout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  margin-top: clamp(32px, 4vw, 48px);
+  padding: 28px 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.storeLogo {
+  flex: none;
+  width: 180px;
+  height: auto;
+}
+
+.storeText {
+  flex: 1 1 260px;
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--small-size);
+}
+
+.storeCallout .btn {
+  flex: none;
+}
+
+@media (max-width: 700px) {
+  .storeCallout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .storeCallout .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 900px) {

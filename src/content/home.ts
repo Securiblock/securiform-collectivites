@@ -125,7 +125,7 @@ export const heroSlides: HeroSlide[] = [
     codesLabel: "Niveaux d'habilitation",
     codes: ["H0B0", "BE Manœuvre-BS", "HE Manœuvre", "B1-B2-BR-BE essai-BC", "B1L-B2L-BRL-BCL", "H1-H2-HE essai-HC"],
     ctaLabel: "Voir les habilitations électriques",
-    ctaHref: "/formations/formation-2/",
+    ctaHref: "/formations/habilitations-electriques/",
     image: {
       src: "/images/slider/habilitation-electrique.webp",
       alt: "Agent territorial en formation à l'habilitation électrique devant une armoire électrique",
@@ -217,7 +217,7 @@ export const trainingTiles: TrainingTile[] = [
     title: "Autorisations de conduite et CACES®",
     href: "/formations/autorisations-de-conduite-et-caces/",
     description: "Conduite en sécurité selon les recommandations R482 à R490, plus les engins spécifiques aux collectivités.",
-    image: { src: "/images/formations/conduite-caces.webp", alt: "" },
+    image: { src: "/images/formations/conduite-caces.webp", alt: "Conduite en sécurité d'un engin de chantier" },
     links: [
       { label: "Engins de chantier (R482)", href: "/formations/autorisations-de-conduite-et-caces/engins-de-chantier/" },
       { label: "Nacelles élévatrices (R486-A)", href: "/formations/autorisations-de-conduite-et-caces/plates-formes-elevatrices-mobiles-de-personnel/" },
@@ -229,12 +229,12 @@ export const trainingTiles: TrainingTile[] = [
   },
   {
     title: "Habilitations électriques",
-    href: "/formations/formation-2/",
+    href: "/formations/habilitations-electriques/",
     description: "Préparation à l'habilitation électrique en basse et haute tensions selon la norme NF C 18-510.",
-    image: { src: "/images/formations/habilitation-electrique.webp", alt: "" },
+    image: { src: "/images/formations/habilitation-electrique.webp", alt: "Agent en préparation à l'habilitation électrique" },
     links: [
-      { label: "Personnel électricien", href: "/formations/formation-2/personnel-electricien/" },
-      { label: "Personnel non électricien", href: "/formations/formation-2/personnel-non-electricien/" },
+      { label: "Personnel électricien", href: "/formations/habilitations-electriques/personnel-electricien/" },
+      { label: "Personnel non électricien", href: "/formations/habilitations-electriques/personnel-non-electricien/" },
     ],
     moreLabel: "Toutes les habilitations",
   },
@@ -242,7 +242,7 @@ export const trainingTiles: TrainingTile[] = [
     title: "Secourisme et incendie",
     href: "/formations/secourisme-et-incendie/",
     description: "Centre habilité SST, défibrillateur, lutte contre l'incendie et évacuation de vos établissements.",
-    image: { src: "/images/formations/secourisme-incendie.webp", alt: "" },
+    image: { src: "/images/formations/secourisme-incendie.webp", alt: "Formation secourisme et lutte contre l'incendie" },
     links: [
       { label: "Sauveteur Secouriste du Travail", href: "/formations/secourisme-et-incendie/sauveteur-secouriste-du-travail-s-s-t/" },
       { label: "Manipulation de défibrillateurs", href: "/formations/secourisme-et-incendie/manipulation-de-defibrillateur/" },
@@ -255,7 +255,7 @@ export const trainingTiles: TrainingTile[] = [
     title: "Risques liés au poste de travail",
     href: "/formations/risques-lies-au-poste-de-travail/",
     description: "La prévention des risques du quotidien : voirie, outillage, manutention et déplacements.",
-    image: { src: "/images/formations/risques-poste-travail.webp", alt: "" },
+    image: { src: "/images/formations/risques-poste-travail.webp", alt: "Prévention des risques liés au poste de travail" },
     links: [
       { label: "Signalisation temporaire de chantier", href: "/formations/risques-lies-au-poste-de-travail/signalisation-temporaire-de-chantier/" },
       { label: "Utilisation d'une tronçonneuse", href: "/formations/risques-lies-au-poste-de-travail/tronconneuse-thermique-a-chaine/" },
@@ -268,7 +268,7 @@ export const trainingTiles: TrainingTile[] = [
     title: "AIPR – Intervention à proximité des réseaux",
     href: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/",
     description: "Préparation à l'examen AIPR selon le rôle de chacun sur vos chantiers de voirie et de réseaux.",
-    image: { src: "/images/formations/aipr.webp", alt: "" },
+    image: { src: "/images/formations/aipr.webp", alt: "Autorisation d'Intervention à Proximité des Réseaux (AIPR)" },
     links: [
       { label: "Concepteurs", href: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/concepteurs/" },
       { label: "Encadrants", href: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/encadrants/" },
@@ -280,7 +280,7 @@ export const trainingTiles: TrainingTile[] = [
     title: "Travaux en hauteur",
     href: "/formations/travaux-en-hauteur/",
     description: "Port du harnais anti-chute, utilisation, montage et vérification des échafaudages.",
-    image: { src: "/images/formations/travaux-en-hauteur.webp", alt: "" },
+    image: { src: "/images/formations/travaux-en-hauteur.webp", alt: "Agent en formation aux travaux en hauteur avec harnais anti-chute" },
     links: [
       { label: "Port du harnais anti-chute", href: "/formations/travaux-en-hauteur/port-du-harnais-anti-chute/" },
       { label: "Échafaudages fixes et roulants", href: "/formations/travaux-en-hauteur/echafaudage/" },
@@ -291,7 +291,7 @@ export const trainingTiles: TrainingTile[] = [
     title: "Membres du CSE",
     href: "/formations/membres-du-cse/",
     description: "Missions des représentants en santé et sécurité, évaluation des risques professionnels, analyse des accidents du travail.",
-    image: { src: "/images/formations/sante-securite-cse.webp", alt: "" },
+    image: { src: "/images/formations/sante-securite-cse.webp", alt: "Réunion des membres du Comité Social et Économique" },
     links: [{ label: "Programme et objectifs", href: "/formations/membres-du-cse/" }],
     moreLabel: "En savoir plus",
   },
@@ -299,7 +299,7 @@ export const trainingTiles: TrainingTile[] = [
     title: "Formations aux risques routiers et éco-conduite",
     href: "/formations/formations-aux-risques-routiers-et-eco-conduite/",
     description: "Sensibilisation aux risques routiers professionnels et à l'éco-conduite pour les agents qui se déplacent au quotidien.",
-    image: { src: "/images/formations/risques-routiers-eco-conduite.webp", alt: "" },
+    image: { src: "/images/formations/risques-routiers-eco-conduite.webp", alt: "Sensibilisation aux risques routiers et à l'éco-conduite" },
     links: [{ label: "Programme et objectifs", href: "/formations/formations-aux-risques-routiers-et-eco-conduite/" }],
     moreLabel: "En savoir plus",
   },
@@ -348,7 +348,7 @@ export const serviceRows: ServiceRow[] = [
     icon: "batiments",
     description: "Maintenance du patrimoine communal, interventions électriques et en hauteur.",
     links: [
-      { label: "Habilitation électrique", href: "/formations/formation-2/" },
+      { label: "Habilitation électrique", href: "/formations/habilitations-electriques/" },
       { label: "Échafaudages R408 / R457", href: "/formations/travaux-en-hauteur/echafaudage/utilisation-montage-demontage-et-verification-dechafaudages-fixes-et-roulants/" },
       { label: "Harnais anti-chute", href: "/formations/travaux-en-hauteur/port-du-harnais-anti-chute/" },
       { label: "Ponts roulants R484", href: "/formations/autorisations-de-conduite-et-caces/ponts-roulants-recommandation-r484/" },
@@ -417,7 +417,7 @@ export const footerColumns: FooterColumn[] = [
     title: "Formations",
     links: [
       { label: "Conduite et CACES®", href: "/formations/autorisations-de-conduite-et-caces/" },
-      { label: "Habilitations électriques", href: "/formations/formation-2/" },
+      { label: "Habilitations électriques", href: "/formations/habilitations-electriques/" },
       { label: "Travaux en hauteur", href: "/formations/travaux-en-hauteur/" },
       { label: "Secourisme et incendie", href: "/formations/secourisme-et-incendie/" },
       { label: "AIPR", href: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/" },
@@ -452,7 +452,7 @@ export const courses: Course[] = [
     position: 2,
     name: "Préparation à l'habilitation électrique",
     description: "Préparation à l'habilitation électrique en basse et haute tensions selon la norme NF C 18-510.",
-    url: "https://www.securiform-collectivites.fr/formations/formation-2/",
+    url: "https://www.securiform-collectivites.fr/formations/habilitations-electriques/",
   },
   {
     position: 3,

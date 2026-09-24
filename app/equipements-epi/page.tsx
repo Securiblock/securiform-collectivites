@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Media } from "@/src/components/ui/Media";
 import { CtaBand } from "@/src/components/home/CtaBand";
 import { epiHero, epiIntro, epiCategories, epiKits } from "@/src/content/epi";
@@ -48,16 +49,32 @@ export default function EquipementsEpiPage() {
       </section>
 
       <section className={`section ${styles.kits}`}>
-        <div className={`container ${styles.kitsInner}`}>
-          <div className={styles.kitsFrame}>
-            <Media src={epiKits.image.src} alt={epiKits.image.alt} sizes="(max-width: 900px) 100vw, 50vw" />
+        <div className="container">
+          <div className={styles.kitsInner}>
+            <div className={styles.kitsFrame}>
+              <Media src={epiKits.image.src} alt={epiKits.image.alt} sizes="(max-width: 900px) 100vw, 50vw" />
+            </div>
+            <div>
+              <p className={styles.eyebrow}>{epiKits.eyebrow}</p>
+              <h2>{epiKits.title}</h2>
+              {epiKits.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
-          <div>
-            <p className={styles.eyebrow}>{epiKits.eyebrow}</p>
-            <h2>{epiKits.title}</h2>
-            {epiKits.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
+
+          <div className={styles.storeCallout}>
+            <Image
+              src={epiKits.store.logo.src}
+              alt={epiKits.store.logo.alt}
+              width={epiKits.store.logo.width}
+              height={epiKits.store.logo.height}
+              className={styles.storeLogo}
+            />
+            <p className={styles.storeText}>{epiKits.store.tagline}</p>
+            <a href={epiKits.store.href} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              {epiKits.store.label}
+            </a>
           </div>
         </div>
       </section>

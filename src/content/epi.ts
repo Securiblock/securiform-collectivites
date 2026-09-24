@@ -56,4 +56,15 @@ export const epiKits = {
     src: "/images/epi/kits-epi.webp",
     alt: "Kits de protection individuelle pour l'habilitation électrique : écran facial, gants isolants et outillage",
   },
+  store: {
+    tagline: "Ces kits et l'ensemble de nos équipements de protection individuelle sont disponibles sur notre boutique en ligne.",
+    label: "Découvrir nos kits sur Securistore",
+    href: "https://securistore.fr/",
+    logo: {
+      src: "/images/logos/securistore-transparent.png",
+      alt: "Securistore – Équipements de Protection Individuelle",
+      width: 1243,
+      height: 235,
+    },
+  },
 };

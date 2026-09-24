@@ -1,50 +1,73 @@
 import Link from "next/link";
+import { Media } from "@/src/components/ui/Media";
 import { CtaBand } from "@/src/components/home/CtaBand";
-import type { FormationLeaf } from "@/src/content/formations-catalog";
+import type { Crumb, CourseContent } from "@/src/content/formations-catalog";
 import styles from "./CourseLeaf.module.css";
 
-export function CourseLeaf({ entry }: { entry: FormationLeaf }) {
+type CourseLeafProps = {
+  trail: Crumb[];
+  title: string;
+  content: CourseContent;
+};
+
+export function CourseLeaf({ trail, title, content }: CourseLeafProps) {
+  const ancestors = trail.slice(0, -1);
+  const parent = ancestors[ancestors.length - 1];
+
   return (
     <>
       <section className={styles.band}>
-        <div className="container">
-          <nav className={styles.breadcrumb} aria-label="Fil d'ariane">
-            <Link href="/formations/">Formations</Link>
-            <span aria-hidden="true">/</span>
-            <Link href={entry.categoryHref}>{entry.categoryLabel}</Link>
-          </nav>
-          <h1>{entry.title}</h1>
+        <div className={`container ${styles.bandInner} ${content.image ? styles.hasMedia : ""}`}>
+          <div>
+            <nav className={styles.breadcrumb} aria-label="Fil d'ariane">
+              <Link href="/formations/">Formations</Link>
+              {ancestors.map((crumb) => (
+                <span key={crumb.href}>
+                  {" "}
+                  / <Link href={crumb.href}>{crumb.title}</Link>
+                </span>
+              ))}
+            </nav>
+            <h1>{title}</h1>
+          </div>
+          {content.image ? (
+            <div className={styles.bandMedia}>
+              <Media src={content.image.src} alt={content.image.alt} sizes="(max-width: 900px) 100vw, 45vw" priority />
+            </div>
+          ) : null}
         </div>
       </section>
 
       <section className="section">
         <div className={`container ${styles.grid}`}>
           <div>
-            <p className={styles.description}>{entry.description}</p>
+            <p className={styles.description}>{content.description}</p>
 
             <h2 className={styles.subhead}>Objectifs de la formation</h2>
             <ul className={styles.points}>
-              {entry.points.map((point) => (
+              {content.points.map((point) => (
                 <li key={point}>{point}</li>
               ))}
             </ul>
 
-            <Link className="btn btn-ghost" href={entry.categoryHref}>
-              Voir toutes les formations « {entry.categoryLabel} »
-            </Link>
+            {parent ? (
+              <Link className="btn btn-ghost" href={parent.href}>
+                Voir toutes les formations « {parent.title} »
+              </Link>
+            ) : null}
           </div>
 
           <aside className={styles.sidebar}>
-            {entry.duration ? (
+            {content.duration ? (
               <div>
                 <h3>Durée</h3>
-                <p>{entry.duration}</p>
+                <p>{content.duration}</p>
               </div>
             ) : null}
-            {entry.groupSize ? (
+            {content.groupSize ? (
               <div>
                 <h3>Effectif</h3>
-                <p>{entry.groupSize}</p>
+                <p>{content.groupSize}</p>
               </div>
             ) : null}
             <div>
@@ -53,7 +76,7 @@ export function CourseLeaf({ entry }: { entry: FormationLeaf }) {
             </div>
             <div>
               <h3>Validation</h3>
-              <p>{entry.validation}</p>
+              <p>{content.validation}</p>
             </div>
           </aside>
         </div>

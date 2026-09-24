@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-import { trainingTiles } from "@/src/content/home";
-import { formationLeaves } from "@/src/content/formations-catalog";
+import { getAllFormationPaths } from "@/src/content/formations-catalog";
 
 const baseUrl = "https://www.securiform-collectivites.fr";
 
@@ -20,10 +19,12 @@ const staticRoutes: { path: string; priority: number }[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const categoryRoutes = trainingTiles.map((tile) => ({ path: tile.href, priority: 0.6 }));
-  const leafRoutes = formationLeaves.map((leaf) => ({ path: leaf.href, priority: 0.4 }));
+  const formationRoutes = getAllFormationPaths().map((slug) => ({
+    path: `/formations/${slug.join("/")}/`,
+    priority: slug.length === 1 ? 0.6 : 0.4,
+  }));
 
-  return [...staticRoutes, ...categoryRoutes, ...leafRoutes].map((route) => ({
+  return [...staticRoutes, ...formationRoutes].map((route) => ({
     url: `${baseUrl}${route.path}`,
     lastModified,
     changeFrequency: "monthly",

@@ -1,44 +1,33 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { trainingTiles } from "@/src/content/home";
-import { formationLeaves } from "@/src/content/formations-catalog";
+import { findFormationNode, getAllFormationPaths, type FormationNode, type Crumb } from "@/src/content/formations-catalog";
 import { CategoryPage } from "@/src/components/formations/CategoryPage";
 import { CourseLeaf } from "@/src/components/formations/CourseLeaf";
 
-function findEntry(slug: string[]) {
-  const href = `/formations/${slug.join("/")}/`;
-  const tile = trainingTiles.find((item) => item.href === href);
-  if (tile) return { kind: "category" as const, tile };
+function describeChild(node: FormationNode): string {
+  return node.kind === "category" ? node.description : node.content.description;
+}
 
-  const leaf = formationLeaves.find((item) => item.href === href);
-  if (leaf) return { kind: "leaf" as const, leaf };
-
-  return null;
+function imageOfChild(node: FormationNode): { src: string; alt: string } | undefined {
+  return node.kind === "category" ? node.image : node.content.image;
 }
 
 export function generateStaticParams() {
-  const categoryParams = trainingTiles
-    .filter((tile) => tile.href.startsWith("/formations/"))
-    .map((tile) => ({ slug: tile.href.replace(/^\/formations\//, "").replace(/\/$/, "").split("/") }));
-
-  const leafParams = formationLeaves
-    .filter((leaf) => leaf.href.startsWith("/formations/"))
-    .map((leaf) => ({ slug: leaf.href.replace(/^\/formations\//, "").replace(/\/$/, "").split("/") }));
-
-  return [...categoryParams, ...leafParams];
+  return getAllFormationPaths().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(props: PageProps<"/formations/[...slug]">): Promise<Metadata> {
   const { slug } = await props.params;
-  const entry = findEntry(slug);
-  if (!entry) return {};
+  const result = findFormationNode(slug);
+  if (!result) return {};
 
-  const href = entry.kind === "category" ? entry.tile.href : entry.leaf.href;
-  const title = entry.kind === "category" ? entry.tile.title : entry.leaf.title;
-  const description = entry.kind === "category" ? entry.tile.description : entry.leaf.description;
+  const { node, trail } = result;
+  const href = trail[trail.length - 1].href;
+  const description = describeChild(node);
 
   return {
-    title,
+    title: node.title,
     description,
     alternates: { canonical: href },
   };
@@ -46,13 +35,29 @@ export async function generateMetadata(props: PageProps<"/formations/[...slug]">
 
 export default async function FormationDetailPage(props: PageProps<"/formations/[...slug]">) {
   const { slug } = await props.params;
-  const entry = findEntry(slug);
+  const result = findFormationNode(slug);
 
-  if (!entry) notFound();
+  if (!result) notFound();
 
-  if (entry.kind === "category") {
-    return <CategoryPage tile={entry.tile} />;
+  const { node, trail } = result;
+
+  if (node.kind === "course") {
+    return <CourseLeaf trail={trail} title={node.title} content={node.content} />;
   }
 
-  return <CourseLeaf entry={entry.leaf} />;
+  const items = node.children.map((child) => ({
+    title: child.title,
+    href: trail[trail.length - 1].href + child.slug + "/",
+    description: describeChild(child),
+    image: imageOfChild(child),
+  }));
+
+  if (slug.length === 1) {
+    const tile = trainingTiles.find((t) => t.href === `/formations/${slug[0]}/`);
+    if (tile) {
+      return <CategoryPage trail={trail} title={node.title} description={node.description} image={tile.image} items={items} />;
+    }
+  }
+
+  return <CategoryPage trail={trail as Crumb[]} title={node.title} description={node.description} items={items} />;
 }

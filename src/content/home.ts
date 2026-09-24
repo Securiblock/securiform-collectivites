@@ -167,7 +167,7 @@ export const heroSlides: HeroSlide[] = [
     codesLabel: "Formations incendie",
     codes: ["Extincteurs et RIA", "EPI", "ESI", "Évacuation"],
     ctaLabel: "Voir les formations incendie",
-    ctaHref: "/formations/secourisme-et-incendie/incendie/",
+    ctaHref: "/formations/secourisme-et-incendie/",
     image: {
       src: "/images/slider/incendie.webp",
       alt: "Agent manipulant un extincteur lors d'une formation incendie",
@@ -185,20 +185,6 @@ export const heroSlides: HeroSlide[] = [
     image: {
       src: "/images/slider/travaux-en-hauteur.webp",
       alt: "Agent équipé d'un harnais anti-chute sur un échafaudage",
-    },
-  },
-  {
-    id: "formations-metiers",
-    title: "Formations aux métiers des collectivités",
-    description:
-      "Des formations pensées pour les agents de terrain : collecte des déchets, accueil en déchetterie et nettoyage urbain, avec les bons gestes de sécurité au quotidien.",
-    codesLabel: "Formations métiers",
-    codes: ["Équipier de collecte", "Agent de déchetterie", "Nettoyage urbain"],
-    ctaLabel: "Voir les formations métiers",
-    ctaHref: "/formations/formations-metiers/",
-    image: {
-      src: "/images/slider/formations-metiers.webp",
-      alt: "Équipier de collecte des déchets en tenue de sécurité à l'arrière d'une benne",
     },
   },
 ];
@@ -247,12 +233,36 @@ export const trainingTiles: TrainingTile[] = [
     description: "Préparation à l'habilitation électrique en basse et haute tensions selon la norme NF C 18-510.",
     image: { src: "/images/formations/habilitation-electrique.webp", alt: "" },
     links: [
-      { label: "Personnel non électricien", href: "/formations/formation-2/personnel-non-electricien/" },
       { label: "Personnel électricien", href: "/formations/formation-2/personnel-electricien/" },
-      { label: "H0B0 personnel exécutant", href: "/h0b0-personnel-executant/" },
-      { label: "BE Manœuvre", href: "/be-manoeuvre/" },
+      { label: "Personnel non électricien", href: "/formations/formation-2/personnel-non-electricien/" },
     ],
     moreLabel: "Toutes les habilitations",
+  },
+  {
+    title: "Secourisme et incendie",
+    href: "/formations/secourisme-et-incendie/",
+    description: "Centre habilité SST, défibrillateur, lutte contre l'incendie et évacuation de vos établissements.",
+    image: { src: "/images/formations/secourisme-incendie.webp", alt: "" },
+    links: [
+      { label: "Sauveteur Secouriste du Travail", href: "/formations/secourisme-et-incendie/sauveteur-secouriste-du-travail-s-s-t/" },
+      { label: "Manipulation de défibrillateurs", href: "/formations/secourisme-et-incendie/manipulation-de-defibrillateur/" },
+      { label: "Manipulation d'extincteurs", href: "/formations/secourisme-et-incendie/manipulation-dextincteurs/" },
+      { label: "Évacuation : guides et serre-files", href: "/formations/secourisme-et-incendie/evacuation/" },
+    ],
+    moreLabel: "Toutes les formations secourisme",
+  },
+  {
+    title: "Risques liés au poste de travail",
+    href: "/formations/risques-lies-au-poste-de-travail/",
+    description: "La prévention des risques du quotidien : voirie, outillage, manutention et déplacements.",
+    image: { src: "/images/formations/risques-poste-travail.webp", alt: "" },
+    links: [
+      { label: "Signalisation temporaire de chantier", href: "/formations/risques-lies-au-poste-de-travail/signalisation-temporaire-de-chantier/" },
+      { label: "Utilisation d'une tronçonneuse", href: "/formations/risques-lies-au-poste-de-travail/tronconneuse-thermique-a-chaine/" },
+      { label: "Gestes et postures", href: "/formations/risques-lies-au-poste-de-travail/gestes-et-postures/" },
+      { label: "Port des EPI", href: "/formations/risques-lies-au-poste-de-travail/port-des-e-p-i-equipements-de-protection-individuelle/" },
+    ],
+    moreLabel: "Toutes les formations prévention",
   },
   {
     title: "AIPR – Intervention à proximité des réseaux",
@@ -273,57 +283,24 @@ export const trainingTiles: TrainingTile[] = [
     image: { src: "/images/formations/travaux-en-hauteur.webp", alt: "" },
     links: [
       { label: "Port du harnais anti-chute", href: "/formations/travaux-en-hauteur/port-du-harnais-anti-chute/" },
-      { label: "Échafaudages fixes et roulants (R408 / R457)", href: "/formations/travaux-en-hauteur/echafaudages/echafaudages-fixes-et-roulants-recommandations-r408-et-r457/" },
+      { label: "Échafaudages fixes et roulants", href: "/formations/travaux-en-hauteur/echafaudage/" },
     ],
     moreLabel: "Toutes les formations en hauteur",
   },
   {
-    title: "Secourisme et incendie",
-    href: "/formations/secourisme-et-incendie/",
-    description: "Centre habilité SST, défibrillateur, lutte contre l'incendie et évacuation de vos établissements.",
-    image: { src: "/images/formations/secourisme-incendie.webp", alt: "" },
-    links: [
-      { label: "Sauveteur Secouriste du Travail", href: "/formations/secourisme-et-incendie/sauveteur-secouriste-du-travail-s-s-t/" },
-      { label: "Manipulation de défibrillateurs", href: "/formations/secourisme-et-incendie/manipulation-de-defibrillateur/" },
-      { label: "Manipulation d'extincteurs", href: "/formation-a-la-manipulation-dextincteurs/" },
-      { label: "Évacuation : guides et serre-files", href: "/formations/secourisme-et-incendie/evacuation/" },
-    ],
-    moreLabel: "Toutes les formations secourisme",
-  },
-  {
-    title: "Risques liés au poste de travail",
-    href: "/formations/risques-lies-au-poste-de-travail/",
-    description: "La prévention des risques du quotidien : voirie, outillage, manutention et déplacements.",
-    image: { src: "/images/formations/risques-poste-travail.webp", alt: "" },
-    links: [
-      { label: "Signalisation temporaire de chantier", href: "/formations/risques-lies-au-poste-de-travail/signalisation-temporaire-de-chantier/" },
-      { label: "Utilisation d'une tronçonneuse", href: "/formations/risques-lies-au-poste-de-travail/formation-a-lutilisation-dune-tronconneuse/" },
-      { label: "Gestes et postures", href: "/formations/risques-lies-au-poste-de-travail/gestes-et-postures/" },
-      { label: "Risques routiers et éco-conduite", href: "/formations/risques-lies-au-poste-de-travail/formations-aux-risques-routiers-et-eco-conduite/risques-routiers/" },
-    ],
-    moreLabel: "Toutes les formations prévention",
-  },
-  {
-    title: "Formations métiers",
-    href: "/formations/formations-metiers/",
-    description: "Des parcours conçus pour les agents de la collecte, des déchetteries et de la propreté urbaine.",
-    image: { src: "/images/formations/formations-metiers.webp", alt: "" },
-    links: [
-      { label: "Équipier de collecte", href: "/formations/formations-metiers/equipier-de-collecte/" },
-      { label: "Agent d'accueil en déchetterie", href: "/formations/formations-metiers/agent-daccueil-en-dechetterie/" },
-      { label: "Agent de nettoyage urbain", href: "/formations/formations-metiers/agent-de-nettoyage-urbain/" },
-    ],
-    moreLabel: "Toutes les formations métiers",
-  },
-  {
-    title: "Santé, sécurité et conditions de travail",
+    title: "Membres du CSE",
     href: "/formations/membres-du-cse/",
     description: "Missions des représentants en santé et sécurité, évaluation des risques professionnels, analyse des accidents du travail.",
     image: { src: "/images/formations/sante-securite-cse.webp", alt: "" },
-    links: [
-      { label: "Formation des membres du CSE", href: "/formations/membres-du-cse/" },
-      { label: "Port des EPI", href: "/formations/risques-lies-au-poste-de-travail/port-des-e-p-i-equipements-de-protection-individuelle/" },
-    ],
+    links: [{ label: "Programme et objectifs", href: "/formations/membres-du-cse/" }],
+    moreLabel: "En savoir plus",
+  },
+  {
+    title: "Formations aux risques routiers et éco-conduite",
+    href: "/formations/formations-aux-risques-routiers-et-eco-conduite/",
+    description: "Sensibilisation aux risques routiers professionnels et à l'éco-conduite pour les agents qui se déplacent au quotidien.",
+    image: { src: "/images/formations/risques-routiers-eco-conduite.webp", alt: "" },
+    links: [{ label: "Programme et objectifs", href: "/formations/formations-aux-risques-routiers-et-eco-conduite/" }],
     moreLabel: "En savoir plus",
   },
 ];
@@ -341,7 +318,7 @@ export const serviceRows: ServiceRow[] = [
     links: [
       { label: "Tondeuses autoportées", href: "/formations/autorisations-de-conduite-et-caces/tondeuse-autoportee/" },
       { label: "Micro-tracteurs", href: "/formations/autorisations-de-conduite-et-caces/micro-tracteur/" },
-      { label: "Tronçonneuse", href: "/formations/risques-lies-au-poste-de-travail/formation-a-lutilisation-dune-tronconneuse/" },
+      { label: "Tronçonneuse", href: "/formations/risques-lies-au-poste-de-travail/tronconneuse-thermique-a-chaine/" },
       { label: "Nacelles R486-A", href: "/formations/autorisations-de-conduite-et-caces/plates-formes-elevatrices-mobiles-de-personnel/" },
     ],
   },
@@ -361,11 +338,9 @@ export const serviceRows: ServiceRow[] = [
     icon: "collecte",
     description: "Collecte des déchets, déchetteries et nettoiement des rues.",
     links: [
-      { label: "Équipier de collecte", href: "/formations/formations-metiers/equipier-de-collecte/" },
-      { label: "Agent de déchetterie", href: "/formations/formations-metiers/agent-daccueil-en-dechetterie/" },
-      { label: "Nettoyage urbain", href: "/formations/formations-metiers/agent-de-nettoyage-urbain/" },
       { label: "Balayeuses", href: "/formations/autorisations-de-conduite-et-caces/formations-a-la-conduite-en-securite-dune-balayeuse/" },
-      { label: "Vigilance partagée", href: "/formations/risques-lies-au-poste-de-travail/vigilance-partagee/" },
+      { label: "Port des EPI", href: "/formations/risques-lies-au-poste-de-travail/port-des-e-p-i-equipements-de-protection-individuelle/" },
+      { label: "Gestes et postures", href: "/formations/risques-lies-au-poste-de-travail/gestes-et-postures/" },
     ],
   },
   {
@@ -374,7 +349,7 @@ export const serviceRows: ServiceRow[] = [
     description: "Maintenance du patrimoine communal, interventions électriques et en hauteur.",
     links: [
       { label: "Habilitation électrique", href: "/formations/formation-2/" },
-      { label: "Échafaudages R408 / R457", href: "/formations/travaux-en-hauteur/echafaudages/echafaudages-fixes-et-roulants-recommandations-r408-et-r457/" },
+      { label: "Échafaudages R408 / R457", href: "/formations/travaux-en-hauteur/echafaudage/utilisation-montage-demontage-et-verification-dechafaudages-fixes-et-roulants/" },
       { label: "Harnais anti-chute", href: "/formations/travaux-en-hauteur/port-du-harnais-anti-chute/" },
       { label: "Ponts roulants R484", href: "/formations/autorisations-de-conduite-et-caces/ponts-roulants-recommandation-r484/" },
     ],
@@ -386,7 +361,7 @@ export const serviceRows: ServiceRow[] = [
     links: [
       { label: "SST", href: "/formations/secourisme-et-incendie/sauveteur-secouriste-du-travail-s-s-t/" },
       { label: "Défibrillateur", href: "/formations/secourisme-et-incendie/manipulation-de-defibrillateur/" },
-      { label: "Équipier de Première Intervention", href: "/equipier-de-premiere-intervention-epi/" },
+      { label: "Équipier de Première Intervention", href: "/formations/secourisme-et-incendie/equipier-de-premiere-intervention-epi/" },
       { label: "Guides et serre-files", href: "/formations/secourisme-et-incendie/evacuation/" },
     ],
   },
@@ -395,8 +370,7 @@ export const serviceRows: ServiceRow[] = [
     icon: "vehicules",
     description: "Agents qui se déplacent et conduisent au quotidien.",
     links: [
-      { label: "Risques routiers et éco-conduite", href: "/formations/risques-lies-au-poste-de-travail/formations-aux-risques-routiers-et-eco-conduite/risques-routiers/" },
-      { label: "Responsabilités en cas d'accident", href: "/formations/risques-lies-au-poste-de-travail/responsabilite-et-devoir-en-cas-daccident/" },
+      { label: "Risques routiers et éco-conduite", href: "/formations/formations-aux-risques-routiers-et-eco-conduite/" },
       { label: "Vérifications générales périodiques", href: "/vgp/" },
     ],
   },
@@ -446,7 +420,7 @@ export const footerColumns: FooterColumn[] = [
       { label: "Habilitations électriques", href: "/formations/formation-2/" },
       { label: "Travaux en hauteur", href: "/formations/travaux-en-hauteur/" },
       { label: "Secourisme et incendie", href: "/formations/secourisme-et-incendie/" },
-      { label: "Formations métiers", href: "/formations/formations-metiers/" },
+      { label: "AIPR", href: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/" },
     ],
   },
   {
@@ -501,19 +475,19 @@ export const courses: Course[] = [
   {
     position: 6,
     name: "Risques liés au poste de travail",
-    description: "Risques routiers et éco-conduite, tronçonneuse, signalisation temporaire de chantier, port des EPI, gestes et postures.",
+    description: "Tronçonneuse, signalisation temporaire de chantier, port des EPI, gestes et postures.",
     url: "https://www.securiform-collectivites.fr/formations/risques-lies-au-poste-de-travail/",
   },
   {
     position: 7,
-    name: "Formations métiers",
-    description: "Équipier de collecte, agent d'accueil en déchetterie, agent de nettoyage urbain.",
-    url: "https://www.securiform-collectivites.fr/formations/formations-metiers/",
+    name: "Membres du CSE",
+    description: "Missions en santé, sécurité et conditions de travail, analyse des risques et des accidents du travail.",
+    url: "https://www.securiform-collectivites.fr/formations/membres-du-cse/",
   },
   {
     position: 8,
-    name: "Santé, sécurité et conditions de travail – Membres du CSE",
-    description: "Missions en santé, sécurité et conditions de travail, analyse des risques et des accidents du travail.",
-    url: "https://www.securiform-collectivites.fr/formations/membres-du-cse/",
+    name: "Formations aux risques routiers et éco-conduite",
+    description: "Sensibilisation aux risques routiers professionnels et à l'éco-conduite.",
+    url: "https://www.securiform-collectivites.fr/formations/formations-aux-risques-routiers-et-eco-conduite/",
   },
 ];

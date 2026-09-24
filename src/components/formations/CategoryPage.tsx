@@ -56,18 +56,18 @@ export function CategoryPage({ trail, title, description, image, items }: Catego
 
           <ul className={styles.list}>
             {items.map((item) => (
-              <li key={item.href} className={styles.card}>
-                {item.image ? (
-                  <div className={styles.cardMedia}>
-                    <Media src={item.image.src} alt={item.image.alt} sizes="(max-width: 700px) 100vw, 33vw" />
+              <li key={item.href}>
+                <Link href={item.href} className={styles.card}>
+                  {item.image ? (
+                    <div className={styles.cardMedia}>
+                      <Media src={item.image.src} alt={item.image.alt} sizes="(max-width: 700px) 100vw, 33vw" />
+                    </div>
+                  ) : null}
+                  <div className={styles.cardBody}>
+                    <span className={styles.cardTitle}>{item.title}</span>
+                    <p>{item.description}</p>
                   </div>
-                ) : null}
-                <div className={styles.cardBody}>
-                  <Link href={item.href} className={styles.cardTitle}>
-                    {item.title}
-                  </Link>
-                  <p>{item.description}</p>
-                </div>
+                </Link>
               </li>
             ))}
           </ul>

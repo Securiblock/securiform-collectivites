@@ -184,7 +184,7 @@ export const formationsTree: FormationNode[] = [
     ],
   ),
 
-  category("formation-2", "Habilitations électriques", "Préparation à l'habilitation électrique en basse et haute tensions selon la norme NF C 18-510.", [
+  category("habilitations-electriques", "Habilitations électriques", "Préparation à l'habilitation électrique en basse et haute tensions selon la norme NF C 18-510.", [
     category(
       "personnel-electricien",
       "Personnel électricien",

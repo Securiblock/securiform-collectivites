@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "@/src/icons/LogoMark";
+import Image from "next/image";
 import { siteConfig, footerColumns, footerLegalLinks } from "@/src/content/home";
 import styles from "./Footer.module.css";
 
@@ -12,11 +13,14 @@ export function Footer() {
         <div className={styles.footerGrid}>
           <div>
             <Link className={styles.logo} href="/" aria-label="SECURIFORM Collectivités – accueil">
-              <LogoMark className={styles.logoMark} />
-              <span className={styles.logoText}>
-                SECURIFORM
-                <small>Collectivités</small>
-              </span>
+              <Image
+                src="/images/og-securiform-collectivites.jpg"
+                alt="SECURIFORM Collectivités"
+                width={1200}
+                height={630}
+                className={styles.logoImage}
+                priority
+              />
             </Link>
             <p>
               Le département de <a href="https://www.securiform.fr/">SECURIFORM</a> dédié à la formation

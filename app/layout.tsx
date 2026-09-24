@@ -30,9 +30,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "SECURIFORM Collectivités",
+    images: [
+      {
+        url: "/images/og-securiform-collectivites.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SECURIFORM Collectivités – Formations sécurité pour les agents territoriaux",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/images/og-securiform-collectivites.jpg"],
   },
 };
 

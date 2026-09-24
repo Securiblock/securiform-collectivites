@@ -164,7 +164,7 @@ p {
 
 .btn-primary {
   background: var(--red);
-  color: #fff;
+  color: #fff !important;
 }
 
 .btn-primary:hover {

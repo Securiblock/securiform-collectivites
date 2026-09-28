@@ -448,6 +448,8 @@ export const footerLegalLinks: TileLink[] = [
   { label: "Mentions légales", href: "/mentions-legales/" },
   { label: "Données personnelles", href: "/donnees-personnelles/" },
   { label: "Confidentialité", href: "/politique-de-confidentialite/" },
+  { label: "Cookies", href: "/politique-cookies/" },
+  { label: "CGU", href: "/conditions-generales-utilisation/" },
 ];
 
 // Reprend le @graph JSON-LD de la maquette (ItemList des formations).

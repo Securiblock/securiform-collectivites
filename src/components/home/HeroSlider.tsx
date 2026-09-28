@@ -123,6 +123,7 @@ export function HeroSlider({ heroH1, slides }: { heroH1: string; slides: HeroSli
                 role="group"
                 aria-roledescription="diapositive"
                 aria-label={`${index + 1} sur ${total}`}
+                inert={index !== current}
               >
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>

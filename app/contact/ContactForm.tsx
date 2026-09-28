@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
+import Link from "next/link";
 import { sendContactMessage, type ContactFormState } from "./actions";
 import styles from "./page.module.css";
 
@@ -22,10 +23,14 @@ export function ContactForm() {
 
   return (
     <form className={styles.form} action={formAction}>
+      <p className={styles.formNote}>Les champs marqués d&apos;un astérisque (*) sont obligatoires.</p>
+
       <div className={styles.formRow}>
         <div className={styles.field}>
-          <label htmlFor="nom">Nom</label>
-          <input type="text" id="nom" name="nom" required autoComplete="name" />
+          <label htmlFor="nom">
+            Nom <span aria-hidden="true">*</span>
+          </label>
+          <input type="text" id="nom" name="nom" required aria-required="true" autoComplete="name" />
         </div>
         <div className={styles.field}>
           <label htmlFor="telephone">Téléphone</label>
@@ -34,16 +39,26 @@ export function ContactForm() {
       </div>
 
       <div className={styles.field}>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" required autoComplete="email" />
+        <label htmlFor="email">
+          Email <span aria-hidden="true">*</span>
+        </label>
+        <input type="email" id="email" name="email" required aria-required="true" autoComplete="email" />
       </div>
 
       <div className={styles.field}>
-        <label htmlFor="message">Message</label>
-        <textarea id="message" name="message" rows={5} required />
+        <label htmlFor="message">
+          Message <span aria-hidden="true">*</span>
+        </label>
+        <textarea id="message" name="message" rows={5} required aria-required="true" />
       </div>
 
       <SubmitButton />
+
+      <p className={styles.formNotice}>
+        Les informations recueillies via ce formulaire sont utilisées uniquement pour traiter votre demande. En
+        savoir plus dans notre{" "}
+        <Link href="/politique-de-confidentialite/">politique de confidentialité</Link>.
+      </p>
 
       {state.status !== "idle" ? (
         <p className={state.status === "success" ? styles.formSuccess : styles.formError} role="status">

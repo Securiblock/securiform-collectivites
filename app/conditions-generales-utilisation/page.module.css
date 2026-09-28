@@ -33,38 +33,3 @@
 .content p {
   color: var(--text);
 }
-
-.tableWrap {
-  margin-top: 16px;
-  max-width: 100%;
-  overflow-x: auto;
-}
-
-.table {
-  width: 100%;
-  min-width: 720px;
-  border-collapse: collapse;
-  font-size: var(--small-size);
-}
-
-.tableCaption {
-  text-align: left;
-  margin-bottom: 8px;
-  color: var(--muted);
-  font-size: var(--small-size);
-}
-
-.table th,
-.table td {
-  text-align: left;
-  vertical-align: top;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-}
-
-.table th {
-  background: var(--panel);
-  font-family: var(--font-title);
-  font-weight: 700;
-  color: var(--ink);
-}

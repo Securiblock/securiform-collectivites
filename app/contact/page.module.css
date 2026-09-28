@@ -18,7 +18,7 @@
   font-size: var(--small-size);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #ffd6d6;
+  color: var(--red-tint);
 }
 
 .splitPanel h1 {
@@ -30,7 +30,7 @@
 .heroText {
   margin-top: 16px;
   max-width: 40ch;
-  color: #fce9e9;
+  color: var(--red-tint);
 }
 
 .phone {
@@ -50,7 +50,7 @@
 .email {
   display: block;
   margin-top: 8px;
-  color: #fce9e9;
+  color: var(--red-tint);
   text-decoration: underline;
 }
 
@@ -176,6 +176,22 @@
 
 .form button {
   align-self: flex-start;
+}
+
+.formNote {
+  margin: -8px 0 0;
+  color: var(--muted);
+  font-size: var(--small-size);
+}
+
+.field label span[aria-hidden] {
+  color: var(--red-dark);
+}
+
+.formNotice {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--small-size);
 }
 
 .formSuccess {

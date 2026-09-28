@@ -23,7 +23,7 @@
 
 .label {
   margin: 0;
-  color: #fce9e9;
+  color: var(--red-tint);
   font-size: var(--small-size);
 }
 

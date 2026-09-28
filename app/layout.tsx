@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Rajdhani, Quicksand } from "next/font/google";
 import { Header } from "@/src/components/layout/Header";
 import { Footer } from "@/src/components/layout/Footer";
+import { ScrollReveal } from "@/src/components/layout/ScrollReveal";
 import "./globals.css";
 
 const rajdhani = Rajdhani({
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main id="contenu">{children}</main>
         <Footer />
+        <ScrollReveal />
       </body>
     </html>
   );

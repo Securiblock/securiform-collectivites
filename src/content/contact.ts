@@ -12,7 +12,7 @@ export const contactAvailability = {
 
 export const contactArea = {
   title: "Zone d'intervention",
-  description: "Nos formateurs interviennent directement dans vos services, partout en France.",
+  description: "Nos formateurs interviennent directement dans vos services, dans le nord de la France.",
 };
 
 export const contactChecklist = {

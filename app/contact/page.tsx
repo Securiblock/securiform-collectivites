@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { siteConfig } from "@/src/content/home";
 import { contactHero, contactAvailability, contactArea, contactChecklist } from "@/src/content/contact";
 import { ContactForm } from "./ContactForm";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     canonical: "/contact/",
   },
 };
+
 
 export default function ContactPage() {
   return (
@@ -72,6 +74,25 @@ export default function ContactPage() {
                 </li>
               ))}
             </ol>
+          </div>
+        </div>
+      </section>
+
+      <section className={`section ${styles.store}`}>
+        <div className="container">
+          <div className={styles.storeInner}>
+            <Image
+              src="/images/logos/securistore-transparent.png"
+              alt="Securistore – Équipements de Protection Individuelle"
+              width={1243}
+              height={235}
+              className={styles.storeLogo}
+            />
+            <h2>Notre magasin</h2>
+            <p>Découvrez notre gamme d&apos;équipements et de produits pour la sécurité des collectivités.</p>
+            <a href="https://securistore.fr/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              Visiter le magasin
+            </a>
           </div>
         </div>
       </section>

@@ -190,6 +190,25 @@
   font-weight: 600;
 }
 
+.store {
+  background: var(--panel);
+}
+
+.storeInner {
+  max-width: 60ch;
+}
+
+.storeLogo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.storeInner p {
+  margin: 10px 0 24px;
+  color: var(--muted);
+}
+
 @media (max-width: 900px) {
   .split,
   .formGrid {

@@ -27,7 +27,7 @@ export const vgpHero = {
 
 export const vgpFacts: Fact[] = [
   { label: "Équipements couverts", value: "5 familles" },
-  { label: "Intervention", value: "Partout en France" },
+  { label: "Intervention", value: "Nord de la France" },
 ];
 
 export const vgpItems: VgpItem[] = [

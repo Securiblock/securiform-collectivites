@@ -84,6 +84,16 @@ export type Course = {
   url: string;
 };
 
+export type Stat =
+  | { kind: "percent"; value: number; label: string }
+  | { kind: "hours"; minutes: number; finalLabel: string; label: string };
+
+export const stats: Stat[] = [
+  { kind: "percent", value: 99.5, label: "Taux de réussite global" },
+  { kind: "percent", value: 93.5, label: "Taux de satisfaction" },
+  { kind: "hours", minutes: 60, finalLabel: "1h", label: "Délai moyen de traitement de votre demande" },
+];
+
 export const siteConfig = {
   name: "SECURIFORM Collectivités",
   legalName: "SECURIFORM© COLLECTIVITES",
@@ -192,7 +202,7 @@ export const heroSlides: HeroSlide[] = [
 export const about = {
   title: "Un département dédié à la sécurité de vos agents",
   paragraphs: [
-    "Créée en 2008, SECURIFORM accompagne ses clients en formation sécurité sur toute la France. Forte de son expérience auprès des collectivités locales et territoriales, elle a développé un département exclusif : SECURIFORM© Collectivités.",
+    "Créée en 2008, SECURIFORM accompagne ses clients en formation sécurité dans le nord de la France. Forte de son expérience auprès des collectivités locales et territoriales, elle a développé un département exclusif : SECURIFORM© Collectivités.",
     "Notre équipe de formateurs actualise en permanence ses compétences au rythme des évolutions réglementaires, et le retour d'expérience de chaque intervention enrichit nos référentiels pédagogiques. Après une étude approfondie de vos besoins, nous vous proposons une offre adaptée, avec conseil et réactivité.",
   ],
   ctaLabel: "Découvrir toutes nos formations",
@@ -201,7 +211,7 @@ export const about = {
 
 export const aboutFacts: Fact[] = [
   { label: "Depuis", value: "2008" },
-  { label: "Intervention", value: "Partout en France" },
+  { label: "Intervention", value: "Nord de la France" },
   { label: "Groupes", value: "6 à 10 stagiaires" },
   { label: "Un conseiller", value: siteConfig.phone, href: siteConfig.phoneHref },
 ];
@@ -388,8 +398,8 @@ export const commitments: Commitment[] = [
   },
   {
     icon: "france",
-    title: "Partout en France",
-    description: "Nos formateurs interviennent auprès des collectivités sur l'ensemble du territoire.",
+    title: "Nord de la France",
+    description: "Nos formateurs interviennent auprès des collectivités du nord de la France.",
   },
   {
     icon: "groupes",
@@ -438,6 +448,8 @@ export const footerLegalLinks: TileLink[] = [
   { label: "Mentions légales", href: "/mentions-legales/" },
   { label: "Données personnelles", href: "/donnees-personnelles/" },
   { label: "Confidentialité", href: "/politique-de-confidentialite/" },
+  { label: "Cookies", href: "/politique-cookies/" },
+  { label: "CGU", href: "/conditions-generales-utilisation/" },
 ];
 
 // Reprend le @graph JSON-LD de la maquette (ItemList des formations).

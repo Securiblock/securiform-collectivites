@@ -10,11 +10,11 @@
   align-items: center;
   margin-bottom: 12px;
   font-size: var(--small-size);
-  color: var(--muted);
+  color: var(--muted-strong);
 }
 
 .breadcrumb a {
-  color: var(--muted);
+  color: var(--muted-strong);
 }
 
 .breadcrumb a:hover {

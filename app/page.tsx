@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Media } from "@/src/components/ui/Media";
 import { HeroSlider, type HeroSliderSlide } from "@/src/components/home/HeroSlider";
+import { StatsBand } from "@/src/components/home/StatsBand";
 import { About } from "@/src/components/home/About";
 import { TrainingTiles } from "@/src/components/home/TrainingTiles";
 import { TrainingsByService } from "@/src/components/home/TrainingsByService";
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SECURIFORM Collectivités – Formations sécurité des agents territoriaux",
     description:
-      "Habilitation électrique, conduite en sécurité, SST, incendie, travaux en hauteur, AIPR et formations métiers pour les collectivités, partout en France.",
+      "Habilitation électrique, conduite en sécurité, SST, incendie, travaux en hauteur, AIPR et formations métiers pour les collectivités du nord de la France.",
     url: "/",
     images: [
       {
@@ -52,7 +53,7 @@ function buildJsonLd() {
         foundingDate: siteConfig.foundingDate,
         telephone: "+33320673490",
         email: siteConfig.email,
-        areaServed: { "@type": "Country", name: "France" },
+        areaServed: { "@type": "Place", name: "Nord de la France" },
         address: {
           "@type": "PostalAddress",
           streetAddress: siteConfig.address.streetAddress,
@@ -136,6 +137,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd()) }}
       />
       <HeroSlider heroH1={heroH1} slides={slides} />
+      <StatsBand />
       <About />
       <TrainingTiles />
       <TrainingsByService />

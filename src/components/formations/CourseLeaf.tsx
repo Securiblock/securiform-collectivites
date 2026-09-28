@@ -72,7 +72,7 @@ export function CourseLeaf({ trail, title, content }: CourseLeafProps) {
             ) : null}
             <div>
               <h3>Intervention</h3>
-              <p>Directement dans vos services, partout en France.</p>
+              <p>Directement dans vos services, dans le nord de la France.</p>
             </div>
             <div>
               <h3>Validation</h3>

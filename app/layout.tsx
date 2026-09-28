@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Rajdhani, Quicksand } from "next/font/google";
 import { Header } from "@/src/components/layout/Header";
 import { Footer } from "@/src/components/layout/Footer";
+import { ScrollReveal } from "@/src/components/layout/ScrollReveal";
+import { CookieConsentProvider } from "@/src/lib/consent/ConsentContext";
+import { CookieConsentBanner } from "@/src/components/consent/CookieConsentBanner";
 import "./globals.css";
 
 const rajdhani = Rajdhani({
@@ -56,9 +59,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a className="skip-link" href="#contenu">
           Aller au contenu
         </a>
-        <Header />
-        <main id="contenu">{children}</main>
-        <Footer />
+        <CookieConsentProvider>
+          <Header />
+          <main id="contenu">{children}</main>
+          <Footer />
+          <ScrollReveal />
+          <CookieConsentBanner />
+        </CookieConsentProvider>
       </body>
     </html>
   );

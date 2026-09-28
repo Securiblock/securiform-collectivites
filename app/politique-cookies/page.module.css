@@ -42,7 +42,7 @@
 
 .table {
   width: 100%;
-  min-width: 720px;
+  min-width: 640px;
   border-collapse: collapse;
   font-size: var(--small-size);
 }

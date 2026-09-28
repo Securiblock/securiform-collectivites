@@ -14,6 +14,8 @@ const staticRoutes: { path: string; priority: number }[] = [
   { path: "/mentions-legales/", priority: 0.1 },
   { path: "/donnees-personnelles/", priority: 0.1 },
   { path: "/politique-de-confidentialite/", priority: 0.1 },
+  { path: "/politique-cookies/", priority: 0.1 },
+  { path: "/conditions-generales-utilisation/", priority: 0.1 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

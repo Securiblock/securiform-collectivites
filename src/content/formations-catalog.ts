@@ -553,3 +553,18 @@ export function getAllFormationPaths(): string[][] {
   walk(formationsTree, []);
   return paths;
 }
+
+export type CourseGroup = { theme: string; courses: string[] };
+
+function courseTitles(node: FormationNode): string[] {
+  if (node.kind === "course") return [node.title];
+  return node.children.flatMap(courseTitles);
+}
+
+export function getCourseGroups(): CourseGroup[] {
+  return formationsTree.map((node) => ({ theme: node.title, courses: courseTitles(node) }));
+}
+
+export function isKnownCourseTitle(title: string): boolean {
+  return getCourseGroups().some((group) => group.courses.includes(title));
+}

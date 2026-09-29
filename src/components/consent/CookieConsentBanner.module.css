@@ -19,6 +19,11 @@
   padding: 24px 28px;
 }
 
+.inner:focus-visible {
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
 .title {
   font-size: clamp(19px, 0.5vw + 16px, 21px);
   margin-bottom: 10px;

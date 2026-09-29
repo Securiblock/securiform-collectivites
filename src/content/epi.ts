@@ -1,4 +1,7 @@
+export type EpiIconKey = "tete" | "chute" | "mains" | "pieds" | "respi" | "visibilite";
+
 export type EpiCategory = {
+  icon: EpiIconKey;
   title: string;
   description: string;
 };
@@ -8,6 +11,7 @@ export const epiHero = {
   title: "Équipements de protection individuelle (EPI)",
   description:
     "Nous accompagnons vos services dans le choix et le suivi des équipements de protection individuelle adaptés aux risques de vos agents.",
+  image: { src: "/images/epi/hero-casques.webp", alt: "" },
 };
 
 export const epiIntro = {
@@ -20,26 +24,32 @@ export const epiIntro = {
 
 export const epiCategories: EpiCategory[] = [
   {
+    icon: "tete",
     title: "Protection de la tête",
     description: "Casques et casquettes anti-heurt adaptés aux travaux de voirie et d'espaces verts.",
   },
   {
+    icon: "chute",
     title: "Protection anti-chute",
     description: "Harnais, longes et systèmes d'arrêt de chute pour les travaux en hauteur.",
   },
   {
+    icon: "mains",
     title: "Protection des mains",
     description: "Gants adaptés aux risques mécaniques, thermiques et chimiques.",
   },
   {
+    icon: "pieds",
     title: "Protection des pieds",
     description: "Chaussures et bottes de sécurité conformes aux normes en vigueur.",
   },
   {
+    icon: "respi",
     title: "Protection respiratoire et auditive",
     description: "Masques, casques anti-bruit et bouchons d'oreilles adaptés aux travaux bruyants ou poussiéreux.",
   },
   {
+    icon: "visibilite",
     title: "Vêtements de haute visibilité",
     description: "Vêtements normés pour les interventions sur voirie et en conditions de faible visibilité.",
   },
@@ -52,6 +62,12 @@ export const epiKits = {
     "En complément de nos formations à l'habilitation électrique, nous proposons des kits de protection individuelle prêts à l'emploi, adaptés à chaque niveau d'habilitation : personnel non électricien (BE Manœuvre, BS) et personnel électricien (B1V-B2V-BR-BC).",
     "Chaque kit regroupe les équipements nécessaires : écran facial, gants isolants, outillage isolé, cadenas de consignation et housse de transport.",
   ],
+  levels: [
+    { code: "BE Manœuvre", audience: "Personnel non électricien" },
+    { code: "BS", audience: "Personnel non électricien" },
+    { code: "B1V-B2V-BR-BC", audience: "Personnel électricien" },
+  ],
+  contents: ["Écran facial", "Gants isolants", "Outillage isolé", "Cadenas de consignation", "Housse de transport"],
   image: {
     src: "/images/epi/kits-epi.webp",
     alt: "Kits de protection individuelle pour l'habilitation électrique : écran facial, gants isolants et outillage",

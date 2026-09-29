@@ -1,5 +1,27 @@
 .commitments {
-  border-top: 1px solid var(--line);
+  background: var(--ink);
+  color: #d8dbe0;
+  position: relative;
+  overflow: hidden;
+}
+
+.commitments::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 60%;
+  height: 180%;
+  background: radial-gradient(closest-side, rgb(206 34 34 / 0.28), transparent);
+  pointer-events: none;
+}
+
+.commitments :global(.container) {
+  position: relative;
+}
+
+.commitments h2 {
+  color: #fff;
 }
 
 .commitGrid {
@@ -8,22 +30,66 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(24px, 3vw, 48px);
+  gap: 20px;
 }
 
-.commitGrid svg {
-  color: var(--red);
-  margin-bottom: 18px;
+.commitGrid li {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  transition:
+    background-color 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+.commitGrid li:hover {
+  background: rgb(255 255 255 / 0.08);
+  border-color: rgb(206 34 34 / 0.6);
+  transform: translateY(-4px);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--red);
+  color: #fff;
+}
+
+.icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.number {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.3);
 }
 
 .commitGrid h3 {
+  color: #fff;
   margin-bottom: 10px;
 }
 
 .commitGrid p {
-  font-size: var(--small-size);
-  color: var(--muted);
   margin: 0;
+  font-size: var(--small-size);
+  color: #c9cfd6;
 }
 
 @media (max-width: 1180px) {

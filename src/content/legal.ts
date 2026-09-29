@@ -74,7 +74,7 @@ export const donneesPersonnellesActivities: ProcessingActivity[] = [
     finalite: "Répondre à une demande de contact ou de devis via le formulaire du site",
     baseLegale:
       "Exécution de mesures précontractuelles prises à la demande de la personne concernée (art. 6.1.b du RGPD), ou intérêt légitime à traiter les demandes reçues (art. 6.1.f du RGPD)",
-    donneesConcernees: "Nom, téléphone (facultatif), adresse email, contenu du message",
+    donneesConcernees: "Nom, téléphone (facultatif), adresse email, formation souhaitée (facultatif), contenu du message",
     duree: "3 ans à compter du dernier échange, en l'absence de relation contractuelle",
     destinataires:
       "Service commercial de SECURIFORM ; Resend, Inc. (prestataire technique d'envoi d'emails, sous-traitant au sens de l'article 28 du RGPD)",

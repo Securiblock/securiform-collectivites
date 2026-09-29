@@ -52,20 +52,18 @@ export function TrainingsByService() {
         <ul className={styles.servicesList}>
           {serviceRows.map((row) => (
             <li key={row.title} className={styles.serviceRow}>
-              <h3>
+              <span className={styles.serviceIcon}>
                 <ServiceIcon icon={row.icon} />
-                {row.title}
-              </h3>
-              <div>
-                <p>{row.description}</p>
-                <ul className={styles.serviceLinks}>
-                  {row.links.map((link) => (
-                    <li key={link.href}>
-                      <Link href={link.href}>{link.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </span>
+              <h3>{row.title}</h3>
+              <p>{row.description}</p>
+              <ul className={styles.serviceLinks}>
+                {row.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>

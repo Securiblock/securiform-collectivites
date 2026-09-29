@@ -2,52 +2,82 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .serviceRow {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition:
+    box-shadow 0.25s var(--ease),
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+.serviceRow:hover {
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.serviceIcon {
   display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-  gap: clamp(16px, 4vw, 64px);
-  padding: clamp(22px, 2.6vw, 32px) 0;
-  border-bottom: 1px solid var(--line);
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: var(--red-soft);
+  color: var(--red);
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.serviceRow:hover .serviceIcon {
+  background: var(--red);
+  color: #fff;
 }
 
 .serviceRow h3 {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-.serviceRow h3 svg {
-  flex: none;
-  margin-top: 2px;
-  color: var(--red);
+  margin-bottom: 10px;
 }
 
 .serviceRow p {
-  margin-bottom: 12px;
+  margin: 0 0 20px;
+  color: var(--muted-strong);
+  font-size: var(--small-size);
 }
 
 .serviceLinks {
   list-style: none;
-  margin: 0;
+  margin: auto 0 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .serviceLinks a {
   display: inline-block;
-  padding: 6px 14px;
-  font-size: 16px;
+  padding: 5px 12px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
   background: var(--panel);
   border-radius: 999px;
   border: 1px solid transparent;
+  transition:
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    background-color 0.2s var(--ease);
 }
 
 .serviceLinks a:hover {
@@ -56,9 +86,14 @@
   background: var(--white);
 }
 
-@media (max-width: 900px) {
-  .serviceRow {
+@media (max-width: 1180px) {
+  .servicesList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .servicesList {
     grid-template-columns: 1fr;
-    gap: 12px;
   }
 }

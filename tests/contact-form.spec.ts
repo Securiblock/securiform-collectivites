@@ -43,6 +43,8 @@ test.describe("Formulaire de contact", () => {
     await page.getByLabel(/^Message/).fill(
       `[TEST AUTOMATIQUE] Vérification hebdomadaire du formulaire de contact (${date}). Merci de ne pas répondre.`,
     );
+    // L'anti-spam ignore silencieusement les envois faits moins de 3 s après l'affichage.
+    await page.waitForTimeout(4_000);
     await page.getByRole("button", { name: "Envoyer le message" }).click();
 
     await expect(page.getByRole("status")).toHaveText(/bien été envoyé/, { timeout: 30_000 });

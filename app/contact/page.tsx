@@ -3,6 +3,7 @@ import Image from "next/image";
 import { siteConfig } from "@/src/content/home";
 import { contactHero, contactAvailability, contactArea, contactChecklist } from "@/src/content/contact";
 import { getCourseGroups, isKnownCourseTitle } from "@/src/content/formations-catalog";
+import { formRenderTime } from "./anti-spam";
 import { ContactForm } from "./ContactForm";
 import styles from "./page.module.css";
 
@@ -50,6 +51,8 @@ export default async function ContactPage(props: PageProps<"/contact">) {
   const { formation } = await props.searchParams;
   const requested = typeof formation === "string" ? formation : "";
   const defaultFormation = isKnownCourseTitle(requested) ? requested : "";
+  // Heure d'affichage du formulaire, contrôlée à l'envoi (anti-spam).
+  const renderedAt = formRenderTime();
 
   return (
     <>
@@ -111,7 +114,11 @@ export default async function ContactPage(props: PageProps<"/contact">) {
                 ? `Vous êtes intéressé par la formation « ${defaultFormation} ». Précisez votre besoin, nous vous répondons rapidement.`
                 : "Décrivez-nous votre projet, nous vous répondons rapidement."}
             </p>
-            <ContactForm courseGroups={getCourseGroups()} defaultFormation={defaultFormation} />
+            <ContactForm
+              courseGroups={getCourseGroups()}
+              defaultFormation={defaultFormation}
+              renderedAt={renderedAt}
+            />
           </div>
 
           <aside className={styles.aside}>

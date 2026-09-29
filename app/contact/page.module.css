@@ -250,6 +250,15 @@ a.channel:hover {
   font-size: var(--small-size);
 }
 
+/* Champ piège anti-spam : hors écran pour les visiteurs, visible pour les robots. */
+.trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .formNotice {
   margin: 0;
   color: var(--muted-strong);

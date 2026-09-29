@@ -5,6 +5,7 @@ import { useFormStatus } from "react-dom";
 import Link from "next/link";
 import type { CourseGroup } from "@/src/content/formations-catalog";
 import { sendContactMessage, type ContactFormState } from "./actions";
+import { HONEYPOT_FIELD, RENDERED_AT_FIELD } from "./anti-spam";
 import styles from "./page.module.css";
 
 const initialState: ContactFormState = { status: "idle", message: "" };
@@ -22,14 +23,21 @@ function SubmitButton() {
 type ContactFormProps = {
   courseGroups: CourseGroup[];
   defaultFormation?: string;
+  renderedAt: number;
 };
 
-export function ContactForm({ courseGroups, defaultFormation = "" }: ContactFormProps) {
+export function ContactForm({ courseGroups, defaultFormation = "", renderedAt }: ContactFormProps) {
   const [state, formAction] = useActionState(sendContactMessage, initialState);
 
   return (
     <form className={styles.form} action={formAction}>
       <p className={styles.formNote}>Les champs marqués d&apos;un astérisque (*) sont obligatoires.</p>
+
+      <input type="hidden" name={RENDERED_AT_FIELD} value={renderedAt} />
+      <div className={styles.trap} aria-hidden="true">
+        <label htmlFor={HONEYPOT_FIELD}>Ne pas remplir ce champ</label>
+        <input type="text" id={HONEYPOT_FIELD} name={HONEYPOT_FIELD} tabIndex={-1} autoComplete="off" />
+      </div>
 
       <div className={`${styles.field} ${defaultFormation ? styles.fieldHighlight : ""}`}>
         <label htmlFor="formation">Formation souhaitée</label>

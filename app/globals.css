@@ -122,6 +122,16 @@ p {
   margin-bottom: clamp(32px, 4vw, 56px);
 }
 
+.section-head h2::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+  background: var(--red);
+}
+
 .section-head p {
   color: var(--muted);
   margin-top: 16px;

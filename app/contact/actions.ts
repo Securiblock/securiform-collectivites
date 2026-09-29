@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { isKnownCourseTitle } from "@/src/content/formations-catalog";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
@@ -17,6 +18,8 @@ export async function sendContactMessage(
   const email = String(formData.get("email") ?? "").trim();
   const telephone = String(formData.get("telephone") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
+  const formationInput = String(formData.get("formation") ?? "").trim();
+  const formation = isKnownCourseTitle(formationInput) ? formationInput : "";
 
   if (!nom || !email || !message) {
     return { status: "error", message: "Merci de renseigner votre nom, votre email et votre message." };
@@ -38,11 +41,14 @@ export async function sendContactMessage(
     from: `Site SECURIFORM Collectivités <${process.env.CONTACT_EMAIL_FROM ?? "onboarding@resend.dev"}>`,
     to: process.env.CONTACT_EMAIL_TO ?? "contact@securiform.fr",
     replyTo: email,
-    subject: `Nouvelle demande de contact de ${nom}`,
+    subject: formation
+      ? `Demande pour « ${formation} » de ${nom}`
+      : `Nouvelle demande de contact de ${nom}`,
     text: [
       `Nom : ${nom}`,
       `Email : ${email}`,
       telephone ? `Téléphone : ${telephone}` : null,
+      formation ? `Formation souhaitée : ${formation}` : null,
       "",
       "Message :",
       message,

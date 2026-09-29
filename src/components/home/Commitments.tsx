@@ -64,9 +64,16 @@ export function Commitments() {
           <h2 id="titre-engagements">{commitmentsSectionHead.title}</h2>
         </div>
         <ul className={styles.commitGrid}>
-          {commitments.map((item) => (
+          {commitments.map((item, index) => (
             <li key={item.title}>
-              <CommitmentIcon icon={item.icon} />
+              <div className={styles.cardTop}>
+                <span className={styles.icon}>
+                  <CommitmentIcon icon={item.icon} />
+                </span>
+                <span className={styles.number} aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </li>

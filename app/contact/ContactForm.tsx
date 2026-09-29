@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import Link from "next/link";
+import type { CourseGroup } from "@/src/content/formations-catalog";
 import { sendContactMessage, type ContactFormState } from "./actions";
 import styles from "./page.module.css";
 
@@ -18,12 +19,33 @@ function SubmitButton() {
   );
 }
 
-export function ContactForm() {
+type ContactFormProps = {
+  courseGroups: CourseGroup[];
+  defaultFormation?: string;
+};
+
+export function ContactForm({ courseGroups, defaultFormation = "" }: ContactFormProps) {
   const [state, formAction] = useActionState(sendContactMessage, initialState);
 
   return (
     <form className={styles.form} action={formAction}>
       <p className={styles.formNote}>Les champs marqués d&apos;un astérisque (*) sont obligatoires.</p>
+
+      <div className={`${styles.field} ${defaultFormation ? styles.fieldHighlight : ""}`}>
+        <label htmlFor="formation">Formation souhaitée</label>
+        <select id="formation" name="formation" defaultValue={defaultFormation}>
+          <option value="">Je ne sais pas encore / plusieurs formations</option>
+          {courseGroups.map((group) => (
+            <optgroup key={group.theme} label={group.theme}>
+              {group.courses.map((course) => (
+                <option key={course} value={course}>
+                  {course}
+                </option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+      </div>
 
       <div className={styles.formRow}>
         <div className={styles.field}>

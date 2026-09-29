@@ -44,15 +44,15 @@ export function CookieConsentBanner() {
   if (view === "hidden") return null;
 
   return (
-    <div
-      ref={containerRef}
-      className={styles.wrapper}
-      role="dialog"
-      aria-modal="false"
-      aria-labelledby={headingId}
-      tabIndex={-1}
-    >
-      <div className={styles.inner}>
+    <div className={styles.wrapper}>
+      <div
+        ref={containerRef}
+        className={styles.inner}
+        role="dialog"
+        aria-modal="false"
+        aria-labelledby={headingId}
+        tabIndex={-1}
+      >
         <h2 id={headingId} className={styles.title}>
           Gestion des cookies
         </h2>

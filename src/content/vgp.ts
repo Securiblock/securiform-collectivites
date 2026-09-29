@@ -30,6 +30,26 @@ export const vgpFacts: Fact[] = [
   { label: "Intervention", value: "Nord de la France" },
 ];
 
+export const vgpHeroSummary =
+  "Nos vérificateurs contrôlent vos engins, échafaudages, EPI antichute, extincteurs et installations électriques, directement dans vos services.";
+
+export const vgpObligation = {
+  eyebrow: "Obligation réglementaire",
+  title: "Des équipements vérifiés, des agents protégés",
+  deliverablesTitle: "Ce que vous recevez",
+  deliverables: [
+    "Une intervention directement dans vos services",
+    "Un rapport détaillé remis à l'issue de chaque contrôle",
+    "Les préconisations nécessaires en cas de non-conformité",
+    "Une alerte avant chaque échéance pour planifier la vérification suivante",
+  ],
+};
+
+export const vgpItemsHead = {
+  title: "Les équipements que nous vérifions",
+  description: "Cinq familles d'équipements contrôlées par nos vérificateurs, directement dans vos services.",
+};
+
 export const vgpItems: VgpItem[] = [
   {
     title: "Engins de chantier et de manutention",
@@ -39,7 +59,7 @@ export const vgpItems: VgpItem[] = [
   {
     title: "Échafaudages fixes et roulants",
     description: "Contrôle de montage et vérifications périodiques selon les recommandations R408 et R457.",
-    image: { src: "/images/vgp/echafaudages.webp", alt: "Échafaudage fixe équipé de panneaux de signalisation" },
+    image: { src: "/images/vgp/echafaudages.webp", alt: "Échafaudage fixe monté sur une façade" },
   },
   {
     title: "Équipements de protection contre les chutes",
@@ -49,7 +69,7 @@ export const vgpItems: VgpItem[] = [
   {
     title: "Extincteurs et moyens de secours",
     description: "Vérification annuelle du bon fonctionnement des extincteurs et des robinets d'incendie armés (RIA).",
-    image: { src: "/images/vgp/extincteurs.webp", alt: "Extincteurs alignés avant vérification" },
+    image: { src: "/images/vgp/extincteurs.webp", alt: "Extincteur mural avant vérification" },
   },
   {
     title: "Installations électriques",

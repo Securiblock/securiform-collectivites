@@ -45,19 +45,43 @@ export default async function FormationDetailPage(props: PageProps<"/formations/
     return <CourseLeaf trail={trail} title={node.title} content={node.content} />;
   }
 
-  const items = node.children.map((child) => ({
-    title: child.title,
-    href: trail[trail.length - 1].href + child.slug + "/",
-    description: describeChild(child),
-    image: imageOfChild(child),
-  }));
+  const items = node.children.map((child) => {
+    const facts =
+      child.kind === "course"
+        ? [child.content.duration && child.content.duration.length <= 40 ? child.content.duration : null, child.content.groupSize].filter(
+            (fact): fact is string => Boolean(fact),
+          )
+        : [`${countCourses(child)} formation${countCourses(child) > 1 ? "s" : ""}`];
 
-  if (slug.length === 1) {
-    const tile = trainingTiles.find((t) => t.href === `/formations/${slug[0]}/`);
-    if (tile) {
-      return <CategoryPage trail={trail} title={node.title} description={node.description} image={tile.image} items={items} />;
-    }
-  }
+    return {
+      title: child.title,
+      href: trail[trail.length - 1].href + child.slug + "/",
+      description: describeChild(child),
+      image: imageOfChild(child),
+      facts,
+      isGroup: child.kind === "category",
+    };
+  });
 
-  return <CategoryPage trail={trail as Crumb[]} title={node.title} description={node.description} items={items} />;
+  const themeHref = `/formations/${slug[0]}/`;
+  const themeTile = trainingTiles.find((t) => t.href === themeHref);
+  const otherThemes = trainingTiles
+    .filter((t) => t.href !== themeHref)
+    .map((t) => ({ title: t.title, href: t.href, image: t.image }));
+
+  return (
+    <CategoryPage
+      trail={trail as Crumb[]}
+      title={node.title}
+      description={node.description}
+      image={node.image ?? themeTile?.image}
+      courseCount={countCourses(node)}
+      items={items}
+      otherThemes={otherThemes}
+    />
+  );
+}
+
+function countCourses(node: FormationNode): number {
+  return node.kind === "course" ? 1 : node.children.reduce((sum, child) => sum + countCourses(child), 0);
 }

@@ -1,0 +1,60 @@
+name: Test hebdomadaire du formulaire de contact
+
+on:
+  # GitHub ne connaît que l'heure UTC : on déclare 5h et 6h UTC,
+  # puis l'étape "Heure de Paris" ne garde que celle qui tombe à 7h en France
+  # (5h UTC en heure d'été, 6h UTC en heure d'hiver).
+  schedule:
+    - cron: "0 5 * * 1"
+    - cron: "0 6 * * 1"
+  # Permet aussi de le lancer à la main depuis l'onglet Actions.
+  workflow_dispatch:
+
+jobs:
+  contact-form:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Heure de Paris
+        id: paris
+        run: |
+          offset=$(TZ=Europe/Paris date +%z)
+          run=true
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "$offset" = "+0200" ] && [ "${{ github.event.schedule }}" != "0 5 * * 1" ]; then run=false; fi
+            if [ "$offset" = "+0100" ] && [ "${{ github.event.schedule }}" != "0 6 * * 1" ]; then run=false; fi
+          fi
+          echo "Décalage Paris : $offset — exécution : $run"
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        if: steps.paris.outputs.run == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.paris.outputs.run == 'true'
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+        if: steps.paris.outputs.run == 'true'
+
+      - run: npx playwright install --with-deps chromium
+        if: steps.paris.outputs.run == 'true'
+
+      - name: Test du formulaire sur le site en ligne
+        if: steps.paris.outputs.run == 'true'
+        run: npm run test:e2e
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          CONTACT_TEST_EMAIL: ${{ vars.CONTACT_TEST_EMAIL }}
+
+      - name: Rapport en cas d'échec
+        if: failure() && steps.paris.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapport-playwright
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14

@@ -568,3 +568,34 @@ export function getCourseGroups(): CourseGroup[] {
 export function isKnownCourseTitle(title: string): boolean {
   return getCourseGroups().some((group) => group.courses.includes(title));
 }
+
+export type CourseEntry = {
+  title: string;
+  href: string;
+  group?: string;
+  content: CourseContent;
+};
+
+export type FormationDomain = {
+  slug: string;
+  title: string;
+  courses: CourseEntry[];
+};
+
+// Formations regroupées par thématique de premier niveau, avec leur lien et
+// le sous-groupe éventuel (ex. « Personnel électricien »).
+export function getFormationDomains(): FormationDomain[] {
+  function collect(node: FormationNode, parentHref: string, group?: string): CourseEntry[] {
+    const href = `${parentHref}${node.slug}/`;
+    if (node.kind === "course") {
+      return [{ title: node.title, href, group, content: node.content }];
+    }
+    return node.children.flatMap((child) => collect(child, href, parentHref === "/formations/" ? group : node.title));
+  }
+
+  return formationsTree.map((node) => ({
+    slug: node.slug,
+    title: node.title,
+    courses: collect(node, "/formations/"),
+  }));
+}

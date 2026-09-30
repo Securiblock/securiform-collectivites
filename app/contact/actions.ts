@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 import { Resend } from "resend";
 import { isKnownCourseTitle } from "@/src/content/formations-catalog";
 import { isRateLimited } from "@/src/lib/rate-limit";
-import { HONEYPOT_FIELD, RENDERED_AT_FIELD } from "./anti-spam";
+import { HONEYPOT_FIELD, RENDERED_AT_FIELD } from "@/src/lib/anti-spam";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";

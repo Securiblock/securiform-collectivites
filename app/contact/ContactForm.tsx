@@ -5,7 +5,7 @@ import { useFormStatus } from "react-dom";
 import Link from "next/link";
 import type { CourseGroup } from "@/src/content/formations-catalog";
 import { sendContactMessage, type ContactFormState } from "./actions";
-import { HONEYPOT_FIELD, RENDERED_AT_FIELD } from "./anti-spam";
+import { HONEYPOT_FIELD, RENDERED_AT_FIELD } from "@/src/lib/anti-spam";
 import styles from "./page.module.css";
 
 const initialState: ContactFormState = { status: "idle", message: "" };
@@ -23,10 +23,11 @@ function SubmitButton() {
 type ContactFormProps = {
   courseGroups: CourseGroup[];
   defaultFormation?: string;
+  defaultMessage?: string;
   renderedAt: number;
 };
 
-export function ContactForm({ courseGroups, defaultFormation = "", renderedAt }: ContactFormProps) {
+export function ContactForm({ courseGroups, defaultFormation = "", defaultMessage = "", renderedAt }: ContactFormProps) {
   const [state, formAction] = useActionState(sendContactMessage, initialState);
 
   return (
@@ -79,7 +80,14 @@ export function ContactForm({ courseGroups, defaultFormation = "", renderedAt }:
         <label htmlFor="message">
           Message <span aria-hidden="true">*</span>
         </label>
-        <textarea id="message" name="message" rows={5} required aria-required="true" />
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          required
+          aria-required="true"
+          defaultValue={defaultMessage}
+        />
       </div>
 
       <SubmitButton />

@@ -80,6 +80,21 @@ export const donneesPersonnellesActivities: ProcessingActivity[] = [
       "Service commercial de SECURIFORM ; Resend, Inc. (prestataire technique d'envoi d'emails, sous-traitant au sens de l'article 28 du RGPD)",
   },
   {
+    finalite: "Vous envoyer un rappel de recyclage par email (outil « Calculateur de recyclage »)",
+    baseLegale: "Consentement (art. 6.1.a du RGPD), recueilli par une case à cocher non pré-cochée et retirable à tout moment via le lien d'annulation",
+    donneesConcernees: "Adresse email, formation concernée, date de formation, dates d'échéance et de rappel calculées",
+    duree: "Jusqu'à la date d'échéance de la formation au plus tard (suppression automatique), ou immédiatement en cas d'annulation",
+    destinataires:
+      "Service commercial de SECURIFORM ; Resend, Inc. (envoi des emails) et Neon, Inc. (hébergement de la base de données), sous-traitants au sens de l'article 28 du RGPD",
+  },
+  {
+    finalite: "Protéger les formulaires du site contre les envois abusifs (spam)",
+    baseLegale: "Intérêt légitime (art. 6.1.f du RGPD) à assurer la sécurité et le bon fonctionnement du site",
+    donneesConcernees: "Adresse IP et horodatage des envois de formulaire",
+    duree: "Conservées en mémoire vive du serveur 24 heures au maximum, jamais enregistrées en base de données",
+    destinataires: "Aucun destinataire externe",
+  },
+  {
     finalite: "Mémoriser vos choix en matière de cookies",
     baseLegale: "Intérêt légitime (mémorisation d'un choix exprimé par l'utilisateur)",
     donneesConcernees: "Préférences de consentement par catégorie de cookies, horodatage du choix",
@@ -105,12 +120,14 @@ export const donneesPersonnellesSections: LegalSection[] = [
     title: "Destinataires et sous-traitants",
     paragraphs: [
       "Les données transmises via le formulaire de contact sont adressées au service commercial de SECURIFORM. L'envoi de cet email repose sur le service technique Resend, Inc., qui agit en tant que sous-traitant au sens de l'article 28 du RGPD et n'utilise ces données à aucune autre fin.",
+      "Les inscriptions aux rappels de recyclage sont enregistrées dans une base de données hébergée par Neon, Inc., sous-traitant au sens de l'article 28 du RGPD, sur des serveurs situés dans l'Union européenne (Francfort, Allemagne). Les emails de confirmation et de rappel sont envoyés via Resend, Inc.",
     ],
   },
   {
     title: "Transferts de données hors Union européenne",
     paragraphs: [
       "Resend, Inc. est une société établie aux États-Unis. Les transferts de données vers ce prestataire s'appuient sur [À COMPLÉTER : mécanisme de transfert retenu par Resend — clauses contractuelles types de la Commission européenne et/ou adhésion au Data Privacy Framework, à vérifier sur la page de conformité de Resend].",
+      "Neon, Inc. est également une société établie aux États-Unis ; les données de la base sont stockées dans l'Union européenne (région AWS de Francfort). Un éventuel accès depuis les États-Unis s'appuie sur [À COMPLÉTER : mécanisme de transfert retenu par Neon — clauses contractuelles types et/ou Data Privacy Framework, à vérifier dans le DPA de Neon].",
     ],
   },
   {

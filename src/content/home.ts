@@ -119,6 +119,7 @@ export const navLinks: NavLink[] = [
   { label: "Formations", href: "/formations/" },
   { label: "VGP", href: "/vgp/" },
   { label: "Équipements EPI", href: "/equipements-epi/" },
+  { label: "Outils", href: "/outils/" },
   { label: "Liens utiles", href: "/liens-utiles/" },
 ];
 

@@ -1,0 +1,53 @@
+.callout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  border: 1px dashed rgb(206 34 34 / 0.45);
+  border-radius: var(--radius);
+  background: var(--red-soft);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--red);
+  color: #fff;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.text {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted-strong);
+}
+
+.link {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--red-dark);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

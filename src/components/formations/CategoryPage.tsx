@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Media } from "@/src/components/ui/Media";
 import { Commitments } from "@/src/components/home/Commitments";
 import { CtaBand } from "@/src/components/home/CtaBand";
+import { ToolCallout, type ToolLink } from "@/src/components/outils/ToolCallout";
 import { siteConfig } from "@/src/content/home";
 import type { Crumb } from "@/src/content/formations-catalog";
 import styles from "./CategoryPage.module.css";
@@ -27,9 +28,10 @@ type CategoryPageProps = {
   courseCount: number;
   items: CategoryItem[];
   otherThemes: ThemeLink[];
+  tool?: ToolLink;
 };
 
-export function CategoryPage({ trail, title, description, image, courseCount, items, otherThemes }: CategoryPageProps) {
+export function CategoryPage({ trail, title, description, image, courseCount, items, otherThemes, tool }: CategoryPageProps) {
   const ancestors = trail.slice(0, -1);
   const plural = courseCount > 1 ? "s" : "";
 
@@ -123,6 +125,8 @@ export function CategoryPage({ trail, title, description, image, courseCount, it
               </li>
             ))}
           </ul>
+
+          {tool ? <ToolCallout {...tool} className={styles.listTool} /> : null}
         </div>
       </section>
 

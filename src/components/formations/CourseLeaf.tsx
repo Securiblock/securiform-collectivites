@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Media } from "@/src/components/ui/Media";
 import { CtaBand } from "@/src/components/home/CtaBand";
+import { ToolCallout, type ToolLink } from "@/src/components/outils/ToolCallout";
 import { siteConfig } from "@/src/content/home";
 import type { Crumb, CourseContent } from "@/src/content/formations-catalog";
 import styles from "./CourseLeaf.module.css";
@@ -9,6 +10,7 @@ type CourseLeafProps = {
   trail: Crumb[];
   title: string;
   content: CourseContent;
+  tool?: ToolLink;
 };
 
 const INTERVENTION = "Directement dans vos services, dans le nord de la France.";
@@ -21,7 +23,7 @@ function CheckIcon() {
   );
 }
 
-export function CourseLeaf({ trail, title, content }: CourseLeafProps) {
+export function CourseLeaf({ trail, title, content, tool }: CourseLeafProps) {
   const ancestors = trail.slice(0, -1);
   const parent = ancestors[ancestors.length - 1];
   const contactHref = `/contact/?formation=${encodeURIComponent(title)}#formulaire`;
@@ -109,6 +111,7 @@ export function CourseLeaf({ trail, title, content }: CourseLeafProps) {
             <Link className={`btn btn-primary ${styles.sidebarCta}`} href={contactHref}>
               Organiser cette formation
             </Link>
+            {tool ? <ToolCallout {...tool} className={styles.sidebarTool} /> : null}
           </aside>
         </div>
       </section>

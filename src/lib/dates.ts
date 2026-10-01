@@ -44,6 +44,13 @@ export function todayInFrance(): string {
   }).format(new Date());
 }
 
+// Nombre de jours entre deux dates ISO (négatif si « to » est avant « from »).
+export function daysBetween(from: string, to: string): number {
+  const [fy, fm, fd] = parts(from);
+  const [ty, tm, td] = parts(to);
+  return Math.round((Date.UTC(ty, tm - 1, td) - Date.UTC(fy, fm - 1, fd)) / 86_400_000);
+}
+
 export function formatDateFr(iso: string): string {
   const [y, m, d] = parts(iso);
   return new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(

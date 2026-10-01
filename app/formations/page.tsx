@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Media } from "@/src/components/ui/Media";
 import { StatsBand } from "@/src/components/home/StatsBand";
 import { CtaBand } from "@/src/components/home/CtaBand";
+import { ToolsBand } from "@/src/components/outils/ToolsBand";
 import { formationsTree, type FormationNode } from "@/src/content/formations-catalog";
 import { siteConfig, trainingTiles } from "@/src/content/home";
 import styles from "./page.module.css";
@@ -148,6 +149,8 @@ export default function FormationsPage() {
           </div>
         </div>
       </section>
+
+      <ToolsBand />
 
       <section className={`section ${styles.process}`} aria-labelledby="titre-deroulement">
         <div className="container">

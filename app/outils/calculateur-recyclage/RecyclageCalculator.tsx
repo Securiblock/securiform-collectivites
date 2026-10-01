@@ -31,10 +31,11 @@ function groupBy(formations: RecyclageFormation[]): [string, RecyclageFormation[
 type CalculatorProps = {
   formations: RecyclageFormation[];
   today: string;
+  initialFormation?: string;
 };
 
-export function RecyclageCalculator({ formations, today }: CalculatorProps) {
-  const [formationKey, setFormationKey] = useState("");
+export function RecyclageCalculator({ formations, today, initialFormation = "" }: CalculatorProps) {
+  const [formationKey, setFormationKey] = useState(initialFormation);
   const [dateFormation, setDateFormation] = useState("");
 
   const formation = formations.find((item) => item.key === formationKey);

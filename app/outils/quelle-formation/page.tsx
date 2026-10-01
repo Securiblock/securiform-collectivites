@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolHero } from "@/src/components/outils/ToolHero";
 import { getFormationDomains } from "@/src/content/formations-catalog";
+import { calculateurHref } from "@/src/content/outils";
 import { recyclageFormations } from "@/src/content/recyclage";
 import type { QuestionnaireDomaine } from "@/src/lib/questionnaire";
 import { Questionnaire } from "./Questionnaire";
@@ -29,13 +30,18 @@ function buildDomaines(): QuestionnaireDomaine[] {
         duration: course.content.duration,
         groupSize: course.content.groupSize,
         validation: course.content.validation,
-        recyclage: recyclage ? { months: recyclage.months, href: "/outils/calculateur-recyclage/" } : undefined,
+        recyclage: recyclage ? { months: recyclage.months, href: calculateurHref(recyclage.key) } : undefined,
       };
     }),
   }));
 }
 
-export default function QuelleFormationPage() {
+export default async function QuelleFormationPage(props: PageProps<"/outils/quelle-formation">) {
+  // Thématique présélectionnée depuis une page formation (?domaine=habilitations-electriques).
+  const { domaine } = await props.searchParams;
+  const domaines = buildDomaines();
+  const initialDomaine = domaines.some((d) => d.id === domaine) ? String(domaine) : undefined;
+
   return (
     <>
       <ToolHero
@@ -47,7 +53,7 @@ export default function QuelleFormationPage() {
 
       <section className="section" aria-label="Questionnaire">
         <div className="container">
-          <Questionnaire domaines={buildDomaines()} />
+          <Questionnaire domaines={domaines} initialDomaine={initialDomaine} />
         </div>
       </section>
     </>

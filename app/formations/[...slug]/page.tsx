@@ -4,6 +4,9 @@ import { trainingTiles } from "@/src/content/home";
 import { findFormationNode, getAllFormationPaths, type FormationNode, type Crumb } from "@/src/content/formations-catalog";
 import { CategoryPage } from "@/src/components/formations/CategoryPage";
 import { CourseLeaf } from "@/src/components/formations/CourseLeaf";
+import type { ToolLink } from "@/src/components/outils/ToolCallout";
+import { calculateurHref, questionnaireHref } from "@/src/content/outils";
+import { recyclageFormations } from "@/src/content/recyclage";
 
 function describeChild(node: FormationNode): string {
   return node.kind === "category" ? node.description : node.content.description;
@@ -40,9 +43,10 @@ export default async function FormationDetailPage(props: PageProps<"/formations/
   if (!result) notFound();
 
   const { node, trail } = result;
+  const href = trail[trail.length - 1].href;
 
   if (node.kind === "course") {
-    return <CourseLeaf trail={trail} title={node.title} content={node.content} />;
+    return <CourseLeaf trail={trail} title={node.title} content={node.content} tool={courseTool(href, slug[0])} />;
   }
 
   const items = node.children.map((child) => {
@@ -78,8 +82,38 @@ export default async function FormationDetailPage(props: PageProps<"/formations/
       courseCount={countCourses(node)}
       items={items}
       otherThemes={otherThemes}
+      tool={{
+        icon: "questionnaire",
+        title: "Vous hésitez entre ces formations ?",
+        text: "Répondez à quelques questions : nous vous indiquons la formation adaptée à vos agents et comment l'organiser.",
+        href: questionnaireHref(slug[0]),
+        cta: "Trouver ma formation",
+      }}
     />
   );
+}
+
+// Encart outil d'une fiche formation : le calculateur si la formation a une durée de validité,
+// sinon le questionnaire d'orientation (ouvert directement sur la thématique).
+function courseTool(href: string, domaine: string): ToolLink {
+  const recyclage = recyclageFormations.find((formation) => href.startsWith(formation.href));
+  if (recyclage) {
+    const duree = recyclage.months % 12 === 0 ? `${recyclage.months / 12} ans` : `${recyclage.months} mois`;
+    return {
+      icon: "calendrier",
+      title: "Vos agents sont déjà formés ?",
+      text: `Validité de référence : ${duree}. Calculez la date de recyclage et recevez un rappel avant l'échéance.`,
+      href: calculateurHref(recyclage.key),
+      cta: "Calculer l'échéance",
+    };
+  }
+  return {
+    icon: "questionnaire",
+    title: "Pas sûr que ce soit la bonne formation ?",
+    text: "Répondez à 4 questions : nous vous orientons vers la formation adaptée à vos agents.",
+    href: questionnaireHref(domaine),
+    cta: "Faire le questionnaire",
+  };
 }
 
 function countCourses(node: FormationNode): number {

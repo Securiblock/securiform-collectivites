@@ -4,6 +4,8 @@ import { siteConfig } from "@/src/content/home";
 import { contactHero, contactAvailability, contactArea, contactChecklist } from "@/src/content/contact";
 import { getCourseGroups, isKnownCourseTitle } from "@/src/content/formations-catalog";
 import { formRenderTime } from "@/src/lib/anti-spam";
+import { ToolCallout } from "@/src/components/outils/ToolCallout";
+import { questionnaireHref } from "@/src/content/outils";
 import { ContactForm } from "./ContactForm";
 import styles from "./page.module.css";
 
@@ -148,6 +150,14 @@ export default async function ContactPage(props: PageProps<"/contact">) {
                 <dd>{contactArea.description}</dd>
               </div>
             </dl>
+
+            <ToolCallout
+              icon="questionnaire"
+              title={"Vous ne savez pas encore quelle formation choisir ?"}
+              text="Notre questionnaire vous oriente en 4 questions, puis pré-remplit ce formulaire pour vous."
+              href={questionnaireHref()}
+              cta="Faire le questionnaire"
+            />
           </aside>
         </div>
       </section>

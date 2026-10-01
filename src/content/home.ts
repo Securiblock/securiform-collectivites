@@ -439,6 +439,8 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "Vérifications générales périodiques", href: "/vgp/" },
       { label: "Équipements de protection individuelle", href: "/equipements-epi/" },
+      { label: "Quelle formation me faut-il ?", href: "/outils/quelle-formation/" },
+      { label: "Calculateur de recyclage", href: "/outils/calculateur-recyclage/" },
       { label: "Liens utiles", href: "/liens-utiles/" },
       { label: "Plan du site", href: "/plan-du-site/" },
     ],

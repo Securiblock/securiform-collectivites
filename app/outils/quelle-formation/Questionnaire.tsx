@@ -27,9 +27,15 @@ function dureeLabel(months: number): string {
   return months % 12 === 0 ? `${months / 12} ans` : `${months} mois`;
 }
 
-export function Questionnaire({ domaines }: { domaines: QuestionnaireDomaine[] }) {
+type QuestionnaireProps = {
+  domaines: QuestionnaireDomaine[];
+  initialDomaine?: string;
+};
+
+export function Questionnaire({ domaines, initialDomaine }: QuestionnaireProps) {
   // Historique des réponses : chaque étape ajoute une entrée, « Retour » retire la dernière.
-  const [historique, setHistorique] = useState<Reponses[]>([{}]);
+  // Arrivée depuis une thématique : la 1re question est déjà répondue, « Retour » permet d'en changer.
+  const [historique, setHistorique] = useState<Reponses[]>(initialDomaine ? [{}, { domaine: initialDomaine }] : [{}]);
   const reponses = historique[historique.length - 1];
   const etape = etapeCourante(reponses, domaines);
   const domaine = domaines.find((d) => d.id === reponses.domaine);

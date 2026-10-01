@@ -7,6 +7,7 @@ import { TrainingTiles } from "@/src/components/home/TrainingTiles";
 import { TrainingsByService } from "@/src/components/home/TrainingsByService";
 import { Commitments } from "@/src/components/home/Commitments";
 import { CtaBand } from "@/src/components/home/CtaBand";
+import { ToolsBand } from "@/src/components/outils/ToolsBand";
 import { heroH1, heroSlides, siteConfig, courses } from "@/src/content/home";
 
 const HERO_IMAGE_SIZES = "(max-width: 900px) 100vw, 50vw";
@@ -140,6 +141,7 @@ export default function HomePage() {
       <StatsBand />
       <About />
       <TrainingTiles />
+      <ToolsBand />
       <TrainingsByService />
       <Commitments />
       <CtaBand />

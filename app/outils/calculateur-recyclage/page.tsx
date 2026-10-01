@@ -16,10 +16,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function CalculateurRecyclagePage() {
+export default async function CalculateurRecyclagePage(props: PageProps<"/outils/calculateur-recyclage">) {
   // Page rendue à chaque visite : la date du jour sert au calcul et à borner le champ date.
   await connection();
   const today = todayInFrance();
+  // Formation présélectionnée depuis une fiche formation (?formation=sst).
+  const { formation } = await props.searchParams;
+  const initialFormation = recyclageFormations.some((item) => item.key === formation) ? String(formation) : "";
 
   return (
     <>
@@ -35,7 +38,7 @@ export default async function CalculateurRecyclagePage() {
           <h2 id="titre-calcul" className="sr-only">
             Calculer une échéance
           </h2>
-          <RecyclageCalculator formations={recyclageFormations} today={today} />
+          <RecyclageCalculator formations={recyclageFormations} today={today} initialFormation={initialFormation} />
 
           <div className={styles.disclaimer}>
             <h3>Comment sont calculées ces dates ?</h3>

@@ -69,6 +69,7 @@ export default function EquipementsEpiPage() {
               rel="noopener noreferrer"
             >
               Boutique Securistore <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (nouvel onglet)</span>
             </a>
           </div>
         </div>
@@ -147,6 +148,7 @@ export default function EquipementsEpiPage() {
             </div>
             <a href={epiKits.store.href} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               {epiKits.store.label} <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (nouvel onglet)</span>
             </a>
           </div>
         </div>

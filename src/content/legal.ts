@@ -56,9 +56,10 @@ export const mentionsLegalesSections: LegalSection[] = [
   {
     title: "Hébergement",
     paragraphs: [
-      "Nom de l'hébergeur : OVH SAS.",
-      "Adresse : 140 Quai du Sartel, 59100 Roubaix, France.",
-      "Téléphone : [À COMPLÉTER : numéro de téléphone de l'hébergeur]",
+      "Le site est hébergé par Vercel Inc.",
+      "Adresse : [À COMPLÉTER : adresse postale de Vercel Inc., à reprendre sur vercel.com/legal]",
+      "Téléphone : [À COMPLÉTER : numéro de téléphone de Vercel Inc.]",
+      "Le nom de domaine et la messagerie sont gérés par OVH SAS, 140 Quai du Sartel, 59100 Roubaix, France.",
     ],
   },
   {
@@ -86,6 +87,13 @@ export const donneesPersonnellesActivities: ProcessingActivity[] = [
     duree: "Jusqu'à la date d'échéance de la formation au plus tard (suppression automatique), ou immédiatement en cas d'annulation",
     destinataires:
       "Service commercial de SECURIFORM ; Resend, Inc. (envoi des emails) et Neon, Inc. (hébergement de la base de données), sous-traitants au sens de l'article 28 du RGPD",
+  },
+  {
+    finalite: "Héberger le site et assurer son fonctionnement et sa sécurité (journaux techniques)",
+    baseLegale: "Intérêt légitime (art. 6.1.f du RGPD) à fournir un site disponible et sécurisé",
+    donneesConcernees: "Adresse IP, date et heure de la requête, page demandée, type de navigateur",
+    duree: "[À COMPLÉTER : durée de conservation des journaux selon l'offre Vercel souscrite]",
+    destinataires: "Vercel Inc. (hébergeur du site, sous-traitant au sens de l'article 28 du RGPD)",
   },
   {
     finalite: "Protéger les formulaires du site contre les envois abusifs (spam)",
@@ -121,6 +129,7 @@ export const donneesPersonnellesSections: LegalSection[] = [
     paragraphs: [
       "Les données transmises via le formulaire de contact sont adressées au service commercial de SECURIFORM. L'envoi de cet email repose sur le service technique Resend, Inc., qui agit en tant que sous-traitant au sens de l'article 28 du RGPD et n'utilise ces données à aucune autre fin.",
       "Les inscriptions aux rappels de recyclage sont enregistrées dans une base de données hébergée par Neon, Inc., sous-traitant au sens de l'article 28 du RGPD, sur des serveurs situés dans l'Union européenne (Francfort, Allemagne). Les emails de confirmation et de rappel sont envoyés via Resend, Inc.",
+      "Le site est hébergé par Vercel Inc., sous-traitant au sens de l'article 28 du RGPD, qui traite les journaux techniques de connexion nécessaires à son fonctionnement.",
     ],
   },
   {
@@ -128,6 +137,7 @@ export const donneesPersonnellesSections: LegalSection[] = [
     paragraphs: [
       "Resend, Inc. est une société établie aux États-Unis. Les transferts de données vers ce prestataire s'appuient sur [À COMPLÉTER : mécanisme de transfert retenu par Resend — clauses contractuelles types de la Commission européenne et/ou adhésion au Data Privacy Framework, à vérifier sur la page de conformité de Resend].",
       "Neon, Inc. est également une société établie aux États-Unis ; les données de la base sont stockées dans l'Union européenne (région AWS de Francfort). Un éventuel accès depuis les États-Unis s'appuie sur [À COMPLÉTER : mécanisme de transfert retenu par Neon — clauses contractuelles types et/ou Data Privacy Framework, à vérifier dans le DPA de Neon].",
+      "Vercel Inc. est une société établie aux États-Unis. Les transferts liés à l'hébergement s'appuient sur [À COMPLÉTER : mécanisme de transfert retenu par Vercel — clauses contractuelles types et/ou Data Privacy Framework, à vérifier dans le DPA de Vercel].",
     ],
   },
   {

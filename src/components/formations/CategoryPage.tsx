@@ -5,6 +5,7 @@ import { CtaBand } from "@/src/components/home/CtaBand";
 import { ToolCallout, type ToolLink } from "@/src/components/outils/ToolCallout";
 import { siteConfig } from "@/src/content/home";
 import type { Crumb } from "@/src/content/formations-catalog";
+import { breadcrumbJsonLd, serializeJsonLd } from "@/src/lib/json-ld";
 import styles from "./CategoryPage.module.css";
 
 type Picture = { src: string; alt: string };
@@ -37,6 +38,7 @@ export function CategoryPage({ trail, title, description, image, courseCount, it
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd(trail)) }} />
       <section className={styles.hero}>
         {image ? (
           <div className={styles.heroMedia}>

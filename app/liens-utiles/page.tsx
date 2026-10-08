@@ -28,6 +28,15 @@ function initials(title: string) {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
+// Taille d'affichage d'un logo : tous occupent la même surface à l'écran,
+// qu'ils soient presque carrés (CNFPT) ou très allongés (Service Public, Assurance Maladie).
+const LOGO_SIZE = 80;
+
+function logoSize(logo: { width: number; height: number }) {
+  const ratio = Math.sqrt(logo.width / logo.height);
+  return { width: Math.round(LOGO_SIZE * ratio), height: Math.round(LOGO_SIZE / ratio) };
+}
+
 function domain(href: string) {
   return new URL(href).hostname.replace(/^www\./, "");
 }
@@ -87,8 +96,7 @@ export default function LiensUtilesPage() {
                           className={styles.logo}
                           src={link.logo.src}
                           alt={link.logo.alt}
-                          width={160}
-                          height={60}
+                          {...logoSize(link.logo)}
                         />
                       ) : (
                         <span className={styles.monogram} aria-hidden="true">

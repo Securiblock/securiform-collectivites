@@ -59,7 +59,7 @@ export default function EquipementsEpiPage() {
             </li>
           </ul>
           <div className={styles.heroActions}>
-            <Link className="btn btn-primary" href="/contact/">
+            <Link className="btn btn-white" href="/contact/">
               Demander conseil
             </Link>
             <a

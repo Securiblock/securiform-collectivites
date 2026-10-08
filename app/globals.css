@@ -1,14 +1,25 @@
 :root {
+  /* Bleu : couleur principale du site (fonds sombres, liens, pictos, filets). */
+  --blue: #084699;
+  --blue-dark: #063877;
+  --blue-deep: #052a5c; /* pied de page, bandeau du haut, fonds derrière les photos */
+  --blue-soft: #eaf1fb;
+  --blue-tint: #d6e4f8;
+  --blue-light: #a9ccff; /* accents posés sur un fond bleu */
+
+  /* Rouge du logo : réservé aux actions (boutons principaux, bandeau d'appel) et aux alertes. */
   --red: #ce2222;
   --red-dark: #a81b1b;
   --red-soft: #fbeaea;
   --red-tint: #ffecec;
-  --ink: #1f262e;
-  --text: #39424c;
-  --muted: #66707b;
-  --muted-strong: #5b646e;
-  --line: #e2e5e9;
-  --panel: #f4f5f7;
+
+  /* Neutres légèrement bleutés pour s'accorder avec le bleu. */
+  --ink: #0e2340;
+  --text: #364256;
+  --muted: #5d6a7c;
+  --muted-strong: #535f72;
+  --line: #dde4ee;
+  --panel: #f3f6fb;
   --white: #ffffff;
 
   --font-title: var(--font-rajdhani), "Arial Narrow", Arial, sans-serif;
@@ -25,9 +36,9 @@
   --header-h: 76px;
 
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-sm: 0 2px 8px -2px rgb(31 38 46 / 0.08);
-  --shadow-md: 0 12px 24px -12px rgb(31 38 46 / 0.25);
-  --shadow-lg: 0 24px 48px -16px rgb(31 38 46 / 0.28);
+  --shadow-sm: 0 2px 8px -2px rgb(4 26 60 / 0.1);
+  --shadow-md: 0 12px 24px -12px rgb(4 26 60 / 0.28);
+  --shadow-lg: 0 24px 48px -16px rgb(4 26 60 / 0.3);
 }
 
 *,
@@ -56,7 +67,7 @@ body {
 }
 
 ::selection {
-  background: var(--red);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -67,18 +78,21 @@ img {
 }
 
 a {
-  color: var(--red);
+  color: var(--blue);
   text-underline-offset: 3px;
   transition: color 0.15s var(--ease);
 }
 
 a:hover {
-  color: var(--red-dark);
+  color: var(--blue-dark);
 }
 
+/* Anneau de focus en deux tons : le liseré blanc le garde visible sur les fonds bleus et rouges,
+   le contour bleu sur les fonds clairs. */
 :focus-visible {
-  outline: 3px solid var(--red);
+  outline: 3px solid var(--blue);
   outline-offset: 3px;
+  box-shadow: 0 0 0 3px #fff;
   border-radius: 2px;
 }
 
@@ -129,7 +143,7 @@ p {
   height: 4px;
   margin-bottom: 16px;
   border-radius: 2px;
-  background: var(--red);
+  background: var(--blue);
 }
 
 .section-head p {
@@ -155,7 +169,7 @@ p {
   left: 16px;
   top: -60px;
   z-index: 100;
-  background: var(--ink);
+  background: var(--blue-deep);
   color: #fff;
   padding: 10px 16px;
   font-size: 16px;
@@ -199,6 +213,7 @@ p {
   box-shadow: none;
 }
 
+/* Bouton principal sur fond clair : le rouge signale l'action. */
 .btn-primary {
   background: var(--red);
   color: #fff !important;
@@ -210,28 +225,33 @@ p {
   color: #fff;
 }
 
+/* Bouton secondaire sur fond clair. */
 .btn-ghost {
   background: transparent;
-  color: var(--red);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 .btn-ghost:hover {
-  background: var(--red);
+  background: var(--blue);
+  border-color: var(--blue);
   color: #fff;
 }
 
+/* Bouton principal sur fond bleu ou rouge : un bouton rouge n'y ressortirait pas assez. */
 .btn-white {
   background: #fff;
-  color: var(--red);
+  color: var(--blue);
   border-color: #fff;
 }
 
 .btn-white:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff;
+  background: var(--blue-soft);
+  border-color: var(--blue-soft);
+  color: var(--blue-dark);
 }
 
+/* Bouton secondaire sur fond bleu ou rouge. */
 .btn-outline {
   background: transparent;
   color: #fff;
@@ -240,7 +260,7 @@ p {
 
 .btn-outline:hover {
   background: #fff;
-  color: var(--red);
+  color: var(--blue);
 }
 
 .reveal {

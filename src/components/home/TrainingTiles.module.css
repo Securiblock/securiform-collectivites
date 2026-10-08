@@ -87,7 +87,7 @@
 }
 
 .tab[aria-selected="true"] .tabThumb::after {
-  box-shadow: inset 0 0 0 3px var(--red);
+  box-shadow: inset 0 0 0 3px var(--blue);
 }
 
 .tabText {
@@ -113,7 +113,7 @@
 
 .tabArrow {
   flex: none;
-  color: var(--red);
+  color: var(--blue);
   opacity: 0;
   transform: translateX(-6px);
   transition:
@@ -128,7 +128,7 @@
 }
 
 .tab[aria-selected="true"] .tabLabel {
-  color: var(--red-dark);
+  color: var(--blue-dark);
 }
 
 .panel {
@@ -160,14 +160,14 @@
 .panelMedia {
   position: relative;
   aspect-ratio: 16 / 8;
-  background: var(--ink);
+  background: var(--blue-deep);
 }
 
 .panelMedia::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgb(20 24 29 / 0.9) 0%, rgb(20 24 29 / 0.3) 55%, transparent 100%);
+  background: linear-gradient(0deg, rgb(4 26 60 / 0.9) 0%, rgb(4 26 60 / 0.3) 55%, transparent 100%);
   pointer-events: none;
 }
 
@@ -185,11 +185,11 @@
   margin-bottom: 10px;
   padding: 4px 12px;
   border-radius: 999px;
-  background: var(--red);
+  background: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
-  color: #fff;
+  color: var(--blue);
 }
 
 .panelHeading h3 {
@@ -244,14 +244,14 @@
 }
 
 .panelLinks a:hover {
-  border-color: var(--red);
-  background: var(--red-soft);
-  color: var(--red-dark);
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  color: var(--blue-dark);
 }
 
 .linkArrow {
   flex: none;
-  color: var(--red);
+  color: var(--blue);
   transition: transform 0.2s var(--ease);
 }
 

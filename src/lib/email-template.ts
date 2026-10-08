@@ -2,12 +2,15 @@
 // Mise en page en tableaux et styles en ligne : c'est ce que les messageries
 // (Outlook, Gmail, Apple Mail…) affichent de façon fiable. Aucune image externe.
 
+// Mêmes couleurs que le site (voir app/globals.css) : bleu pour la structure, rouge pour l'action.
+const BLUE = "#084699";
+const BLUE_DEEP = "#052a5c";
 const RED = "#ce2222";
-const INK = "#1f262e";
-const TEXT = "#3a434d";
-const MUTED = "#5b646e";
-const LINE = "#e3e6ea";
-const PANEL = "#f4f5f7";
+const INK = "#0e2340";
+const TEXT = "#364256";
+const MUTED = "#535f72";
+const LINE = "#dde4ee";
+const PANEL = "#f3f6fb";
 const FONT = "Arial, Helvetica, sans-serif";
 
 export type EmailContent = {
@@ -80,11 +83,11 @@ export function renderEmail(content: EmailContent): string {
 
           <!-- En-tête -->
           <tr>
-            <td bgcolor="${INK}" style="background:${INK};padding:26px 36px;border-radius:12px 12px 0 0;border-bottom:4px solid ${RED};">
+            <td bgcolor="${BLUE}" style="background:${BLUE};padding:26px 36px;border-radius:12px 12px 0 0;border-bottom:4px solid ${BLUE_DEEP};">
               <a href="${escapeHtml(contact.siteUrl)}" target="_blank" style="text-decoration:none;">
-                <span style="font-family:${FONT};font-size:22px;font-weight:bold;letter-spacing:1px;color:#ffffff;">SECURI</span><span style="font-family:${FONT};font-size:22px;font-weight:bold;letter-spacing:1px;color:${RED};">FORM</span>
+                <span style="font-family:${FONT};font-size:22px;font-weight:bold;letter-spacing:1px;color:#ffffff;">SECURIFORM</span>
                 <br>
-                <span style="font-family:${FONT};font-size:11px;letter-spacing:3px;color:#c9cfd6;">COLLECTIVIT&Eacute;S</span>
+                <span style="font-family:${FONT};font-size:11px;letter-spacing:3px;color:#c9d8ee;">COLLECTIVIT&Eacute;S</span>
               </a>
             </td>
           </tr>
@@ -92,11 +95,11 @@ export function renderEmail(content: EmailContent): string {
           <!-- Contenu -->
           <tr>
             <td bgcolor="#ffffff" style="background:#ffffff;padding:36px 36px 28px;">
-              <p style="margin:0 0 10px;font-family:${FONT};font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:${RED};">${escapeHtml(content.eyebrow)}</p>
+              <p style="margin:0 0 10px;font-family:${FONT};font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:${BLUE};">${escapeHtml(content.eyebrow)}</p>
               <h1 style="margin:0 0 16px;font-family:${FONT};font-size:26px;line-height:32px;color:${INK};">${escapeHtml(content.title)}</h1>
               <p style="margin:0 0 24px;font-family:${FONT};font-size:15px;line-height:24px;color:${TEXT};">${escapeHtml(content.intro)}</p>
 
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${PANEL};border-left:4px solid ${RED};border-radius:0 10px 10px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${PANEL};border-left:4px solid ${BLUE};border-radius:0 10px 10px 0;">
                 <tr>
                   <td style="padding:22px 24px;">
                     <p style="margin:0 0 6px;font-family:${FONT};font-size:13px;color:${MUTED};">${escapeHtml(content.highlight.label)}</p>
@@ -119,9 +122,9 @@ export function renderEmail(content: EmailContent): string {
                 <tr>
                   <td style="padding-top:22px;border-top:1px solid ${LINE};font-family:${FONT};font-size:14px;line-height:22px;color:${TEXT};">
                     <strong style="color:${INK};">Une question ?</strong><br>
-                    <a href="tel:${escapeHtml(contact.phone.replace(/\s/g, ""))}" style="color:${RED};text-decoration:none;font-weight:bold;">${escapeHtml(contact.phone)}</a>
+                    <a href="tel:${escapeHtml(contact.phone.replace(/\s/g, ""))}" style="color:${BLUE};text-decoration:none;font-weight:bold;">${escapeHtml(contact.phone)}</a>
                     &nbsp;&middot;&nbsp;
-                    <a href="mailto:${escapeHtml(contact.email)}" style="color:${RED};text-decoration:none;font-weight:bold;">${escapeHtml(contact.email)}</a>
+                    <a href="mailto:${escapeHtml(contact.email)}" style="color:${BLUE};text-decoration:none;font-weight:bold;">${escapeHtml(contact.email)}</a>
                   </td>
                 </tr>
               </table>

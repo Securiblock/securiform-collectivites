@@ -30,7 +30,7 @@
   position: absolute;
   inset: 0 0 auto;
   height: 4px;
-  background: var(--red);
+  background: var(--blue);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s var(--ease);
@@ -51,7 +51,7 @@
   font-weight: 700;
   font-size: 56px;
   line-height: 1;
-  color: var(--red);
+  color: var(--blue);
   margin-bottom: 20px;
 }
 
@@ -69,7 +69,7 @@
   margin-top: auto;
   font-family: var(--font-title);
   font-weight: 700;
-  color: var(--red);
+  color: var(--blue);
 }
 
 .card:hover .more {

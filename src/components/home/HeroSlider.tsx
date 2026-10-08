@@ -133,7 +133,7 @@ export function HeroSlider({ heroH1, slides }: { heroH1: string; slides: HeroSli
                   ))}
                 </ul>
                 <div className={styles.slideActions}>
-                  <Link className="btn btn-primary" href={slide.ctaHref}>
+                  <Link className="btn btn-white" href={slide.ctaHref}>
                     {slide.ctaLabel}
                   </Link>
                 </div>

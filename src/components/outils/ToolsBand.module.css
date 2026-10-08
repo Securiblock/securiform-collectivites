@@ -1,8 +1,8 @@
 .band {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
-  color: #e4e6e9;
+  background: var(--blue);
+  color: #e8effa;
 }
 
 .band::before {
@@ -23,7 +23,7 @@
   right: -10%;
   width: 55%;
   height: 160%;
-  background: radial-gradient(closest-side, rgb(206 34 34 / 0.3), transparent);
+  background: radial-gradient(closest-side, rgb(110 170 255 / 0.3), transparent);
   pointer-events: none;
 }
 
@@ -41,9 +41,9 @@
   margin: 0 0 16px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgb(206 34 34 / 0.18);
-  border: 1px solid rgb(206 34 34 / 0.5);
-  color: #ffd9d9;
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  color: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 14px;
@@ -58,7 +58,7 @@
 
 .head p:not(.eyebrow) {
   margin: 0 0 24px;
-  color: #d8dbe0;
+  color: #dbe6f5;
 }
 
 .all {
@@ -67,12 +67,12 @@
   font-size: 18px;
   color: #fff;
   text-decoration: none;
-  border-bottom: 2px solid var(--red);
+  border-bottom: 2px solid var(--blue-light);
   padding-bottom: 2px;
 }
 
 .all:hover {
-  color: #ffd9d9;
+  color: var(--blue-light);
 }
 
 .cards {
@@ -102,7 +102,7 @@
 
 .card:hover {
   background: rgb(255 255 255 / 0.1);
-  border-color: rgb(206 34 34 / 0.8);
+  border-color: rgb(255 255 255 / 0.6);
   transform: translateY(-4px);
 }
 
@@ -113,8 +113,8 @@
   height: 52px;
   margin-bottom: 20px;
   border-radius: 12px;
-  background: var(--red);
-  color: #fff;
+  background: #fff;
+  color: var(--blue);
 }
 
 .icon svg {
@@ -133,7 +133,7 @@
 
 .cardText {
   font-size: 16px;
-  color: #d8dbe0;
+  color: #dbe6f5;
   margin-bottom: 20px;
 }
 
@@ -141,7 +141,7 @@
   margin-top: auto;
   font-family: var(--font-title);
   font-weight: 700;
-  color: #ffb3b3;
+  color: var(--blue-light);
 }
 
 .card:hover .cardCta {

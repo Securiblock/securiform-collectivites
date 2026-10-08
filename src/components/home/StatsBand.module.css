@@ -1,5 +1,5 @@
 .stats {
-  background: var(--red);
+  background: var(--blue-deep);
 }
 
 .grid {
@@ -23,7 +23,7 @@
 
 .label {
   margin: 0;
-  color: var(--red-tint);
+  color: var(--blue-tint);
   font-size: var(--small-size);
 }
 

@@ -59,3 +59,18 @@
     width: 100%;
   }
 }
+
+/* Sur ce bandeau rouge, les boutons clairs reprennent le rouge (et non le bleu des autres fonds). */
+.cta :global(.btn-white) {
+  color: var(--red-dark);
+}
+
+.cta :global(.btn-white):hover {
+  background: var(--red-soft);
+  border-color: var(--red-soft);
+  color: var(--red-dark);
+}
+
+.cta :global(.btn-outline):hover {
+  color: var(--red-dark);
+}

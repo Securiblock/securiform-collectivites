@@ -73,7 +73,7 @@ export default function FormationsPage() {
             </li>
           </ul>
           <div className={styles.heroActions}>
-            <a className="btn btn-primary" href="#catalogue">
+            <a className="btn btn-white" href="#catalogue">
               Parcourir le catalogue
             </a>
             <Link className={`btn ${styles.btnGlass}`} href="/contact/">

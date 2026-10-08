@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -15,8 +15,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgb(20 24 29 / 0.94) 0%, rgb(20 24 29 / 0.82) 45%, rgb(20 24 29 / 0.35) 100%),
-    linear-gradient(0deg, rgb(20 24 29 / 0.5) 0%, transparent 40%);
+    linear-gradient(90deg, rgb(4 26 60 / 0.94) 0%, rgb(4 26 60 / 0.82) 45%, rgb(4 26 60 / 0.35) 100%),
+    linear-gradient(0deg, rgb(4 26 60 / 0.5) 0%, transparent 40%);
 }
 
 .heroInner {
@@ -42,7 +42,7 @@
 }
 
 .breadcrumb a {
-  color: #d8dbe0;
+  color: #dbe6f5;
   text-decoration: none;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .breadcrumb span[aria-hidden] {
-  color: #8a929c;
+  color: #86a6d4;
 }
 
 .hero h1 {
@@ -64,7 +64,7 @@
 
 .heroText {
   max-width: 58ch;
-  color: #e4e6e9;
+  color: #e8effa;
   margin-bottom: 24px;
 }
 
@@ -117,7 +117,7 @@
 
 .eyebrow {
   margin: 0 0 8px;
-  color: var(--red);
+  color: var(--blue);
   font-family: var(--font-title);
   font-weight: 700;
   font-size: var(--small-size);
@@ -156,8 +156,8 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--red-soft);
-  color: var(--red);
+  background: var(--blue-soft);
+  color: var(--blue);
 }
 
 .check svg {
@@ -181,7 +181,7 @@
   padding: 28px;
   background: var(--white);
   border: 1px solid var(--line);
-  border-top: 4px solid var(--red);
+  border-top: 4px solid var(--blue);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
 }
@@ -212,7 +212,7 @@
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
-  color: var(--red-dark);
+  color: var(--blue-dark);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -241,6 +241,6 @@
   }
 
   .hero::after {
-    background: rgb(20 24 29 / 0.82);
+    background: rgb(4 26 60 / 0.82);
   }
 }

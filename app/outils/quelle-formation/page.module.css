@@ -17,7 +17,7 @@
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 16px;
-  color: var(--red);
+  color: var(--blue);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -32,7 +32,7 @@
 .progressBar span {
   display: block;
   height: 100%;
-  background: var(--red);
+  background: var(--blue);
   border-radius: inherit;
   transition: width 0.35s var(--ease);
 }
@@ -47,7 +47,7 @@
 }
 
 .question:focus-visible {
-  outline: 3px solid var(--red);
+  outline: 3px solid var(--blue);
   outline-offset: 6px;
   border-radius: 4px;
 }
@@ -88,8 +88,8 @@
 }
 
 .choice:hover {
-  border-color: var(--red);
-  background: var(--red-soft);
+  border-color: var(--blue);
+  background: var(--blue-soft);
   box-shadow: var(--shadow-sm);
 }
 
@@ -109,7 +109,7 @@
   position: absolute;
   top: 50%;
   right: 18px;
-  color: var(--red);
+  color: var(--blue);
   transform: translateY(-50%);
   transition: transform 0.2s var(--ease);
 }
@@ -125,7 +125,7 @@
   background: none;
   font: inherit;
   font-weight: 600;
-  color: var(--red);
+  color: var(--blue);
   cursor: pointer;
 }
 
@@ -138,7 +138,7 @@
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 16px;
-  color: var(--red);
+  color: var(--blue);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -162,7 +162,7 @@
 .facts div {
   padding: 14px 18px;
   border: 1px solid var(--line);
-  border-left: 4px solid var(--red);
+  border-left: 4px solid var(--blue);
   border-radius: var(--radius);
   background: var(--panel);
 }
@@ -183,8 +183,8 @@
   margin-bottom: 28px;
   padding: 24px;
   border-radius: var(--radius);
-  background: var(--ink);
-  color: #e4e6e9;
+  background: var(--blue);
+  color: #e8effa;
 }
 
 .advice h3 {

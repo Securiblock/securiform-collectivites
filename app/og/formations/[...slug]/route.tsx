@@ -23,17 +23,16 @@ export async function GET(_request: Request, ctx: RouteContext<"/og/formations/[
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "64px 72px",
-          background: "radial-gradient(circle at 85% 20%, rgba(206,34,34,0.45), #1f262e 55%)",
+          background: "radial-gradient(circle at 85% 15%, #2f6fd0 0%, #084699 45%, #052a5c 100%)",
           color: "#ffffff",
-          borderBottom: "14px solid #ce2222",
+          borderBottom: "14px solid #a9ccff",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 40, fontWeight: 700, letterSpacing: 2 }}>
-            <span>SECURI</span>
-            <span style={{ color: "#ce2222" }}>FORM</span>
+            SECURIFORM
           </div>
-          <div style={{ display: "flex", fontSize: 20, letterSpacing: 8, color: "#c9cfd6" }}>COLLECTIVITÉS</div>
+          <div style={{ display: "flex", fontSize: 20, letterSpacing: 8, color: "#c9d8ee" }}>COLLECTIVITÉS</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -44,9 +43,9 @@ export async function GET(_request: Request, ctx: RouteContext<"/og/formations/[
               padding: "8px 20px",
               marginBottom: 24,
               borderRadius: 999,
-              border: "2px solid rgba(206,34,34,0.8)",
-              background: "rgba(206,34,34,0.2)",
-              color: "#ffd9d9",
+              border: "2px solid rgba(255,255,255,0.6)",
+              background: "rgba(255,255,255,0.14)",
+              color: "#ffffff",
               fontSize: 26,
               textTransform: "uppercase",
               letterSpacing: 2,
@@ -59,7 +58,7 @@ export async function GET(_request: Request, ctx: RouteContext<"/og/formations/[
           </div>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "#d8dbe0" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "#dbe6f5" }}>
           <span>Formation sur site · Nord de la France</span>
           <span>securiform-collectivites.fr</span>
         </div>

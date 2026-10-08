@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -15,8 +15,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgb(20 24 29 / 0.95) 0%, rgb(20 24 29 / 0.82) 50%, rgb(20 24 29 / 0.45) 100%),
-    linear-gradient(0deg, rgb(20 24 29 / 0.6) 0%, transparent 45%);
+    linear-gradient(90deg, rgb(4 26 60 / 0.95) 0%, rgb(4 26 60 / 0.82) 50%, rgb(4 26 60 / 0.45) 100%),
+    linear-gradient(0deg, rgb(4 26 60 / 0.6) 0%, transparent 45%);
 }
 
 .heroInner {
@@ -30,9 +30,9 @@
   margin: 0 0 18px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgb(206 34 34 / 0.18);
-  border: 1px solid rgb(206 34 34 / 0.5);
-  color: #ffd9d9;
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  color: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
@@ -49,7 +49,7 @@
 
 .heroText {
   max-width: 56ch;
-  color: #e4e6e9;
+  color: #e8effa;
   margin-bottom: 32px;
 }
 
@@ -60,13 +60,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px 40px;
-  color: #d8dbe0;
+  color: #dbe6f5;
   font-size: var(--small-size);
 }
 
 .heroFigures li {
   padding-left: 16px;
-  border-left: 3px solid var(--red);
+  border-left: 3px solid var(--blue-light);
 }
 
 .heroFigures strong {
@@ -123,7 +123,7 @@
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
-  color: var(--red-dark);
+  color: var(--blue-dark);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -151,8 +151,8 @@
 }
 
 .themeNav a:hover {
-  background: var(--red-soft);
-  color: var(--red-dark);
+  background: var(--blue-soft);
+  color: var(--blue-dark);
 }
 
 .themeCount {
@@ -187,7 +187,7 @@
   min-height: 180px;
   display: flex;
   align-items: flex-end;
-  background: var(--ink);
+  background: var(--blue-deep);
 }
 
 .themeMedia {
@@ -199,7 +199,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgb(20 24 29 / 0.9) 0%, rgb(20 24 29 / 0.35) 70%, rgb(20 24 29 / 0.15) 100%);
+  background: linear-gradient(0deg, rgb(4 26 60 / 0.9) 0%, rgb(4 26 60 / 0.35) 70%, rgb(4 26 60 / 0.15) 100%);
 }
 
 .themeHeading {
@@ -213,11 +213,11 @@
   margin-bottom: 10px;
   padding: 4px 12px;
   border-radius: 999px;
-  background: var(--red);
+  background: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 14px;
-  color: #fff;
+  color: var(--blue);
 }
 
 .themeHeading h3 {
@@ -264,14 +264,14 @@
 }
 
 .courseList a:hover {
-  border-color: var(--red);
-  background: var(--red-soft);
-  color: var(--red-dark);
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  color: var(--blue-dark);
 }
 
 .arrow {
   flex: none;
-  color: var(--red);
+  color: var(--blue);
   transition: transform 0.2s var(--ease);
 }
 
@@ -311,7 +311,7 @@
   left: 64px;
   right: -12px;
   height: 2px;
-  background: linear-gradient(90deg, var(--red) 0%, var(--line) 100%);
+  background: linear-gradient(90deg, var(--blue) 0%, var(--line) 100%);
 }
 
 .stepNumber {
@@ -321,8 +321,8 @@
   height: 48px;
   margin-bottom: 20px;
   border-radius: 50%;
-  background: var(--red);
-  box-shadow: 0 0 0 6px var(--red-soft);
+  background: var(--blue);
+  box-shadow: 0 0 0 6px var(--blue-soft);
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 20px;
@@ -382,7 +382,7 @@
 
 @media (max-width: 620px) {
   .hero::after {
-    background: rgb(20 24 29 / 0.85);
+    background: rgb(4 26 60 / 0.85);
   }
 
   .courseList,

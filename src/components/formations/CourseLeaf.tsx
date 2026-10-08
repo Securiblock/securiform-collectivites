@@ -67,7 +67,7 @@ export function CourseLeaf({ trail, title, content, tool }: CourseLeafProps) {
           </ul>
 
           <div className={styles.heroActions}>
-            <Link className="btn btn-primary" href={contactHref}>
+            <Link className="btn btn-white" href={contactHref}>
               Demander un devis
             </Link>
             <a className={`btn ${styles.btnGlass}`} href={siteConfig.phoneHref}>

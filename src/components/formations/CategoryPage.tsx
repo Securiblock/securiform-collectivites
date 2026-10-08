@@ -75,7 +75,7 @@ export function CategoryPage({ trail, title, description, image, courseCount, it
           </ul>
 
           <div className={styles.heroActions}>
-            <a className="btn btn-primary" href="#liste">
+            <a className="btn btn-white" href="#liste">
               Voir les formations
             </a>
             <Link className={`btn ${styles.btnGlass}`} href="/contact/#formulaire">

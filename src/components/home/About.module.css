@@ -19,7 +19,7 @@
   height: 70%;
   border-radius: var(--radius);
   background:
-    radial-gradient(rgb(206 34 34 / 0.35) 1.5px, transparent 1.5px) 0 0 / 16px 16px;
+    radial-gradient(rgb(8 70 153 / 0.35) 1.5px, transparent 1.5px) 0 0 / 16px 16px;
 }
 
 .photo {
@@ -38,16 +38,16 @@
   flex-direction: column;
   padding: 20px 24px;
   border-radius: var(--radius);
-  background: var(--red);
+  background: var(--blue);
   color: #fff;
-  box-shadow: 0 20px 40px -16px rgb(206 34 34 / 0.6);
+  box-shadow: 0 20px 40px -16px rgb(8 70 153 / 0.55);
 }
 
 .badgeLabel {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--red-tint);
+  color: var(--blue-tint);
 }
 
 .badgeValue {
@@ -60,12 +60,12 @@
 .badgeText {
   margin-top: 4px;
   font-size: 15px;
-  color: var(--red-tint);
+  color: var(--blue-tint);
 }
 
 .kicker {
   margin: 0 0 10px;
-  color: var(--red);
+  color: var(--blue);
   font-family: var(--font-title);
   font-weight: 700;
   font-size: var(--small-size);
@@ -92,7 +92,7 @@
 .facts div {
   padding: 18px 20px;
   border: 1px solid var(--line);
-  border-left: 4px solid var(--red);
+  border-left: 4px solid var(--blue);
   border-radius: var(--radius);
   background: var(--white);
   transition:
@@ -125,7 +125,7 @@
 }
 
 .facts dd a:hover {
-  color: var(--red);
+  color: var(--blue);
 }
 
 @media (max-width: 900px) {

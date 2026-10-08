@@ -1,5 +1,5 @@
 .topbar {
-  background: var(--ink);
+  background: var(--blue-deep);
   color: #d5dae0;
   font-size: 15px;
   padding-top: env(safe-area-inset-top, 0px);

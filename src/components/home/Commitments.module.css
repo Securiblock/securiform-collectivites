@@ -1,27 +1,6 @@
+/* Section claire : placée juste avant le bandeau d'appel rouge, elle évite un choc bleu vif / rouge vif. */
 .commitments {
-  background: var(--ink);
-  color: #d8dbe0;
-  position: relative;
-  overflow: hidden;
-}
-
-.commitments::before {
-  content: "";
-  position: absolute;
-  top: -40%;
-  right: -10%;
-  width: 60%;
-  height: 180%;
-  background: radial-gradient(closest-side, rgb(206 34 34 / 0.28), transparent);
-  pointer-events: none;
-}
-
-.commitments :global(.container) {
-  position: relative;
-}
-
-.commitments h2 {
-  color: #fff;
+  background: var(--blue-soft);
 }
 
 .commitGrid {
@@ -36,17 +15,17 @@
 .commitGrid li {
   padding: 28px;
   border-radius: var(--radius);
-  background: rgb(255 255 255 / 0.04);
-  border: 1px solid rgb(255 255 255 / 0.1);
+  background: var(--white);
+  border: 1px solid var(--line);
   transition:
-    background-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
     border-color 0.25s var(--ease),
     transform 0.25s var(--ease);
 }
 
 .commitGrid li:hover {
-  background: rgb(255 255 255 / 0.08);
-  border-color: rgb(206 34 34 / 0.6);
+  border-color: var(--blue);
+  box-shadow: var(--shadow-md);
   transform: translateY(-4px);
 }
 
@@ -63,7 +42,7 @@
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background: var(--red);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -78,18 +57,17 @@
   font-size: 32px;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgb(255 255 255 / 0.3);
+  -webkit-text-stroke: 1px rgb(8 70 153 / 0.4);
 }
 
 .commitGrid h3 {
-  color: #fff;
   margin-bottom: 10px;
 }
 
 .commitGrid p {
   margin: 0;
   font-size: var(--small-size);
-  color: #c9cfd6;
+  color: var(--muted-strong);
 }
 
 @media (max-width: 1180px) {

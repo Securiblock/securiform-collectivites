@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -23,7 +23,7 @@
   right: -10%;
   width: 60%;
   height: 180%;
-  background: radial-gradient(closest-side, rgb(206 34 34 / 0.35), transparent);
+  background: radial-gradient(closest-side, rgb(110 170 255 / 0.35), transparent);
   pointer-events: none;
 }
 
@@ -41,13 +41,13 @@
   flex-wrap: wrap;
   gap: 6px;
   font-size: var(--small-size);
-  color: #c9cfd6;
+  color: #c9d8ee;
 }
 
 .breadcrumb li:not(:last-child)::after {
   content: "/";
   margin-left: 6px;
-  color: #8a939d;
+  color: #86a6d4;
 }
 
 .breadcrumb a {
@@ -59,9 +59,9 @@
   margin: 0 0 18px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgb(206 34 34 / 0.18);
-  border: 1px solid rgb(206 34 34 / 0.5);
-  color: #ffd9d9;
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  color: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
@@ -79,5 +79,5 @@
 .text {
   max-width: 60ch;
   margin: 0;
-  color: #e4e6e9;
+  color: #e8effa;
 }

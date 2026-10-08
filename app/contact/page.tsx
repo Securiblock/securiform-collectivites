@@ -178,6 +178,7 @@ export default async function ContactPage(props: PageProps<"/contact">) {
             </div>
             <a href="https://securistore.fr/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               Visiter le magasin <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (nouvel onglet)</span>
             </a>
           </div>
         </div>

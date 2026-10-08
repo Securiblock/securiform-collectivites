@@ -33,15 +33,15 @@
   height: 52px;
   margin-bottom: 20px;
   border-radius: 14px;
-  background: var(--red-soft);
-  color: var(--red);
+  background: var(--blue-soft);
+  color: var(--blue);
   transition:
     background-color 0.25s var(--ease),
     color 0.25s var(--ease);
 }
 
 .serviceRow:hover .serviceIcon {
-  background: var(--red);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -81,8 +81,8 @@
 }
 
 .serviceLinks a:hover {
-  border-color: var(--red);
-  color: var(--red);
+  border-color: var(--blue);
+  color: var(--blue);
   background: var(--white);
 }
 

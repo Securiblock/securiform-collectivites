@@ -34,8 +34,8 @@
 
 .mainNav a:hover,
 .mainNav a[aria-current="page"] {
-  color: var(--red);
-  border-bottom-color: var(--red);
+  color: var(--blue);
+  border-bottom-color: var(--blue);
 }
 
 .mainNav :global(.btn) {
@@ -61,7 +61,7 @@
     right: 0;
     background: var(--white);
     border-bottom: 1px solid var(--line);
-    box-shadow: 0 16px 24px rgba(31, 38, 46, 0.08);
+    box-shadow: 0 16px 24px rgb(4 26 60 / 0.08);
     display: none;
   }
 

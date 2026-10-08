@@ -64,8 +64,9 @@ export function CookieConsentBanner() {
               refuser les cookies de mesure d&apos;audience, ou personnaliser votre choix.{" "}
               <Link href="/politique-cookies/">En savoir plus</Link>.
             </p>
+            {/* CNIL : « Tout refuser » et « Tout accepter » doivent avoir le même poids visuel. */}
             <div className={styles.actions}>
-              <button type="button" className="btn btn-ghost" onClick={refuseAll}>
+              <button type="button" className="btn btn-primary" onClick={refuseAll}>
                 Tout refuser
               </button>
               <button type="button" className="btn btn-primary" onClick={acceptAll}>

@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -23,7 +23,7 @@
   left: -15%;
   width: 60%;
   height: 200%;
-  background: radial-gradient(closest-side, rgb(206 34 34 / 0.35), transparent);
+  background: radial-gradient(closest-side, rgb(110 170 255 / 0.35), transparent);
   pointer-events: none;
 }
 
@@ -42,9 +42,9 @@
   margin: 0 0 18px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgb(206 34 34 / 0.18);
-  border: 1px solid rgb(206 34 34 / 0.5);
-  color: #ffd9d9;
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  color: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
@@ -62,7 +62,7 @@
 .heroText p:not(.eyebrow) {
   margin: 0;
   max-width: 48ch;
-  color: #e4e6e9;
+  color: #e8effa;
 }
 
 .channels {
@@ -95,7 +95,7 @@
 a.channel:hover {
   color: #fff;
   background: rgb(255 255 255 / 0.1);
-  border-color: rgb(206 34 34 / 0.7);
+  border-color: rgb(255 255 255 / 0.6);
   transform: translateX(4px);
 }
 
@@ -106,8 +106,8 @@ a.channel:hover {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: var(--red);
-  color: #fff;
+  background: #fff;
+  color: var(--blue);
 }
 
 .channelIcon svg {
@@ -118,7 +118,7 @@ a.channel:hover {
 .channelLabel {
   display: block;
   font-size: 14px;
-  color: #c9cfd6;
+  color: #c9d8ee;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -147,7 +147,7 @@ a.channel:hover {
   padding: clamp(28px, 4vw, 48px);
   background: var(--white);
   border: 1px solid var(--line);
-  border-top: 4px solid var(--red);
+  border-top: 4px solid var(--blue);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
 }
@@ -206,7 +206,7 @@ a.channel:hover {
 .field select {
   appearance: none;
   padding-right: 44px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%23ce2222' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%23084699' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-size: 20px;
@@ -223,8 +223,8 @@ a.channel:hover {
 .field textarea:focus,
 .field select:focus {
   background-color: #fff;
-  border-color: var(--red);
-  box-shadow: 0 0 0 4px rgb(206 34 34 / 0.12);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgb(8 70 153 / 0.14);
 }
 
 .field input:focus-visible,
@@ -234,8 +234,8 @@ a.channel:hover {
 }
 
 .fieldHighlight select {
-  border-color: var(--red);
-  background-color: var(--red-soft);
+  border-color: var(--blue);
+  background-color: var(--blue-soft);
   font-weight: 600;
   color: var(--ink);
 }
@@ -293,9 +293,9 @@ a.channel:hover {
 
 .asideCard {
   padding: 28px;
-  background: var(--ink);
+  background: var(--blue);
   border-radius: var(--radius);
-  color: #d8dbe0;
+  color: #dbe6f5;
 }
 
 .asideCard h2 {
@@ -305,7 +305,7 @@ a.channel:hover {
 
 .asideIntro {
   margin: 10px 0 18px;
-  color: #c9cfd6;
+  color: #c9d8ee;
   font-size: var(--small-size);
 }
 
@@ -333,11 +333,11 @@ a.channel:hover {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--red);
+  background: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
-  color: #fff;
+  color: var(--blue);
 }
 
 .infoCard {
@@ -356,7 +356,7 @@ a.channel:hover {
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
-  color: var(--red-dark);
+  color: var(--blue-dark);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -380,7 +380,7 @@ a.channel:hover {
   padding: clamp(28px, 4vw, 44px);
   background: var(--white);
   border: 1px solid var(--line);
-  border-left: 6px solid var(--red);
+  border-left: 6px solid var(--blue);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
 }

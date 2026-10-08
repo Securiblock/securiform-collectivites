@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -15,8 +15,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgb(20 24 29 / 0.95) 0%, rgb(20 24 29 / 0.75) 45%, rgb(20 24 29 / 0.05) 100%),
-    linear-gradient(0deg, rgb(20 24 29 / 0.45) 0%, transparent 40%);
+    linear-gradient(90deg, rgb(4 26 60 / 0.95) 0%, rgb(4 26 60 / 0.75) 45%, rgb(4 26 60 / 0.05) 100%),
+    linear-gradient(0deg, rgb(4 26 60 / 0.45) 0%, transparent 40%);
 }
 
 .heroInner {
@@ -30,9 +30,9 @@
   margin: 0 0 18px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgb(206 34 34 / 0.18);
-  border: 1px solid rgb(206 34 34 / 0.5);
-  color: #ffd9d9;
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  color: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
@@ -49,7 +49,7 @@
 
 .heroText {
   max-width: 54ch;
-  color: #e4e6e9;
+  color: #e8effa;
   margin-bottom: 32px;
 }
 
@@ -60,13 +60,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px 40px;
-  color: #d8dbe0;
+  color: #dbe6f5;
   font-size: var(--small-size);
 }
 
 .heroFigures li {
   padding-left: 16px;
-  border-left: 3px solid var(--red);
+  border-left: 3px solid var(--blue-light);
 }
 
 .heroFigures strong {
@@ -99,7 +99,7 @@
 
 .kicker {
   margin: 0 0 10px;
-  color: var(--red);
+  color: var(--blue);
   font-family: var(--font-title);
   font-weight: 700;
   font-size: var(--small-size);
@@ -166,8 +166,8 @@
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background: var(--red-soft);
-  color: var(--red);
+  background: var(--blue-soft);
+  color: var(--blue);
   transition:
     background-color 0.25s var(--ease),
     color 0.25s var(--ease);
@@ -179,7 +179,7 @@
 }
 
 .categories li:hover .icon {
-  background: var(--red);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -205,8 +205,8 @@
 .kits {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
-  color: #d8dbe0;
+  background: var(--blue);
+  color: #dbe6f5;
 }
 
 .kits::before {
@@ -216,7 +216,7 @@
   left: -15%;
   width: 60%;
   height: 160%;
-  background: radial-gradient(closest-side, rgb(206 34 34 / 0.3), transparent);
+  background: radial-gradient(closest-side, rgb(110 170 255 / 0.3), transparent);
   pointer-events: none;
 }
 
@@ -247,11 +247,11 @@
 }
 
 .kitsText p:not(.kicker) {
-  color: #d8dbe0;
+  color: #dbe6f5;
 }
 
 .kitsText .kicker {
-  color: #ff8a8a;
+  color: var(--blue-light);
 }
 
 .levels {
@@ -268,7 +268,7 @@
   border-radius: var(--radius);
   background: rgb(255 255 255 / 0.05);
   border: 1px solid rgb(255 255 255 / 0.12);
-  border-top: 3px solid var(--red);
+  border-top: 3px solid var(--blue-light);
 }
 
 .levels strong {
@@ -282,7 +282,7 @@
 
 .levels span {
   font-size: 15px;
-  color: #c9cfd6;
+  color: #c9d8ee;
 }
 
 .kitsText p.contentsTitle {
@@ -325,7 +325,7 @@
   padding: clamp(28px, 4vw, 44px);
   background: var(--white);
   border: 1px solid var(--line);
-  border-left: 6px solid var(--red);
+  border-left: 6px solid var(--blue);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
 }
@@ -359,7 +359,7 @@
 
 @media (max-width: 620px) {
   .hero::after {
-    background: rgb(20 24 29 / 0.82);
+    background: rgb(4 26 60 / 0.82);
   }
 
   .categories,

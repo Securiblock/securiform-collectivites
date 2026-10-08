@@ -4,9 +4,9 @@
   gap: 16px;
   align-items: start;
   padding: 20px;
-  border: 1px dashed rgb(206 34 34 / 0.45);
+  border: 1px dashed rgb(8 70 153 / 0.4);
   border-radius: var(--radius);
-  background: var(--red-soft);
+  background: var(--blue-soft);
 }
 
 .icon {
@@ -15,7 +15,7 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: var(--red);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -44,7 +44,7 @@
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 16px;
-  color: var(--red-dark);
+  color: var(--blue-dark);
   text-decoration: none;
 }
 

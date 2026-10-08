@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -15,8 +15,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgb(20 24 29 / 0.95) 0%, rgb(20 24 29 / 0.8) 50%, rgb(20 24 29 / 0.3) 100%),
-    linear-gradient(0deg, rgb(20 24 29 / 0.55) 0%, transparent 45%);
+    linear-gradient(90deg, rgb(4 26 60 / 0.95) 0%, rgb(4 26 60 / 0.8) 50%, rgb(4 26 60 / 0.3) 100%),
+    linear-gradient(0deg, rgb(4 26 60 / 0.55) 0%, transparent 45%);
 }
 
 .heroInner {
@@ -42,7 +42,7 @@
 }
 
 .breadcrumb a {
-  color: #d8dbe0;
+  color: #dbe6f5;
   text-decoration: none;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .breadcrumb span[aria-hidden] {
-  color: #8a929c;
+  color: #86a6d4;
 }
 
 .eyebrow {
@@ -60,9 +60,9 @@
   margin: 0 0 16px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgb(206 34 34 / 0.18);
-  border: 1px solid rgb(206 34 34 / 0.5);
-  color: #ffd9d9;
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  color: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
@@ -79,7 +79,7 @@
 
 .heroText {
   max-width: 56ch;
-  color: #e4e6e9;
+  color: #e8effa;
   margin-bottom: 32px;
 }
 
@@ -90,13 +90,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px 40px;
-  color: #d8dbe0;
+  color: #dbe6f5;
   font-size: var(--small-size);
 }
 
 .heroFigures li {
   padding-left: 16px;
-  border-left: 3px solid var(--red);
+  border-left: 3px solid var(--blue-light);
 }
 
 .heroFigures strong {
@@ -158,11 +158,11 @@
 }
 
 .phoneLink strong {
-  color: var(--red);
+  color: var(--blue);
 }
 
 .phoneLink:hover {
-  border-color: var(--red);
+  border-color: var(--blue);
   color: var(--ink);
 }
 
@@ -215,8 +215,8 @@
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--ink);
-  border-bottom: 4px solid var(--red);
+  background: var(--blue-deep);
+  border-bottom: 4px solid var(--blue);
 }
 
 .cardMedia > :first-child {
@@ -233,7 +233,7 @@
   left: 14px;
   padding: 4px 10px;
   border-radius: 8px;
-  background: rgb(20 24 29 / 0.75);
+  background: rgb(4 26 60 / 0.75);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   font-family: var(--font-title);
@@ -261,7 +261,7 @@
 }
 
 .card:hover .cardTitle {
-  color: var(--red);
+  color: var(--blue);
 }
 
 .cardBody > p {
@@ -293,7 +293,7 @@
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 16px;
-  color: var(--red);
+  color: var(--blue);
 }
 
 .cardMore span {
@@ -325,7 +325,7 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--radius);
-  background: var(--ink);
+  background: var(--blue-deep);
   color: #fff;
   text-decoration: none;
 }
@@ -340,7 +340,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgb(20 24 29 / 0.9) 0%, rgb(20 24 29 / 0.25) 65%, transparent 100%);
+  background: linear-gradient(0deg, rgb(4 26 60 / 0.9) 0%, rgb(4 26 60 / 0.25) 65%, transparent 100%);
   transition: background-color 0.3s var(--ease);
 }
 
@@ -360,7 +360,7 @@
 
 .otherTitle span {
   display: inline-block;
-  color: #ff8a8a;
+  color: var(--blue-light);
   transition: transform 0.2s var(--ease);
 }
 
@@ -370,7 +370,7 @@
 
 @media (max-width: 900px) {
   .hero::after {
-    background: rgb(20 24 29 / 0.82);
+    background: rgb(4 26 60 / 0.82);
   }
 }
 

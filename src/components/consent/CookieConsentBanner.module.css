@@ -36,7 +36,7 @@
 }
 
 .description a {
-  color: var(--red);
+  color: var(--blue);
 }
 
 .actions {
@@ -65,7 +65,7 @@
 }
 
 .customize:hover {
-  color: var(--red);
+  color: var(--blue);
 }
 
 .categoryList {
@@ -129,7 +129,7 @@
 .toggle input {
   width: 18px;
   height: 18px;
-  accent-color: var(--red);
+  accent-color: var(--blue);
 }
 
 @media (max-width: 620px) {

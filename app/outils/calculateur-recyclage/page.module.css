@@ -41,7 +41,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--blue);
   color: #fff;
   font-size: 16px;
 }
@@ -70,9 +70,9 @@
 
 .field select:focus-visible,
 .field input:focus-visible {
-  outline: 3px solid var(--red);
+  outline: 3px solid var(--blue);
   outline-offset: 1px;
-  border-color: var(--red);
+  border-color: var(--blue);
 }
 
 .help {
@@ -84,7 +84,7 @@
 .source {
   margin: 0;
   padding: 14px 16px;
-  border-left: 4px solid var(--red);
+  border-left: 4px solid var(--blue);
   border-radius: 0 8px 8px 0;
   background: var(--white);
   font-size: 16px;
@@ -191,7 +191,7 @@
   width: 22px;
   height: 22px;
   margin-top: 3px;
-  accent-color: var(--red);
+  accent-color: var(--blue);
 }
 
 .trap {

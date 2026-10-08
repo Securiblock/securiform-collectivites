@@ -6,7 +6,7 @@
 
 .eyebrow {
   margin: 0 0 8px;
-  color: var(--red);
+  color: var(--blue);
   font-family: var(--font-title);
   font-weight: 700;
   font-size: var(--small-size);

@@ -4,6 +4,7 @@ import { CtaBand } from "@/src/components/home/CtaBand";
 import { ToolCallout, type ToolLink } from "@/src/components/outils/ToolCallout";
 import { siteConfig } from "@/src/content/home";
 import type { Crumb, CourseContent } from "@/src/content/formations-catalog";
+import { breadcrumbJsonLd, courseJsonLd, serializeJsonLd } from "@/src/lib/json-ld";
 import styles from "./CourseLeaf.module.css";
 
 type CourseLeafProps = {
@@ -35,8 +36,11 @@ export function CourseLeaf({ trail, title, content, tool }: CourseLeafProps) {
     { label: "Validation", value: content.validation },
   ].filter((fact): fact is { label: string; value: string } => Boolean(fact.value));
 
+  const jsonLd = [breadcrumbJsonLd(trail), courseJsonLd(title, content.description, trail[trail.length - 1].href)];
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <section className={styles.hero}>
         {content.image ? (
           <div className={styles.heroMedia}>
@@ -63,7 +67,7 @@ export function CourseLeaf({ trail, title, content, tool }: CourseLeafProps) {
           </ul>
 
           <div className={styles.heroActions}>
-            <Link className="btn btn-primary" href={contactHref}>
+            <Link className="btn btn-white" href={contactHref}>
               Demander un devis
             </Link>
             <a className={`btn ${styles.btnGlass}`} href={siteConfig.phoneHref}>

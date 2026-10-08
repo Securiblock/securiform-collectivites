@@ -9,7 +9,7 @@
   padding: clamp(28px, 4vw, 48px);
   background: var(--white);
   border: 1px solid var(--line);
-  border-top: 4px solid var(--red);
+  border-top: 4px solid var(--blue);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
 }

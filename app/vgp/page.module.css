@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
 }
 
@@ -15,8 +15,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgb(20 24 29 / 0.95) 0%, rgb(20 24 29 / 0.82) 50%, rgb(20 24 29 / 0.4) 100%),
-    linear-gradient(0deg, rgb(20 24 29 / 0.6) 0%, transparent 45%);
+    linear-gradient(90deg, rgb(4 26 60 / 0.95) 0%, rgb(4 26 60 / 0.82) 50%, rgb(4 26 60 / 0.4) 100%),
+    linear-gradient(0deg, rgb(4 26 60 / 0.6) 0%, transparent 45%);
 }
 
 .heroInner {
@@ -30,9 +30,9 @@
   margin: 0 0 18px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgb(206 34 34 / 0.18);
-  border: 1px solid rgb(206 34 34 / 0.5);
-  color: #ffd9d9;
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  color: #fff;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 15px;
@@ -49,7 +49,7 @@
 
 .heroText {
   max-width: 58ch;
-  color: #e4e6e9;
+  color: #e8effa;
   margin-bottom: 32px;
 }
 
@@ -60,13 +60,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px 40px;
-  color: #d8dbe0;
+  color: #dbe6f5;
   font-size: var(--small-size);
 }
 
 .heroFigures li {
   padding-left: 16px;
-  border-left: 3px solid var(--red);
+  border-left: 3px solid var(--blue-light);
 }
 
 .heroFigures strong {
@@ -106,7 +106,7 @@
 
 .kicker {
   margin: 0 0 10px;
-  color: var(--red);
+  color: var(--blue);
   font-family: var(--font-title);
   font-weight: 700;
   font-size: var(--small-size);
@@ -126,7 +126,7 @@
 
 .deliverables {
   padding: clamp(24px, 3vw, 36px);
-  background: var(--ink);
+  background: var(--blue);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   position: relative;
@@ -140,7 +140,7 @@
   right: -30%;
   width: 80%;
   height: 120%;
-  background: radial-gradient(closest-side, rgb(206 34 34 / 0.35), transparent);
+  background: radial-gradient(closest-side, rgb(110 170 255 / 0.35), transparent);
   pointer-events: none;
 }
 
@@ -164,7 +164,7 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  color: #e4e6e9;
+  color: #e8effa;
   font-size: var(--small-size);
 }
 
@@ -175,8 +175,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--red);
-  color: #fff;
+  background: #fff;
+  color: var(--blue);
 }
 
 .check svg {
@@ -224,7 +224,7 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(to top, rgb(31 38 46 / 0.92) 0%, rgb(31 38 46 / 0.45) 55%, rgb(31 38 46 / 0.2) 100%);
+  background: linear-gradient(to top, rgb(4 26 60 / 0.92) 0%, rgb(4 26 60 / 0.45) 55%, rgb(4 26 60 / 0.2) 100%);
 }
 
 .panelLabel {
@@ -263,7 +263,7 @@
   width: 40px;
   height: 4px;
   margin-bottom: 14px;
-  background: var(--red);
+  background: var(--blue-light);
 }
 
 .panel:hover .panelLabel,
@@ -286,7 +286,7 @@
   font-weight: 700;
   font-size: 28px;
   line-height: 1;
-  color: #ff8a8a;
+  color: var(--blue-light);
 }
 
 .panelContent h3 {
@@ -298,7 +298,7 @@
 .panelContent p {
   margin: 0;
   max-width: 40ch;
-  color: #e4e6e9;
+  color: #e8effa;
   font-size: var(--small-size);
 }
 
@@ -324,7 +324,7 @@
   left: 64px;
   right: -12px;
   height: 2px;
-  background: linear-gradient(90deg, var(--red) 0%, var(--line) 100%);
+  background: linear-gradient(90deg, var(--blue) 0%, var(--line) 100%);
 }
 
 .stepNumber {
@@ -334,8 +334,8 @@
   height: 48px;
   margin-bottom: 20px;
   border-radius: 50%;
-  background: var(--red);
-  box-shadow: 0 0 0 6px var(--red-soft);
+  background: var(--blue);
+  box-shadow: 0 0 0 6px var(--blue-soft);
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 20px;
@@ -391,7 +391,7 @@
 
 @media (max-width: 620px) {
   .hero::after {
-    background: rgb(20 24 29 / 0.85);
+    background: rgb(4 26 60 / 0.85);
   }
 
   .steps {

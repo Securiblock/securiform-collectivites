@@ -1,0 +1,145 @@
+.phone {
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.phone:hover {
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+/* Carte « Et maintenant ? » posée sur le fond bleu. */
+.steps {
+  padding: clamp(24px, 3vw, 36px);
+  border-radius: var(--radius);
+  background: rgb(255 255 255 / 0.1);
+  border: 1px solid rgb(255 255 255 / 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.steps h2 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.steps ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  color: #e8effa;
+}
+
+.steps li span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--blue);
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+
+.hours {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgb(255 255 255 / 0.25);
+  font-size: var(--small-size);
+  color: #e8effa;
+}
+
+.store {
+  background: var(--panel);
+}
+
+.storeCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px 48px;
+  align-items: center;
+  padding: clamp(28px, 5vw, 56px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--red);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.storeLogo {
+  width: 220px;
+  height: auto;
+  margin-bottom: 22px;
+}
+
+.storeEyebrow {
+  margin: 0 0 10px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.storeText h2 {
+  margin-bottom: 14px;
+}
+
+.storeText > p:not(.storeEyebrow) {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--muted-strong);
+}
+
+.categories {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.categories li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.storeActions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .storeCard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .storeActions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

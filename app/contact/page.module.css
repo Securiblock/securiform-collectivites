@@ -265,15 +265,6 @@ a.channel:hover {
   font-size: var(--small-size);
 }
 
-.formSuccess {
-  margin: 0;
-  padding: 14px 16px;
-  border-radius: var(--radius);
-  background: #e8f5ec;
-  color: #1a6b36;
-  font-weight: 600;
-}
-
 .formError {
   margin: 0;
   padding: 14px 16px;

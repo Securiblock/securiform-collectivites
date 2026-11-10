@@ -98,8 +98,8 @@ export function ContactForm({ courseGroups, defaultFormation = "", defaultMessag
         <Link href="/politique-de-confidentialite/">politique de confidentialité</Link>.
       </p>
 
-      {state.status !== "idle" ? (
-        <p className={state.status === "success" ? styles.formSuccess : styles.formError} role="status">
+      {state.status === "error" ? (
+        <p className={styles.formError} role="alert">
           {state.message}
         </p>
       ) : null}

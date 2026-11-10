@@ -1,21 +1,20 @@
 "use server";
 
 import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import { Resend } from "resend";
 import { isKnownCourseTitle } from "@/src/content/formations-catalog";
 import { isRateLimited } from "@/src/lib/rate-limit";
 import { HONEYPOT_FIELD, RENDERED_AT_FIELD } from "@/src/lib/anti-spam";
 
 export type ContactFormState = {
-  status: "idle" | "success" | "error";
+  status: "idle" | "error";
   message: string;
 };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const SUCCESS: ContactFormState = {
-  status: "success",
-  message: "Votre message a bien été envoyé. Nous vous répondons rapidement.",
-};
+// Page de confirmation affichée après un envoi réussi.
+const MERCI_PATH = "/contact/merci/";
 
 // Anti-spam
 const MIN_FILL_MS = 3_000;
@@ -86,7 +85,7 @@ export async function sendContactMessage(
   const reason = spamReason(formData, message);
   if (reason) {
     console.warn(`Message de contact ignoré (spam probable : ${reason}).`);
-    return SUCCESS;
+    redirect(MERCI_PATH);
   }
 
   if (isRateLimited(await clientIp(), RATE_LIMITS)) {
@@ -129,5 +128,5 @@ export async function sendContactMessage(
     return { status: "error", message: "L'envoi a échoué. Merci de réessayer ou de nous appeler directement." };
   }
 
-  return SUCCESS;
+  redirect(MERCI_PATH);
 }

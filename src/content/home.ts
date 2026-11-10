@@ -117,6 +117,7 @@ export const siteConfig = {
 export const navLinks: NavLink[] = [
   { label: "Accueil", href: "/" },
   { label: "Formations", href: "/formations/" },
+  { label: "Communes", href: "/formations/#incontournables" },
   { label: "VGP", href: "/vgp/" },
   { label: "Équipements EPI", href: "/equipements-epi/" },
   { label: "Outils", href: "/outils/" },
@@ -130,9 +131,9 @@ export const heroH1 = "Formations sécurité pour les agents des collectivités 
 export const heroSlides: HeroSlide[] = [
   {
     id: "habilitation-electrique",
-    title: "Préparation à l'habilitation électrique",
+    title: "Habilitation électrique : une obligation de l'employeur",
     description:
-      "Nous préparons vos agents électriciens et non électriciens à l'habilitation électrique, en basse et haute tensions, selon la norme NF C 18-510.",
+      "Électriciens, agents d'entretien des écoles et des bâtiments, éclairage public : toute opération d'ordre électrique exige une habilitation délivrée par l'employeur, selon la norme NF C 18-510.",
     codesLabel: "Niveaux d'habilitation",
     codes: ["H0B0", "BE Manœuvre-BS", "HE Manœuvre", "B1-B2-BR-BE essai-BC", "B1L-B2L-BRL-BCL", "H1-H2-HE essai-HC"],
     ctaLabel: "Voir les habilitations électriques",
@@ -143,10 +144,24 @@ export const heroSlides: HeroSlide[] = [
     },
   },
   {
-    id: "conduite-securite",
-    title: "Formations à la conduite en sécurité",
+    id: "voirie-reseaux",
+    title: "Voirie et réseaux : aucun chantier sans AIPR",
     description:
-      "Nous préparons vos agents à l'autorisation de conduite des engins de vos services techniques et espaces verts, y compris balayeuses, micro-tracteurs et tondeuses autoportées. Pour le passage du CACES®, nous consulter.",
+      "Voirie, eau, assainissement, éclairage public : la réglementation DT-DICT exige l'AIPR pour intervenir à proximité des réseaux. Concepteurs, encadrants, opérateurs : chacun est préparé à l'examen.",
+    codesLabel: "Profils AIPR",
+    codes: ["Concepteur", "Encadrant", "Opérateur", "Signalisation temporaire"],
+    ctaLabel: "Voir les formations AIPR",
+    ctaHref: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/",
+    image: {
+      src: "/images/formations/courses/aipr-operateurs.webp",
+      alt: "Agent intervenant sur un chantier de voirie à proximité des réseaux",
+    },
+  },
+  {
+    id: "conduite-securite",
+    title: "Conduite d'engins : des agents autorisés",
+    description:
+      "Tractopelles, nacelles d'élagage, balayeuses, tondeuses : chaque conducteur doit être formé et autorisé par l'employeur. Formation sur vos propres engins ; pour le CACES®, nous consulter.",
     codesLabel: "Recommandations CNAM",
     codes: ["R482", "R484", "R485", "R486-A", "R489", "R490"],
     ctaLabel: "Voir les formations conduite",
@@ -158,9 +173,9 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: "secourisme-sst",
-    title: "Formation secourisme",
+    title: "Secourisme : un agent formé sur chaque site",
     description:
-      "SECURIFORM est habilitée centre de formation Sauveteur Secouriste du Travail (SST). Nous formons aussi vos agents à la manipulation des défibrillateurs installés dans vos bâtiments.",
+      "Écoles, cantines, équipements : centre habilité SST, nous formons vos agents aux gestes qui sauvent et aux défibrillateurs de vos bâtiments recevant du public.",
     codesLabel: "Formations secourisme",
     codes: ["SST initial", "MAC SST", "Défibrillateur"],
     ctaLabel: "Voir la formation SST",
@@ -172,9 +187,9 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: "incendie",
-    title: "Formations incendie",
+    title: "Incendie : des bâtiments publics sous contrôle",
     description:
-      "Manipulation d'extincteurs et de RIA, Équipiers de Première et Seconde Intervention, évacuation des locaux avec guides et serre-files. Nous développons aussi une formation adaptée aux risques de vos bâtiments et services.",
+      "Mairie, écoles, équipements sportifs : extincteurs et RIA, équipiers de première et seconde intervention, guides et serre-files, selon les risques de chaque bâtiment.",
     codesLabel: "Formations incendie",
     codes: ["Extincteurs et RIA", "EPI", "ESI", "Évacuation"],
     ctaLabel: "Voir les formations incendie",
@@ -186,9 +201,9 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: "travaux-en-hauteur",
-    title: "Formations travaux en hauteur",
+    title: "Travaux en hauteur : maîtriser le risque de chute",
     description:
-      "Nous formons vos agents au port du harnais anti-chute ainsi qu'à l'utilisation, au montage et à la vérification des échafaudages fixes et roulants.",
+      "Élagage, toitures, éclairage public : la chute de hauteur est la 2ᵉ cause d'accidents du travail mortels en France. Nous formons vos agents au harnais anti-chute et aux échafaudages fixes et roulants.",
     codesLabel: "Formations travaux en hauteur",
     codes: ["Harnais anti-chute", "R408", "R457"],
     ctaLabel: "Voir les formations travaux en hauteur",
@@ -313,6 +328,74 @@ export const trainingTiles: TrainingTile[] = [
     image: { src: "/images/formations/risques-routiers-eco-conduite.webp", alt: "Sensibilisation aux risques routiers et à l'éco-conduite" },
     links: [{ label: "Programme et objectifs", href: "/formations/formations-aux-risques-routiers-et-eco-conduite/" }],
     moreLabel: "En savoir plus",
+  },
+];
+
+// Formations mises en avant pour les élus : obligations de l'employeur,
+// bâtiments recevant du public, métiers propres aux communes, santé des agents.
+export type Essential = {
+  tag: string;
+  title: string;
+  hook: string;
+  description: string;
+  href: string;
+};
+
+export const essentialsSectionHead = {
+  eyebrow: "Pour les élus et les DGS",
+  title: "Les incontournables des communes",
+  description:
+    "Les formations que nos collectivités nous demandent en priorité : celles qui protègent vos agents, vos usagers et la responsabilité de l'employeur.",
+};
+
+export const essentials: Essential[] = [
+  {
+    tag: "Obligation de l'employeur",
+    title: "AIPR",
+    hook: "Aucun chantier près des réseaux sans AIPR.",
+    description:
+      "Voirie, eau, éclairage public : l'AIPR est exigée par la réglementation DT-DICT pour intervenir à proximité des réseaux enterrés ou aériens.",
+    href: "/formations/autorisation-dintervention-a-proximite-des-reseaux-a-i-p-r/",
+  },
+  {
+    tag: "Obligation de l'employeur",
+    title: "Habilitation électrique BS et BE Manœuvre",
+    hook: "Écoles, salles municipales, éclairage public : vos agents sont concernés.",
+    description:
+      "Toute opération d'ordre électrique, même élémentaire, ou tout travail à proximité d'une installation exige une habilitation délivrée par l'employeur, selon la norme NF C 18-510.",
+    href: "/formations/habilitations-electriques/personnel-non-electricien/",
+  },
+  {
+    tag: "Bâtiments recevant du public",
+    title: "Manipulation de défibrillateurs",
+    hook: "Vos bâtiments sont équipés. Vos agents savent-ils s'en servir ?",
+    description:
+      "Mairie, école, salle des fêtes, équipements sportifs : des agents prêts à agir dans les premières minutes.",
+    href: "/formations/secourisme-et-incendie/manipulation-de-defibrillateur/",
+  },
+  {
+    tag: "Bâtiments recevant du public",
+    title: "Sauveteur Secouriste du Travail (SST)",
+    hook: "Un secouriste formé sur chaque site.",
+    description:
+      "ATSEM, cantine, accueil, services techniques : les bons gestes face à un accident, chez vos agents comme chez vos usagers.",
+    href: "/formations/secourisme-et-incendie/sauveteur-secouriste-du-travail-s-s-t/",
+  },
+  {
+    tag: "Métiers de la commune",
+    title: "Espaces verts : tondeuse, micro-tracteur, tronçonneuse",
+    hook: "Les engins et outils les plus utilisés par vos agents.",
+    description:
+      "Conduite en sécurité sur terrain plat et en pente, en espace public, et utilisation de la tronçonneuse en toute sécurité.",
+    href: "/formations/autorisations-de-conduite-et-caces/tondeuse-autoportee/",
+  },
+  {
+    tag: "Santé des agents",
+    title: "Gestes et postures",
+    hook: "Préserver la santé de vos agents, réduire l'absentéisme.",
+    description:
+      "Prévenir les troubles musculo-squelettiques, première cause de maladie professionnelle, chez vos agents techniques et d'entretien.",
+    href: "/formations/risques-lies-au-poste-de-travail/gestes-et-postures/",
   },
 ];
 

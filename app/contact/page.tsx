@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { siteConfig } from "@/src/content/home";
-import { contactHero, contactAvailability, contactArea, contactChecklist } from "@/src/content/contact";
+import { contactHero, contactAvailability, contactArea, contactChecklist, contactDetails } from "@/src/content/contact";
+import { FormationDetails } from "@/src/components/formations/FormationDetails";
 import { getCourseGroups, isKnownCourseTitle } from "@/src/content/formations-catalog";
 import { formRenderTime } from "@/src/lib/anti-spam";
 import { ToolCallout } from "@/src/components/outils/ToolCallout";
@@ -183,6 +184,8 @@ export default async function ContactPage(props: PageProps<"/contact">) {
           </div>
         </div>
       </section>
+
+      <FormationDetails sections={contactDetails} />
     </>
   );
 }

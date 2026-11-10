@@ -4,6 +4,7 @@ import { Media } from "@/src/components/ui/Media";
 import { StatsBand } from "@/src/components/home/StatsBand";
 import { CtaBand } from "@/src/components/home/CtaBand";
 import { ToolsBand } from "@/src/components/outils/ToolsBand";
+import { Essentials } from "@/src/components/home/Essentials";
 import { formationsTree, type FormationNode } from "@/src/content/formations-catalog";
 import { siteConfig, trainingTiles } from "@/src/content/home";
 import styles from "./page.module.css";
@@ -84,6 +85,8 @@ export default function FormationsPage() {
       </section>
 
       <StatsBand />
+
+      <Essentials />
 
       <section className={`section ${styles.catalog}`} id="catalogue" aria-labelledby="titre-catalogue">
         <div className={`container ${styles.catalogGrid}`}>

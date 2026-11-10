@@ -3,6 +3,7 @@ import { ToolHero } from "@/src/components/outils/ToolHero";
 import { getFormationDomains } from "@/src/content/formations-catalog";
 import { calculateurHref } from "@/src/content/outils";
 import { recyclageFormations } from "@/src/content/recyclage";
+import { serviceRows } from "@/src/content/home";
 import type { QuestionnaireDomaine } from "@/src/lib/questionnaire";
 import { Questionnaire } from "./Questionnaire";
 
@@ -17,9 +18,10 @@ export const metadata: Metadata = {
 
 // Données du catalogue réduites au strict nécessaire pour le composant client.
 function buildDomaines(): QuestionnaireDomaine[] {
-  return getFormationDomains().map((domaine) => ({
+  const themes: QuestionnaireDomaine[] = getFormationDomains().map((domaine) => ({
     id: domaine.slug,
     title: domaine.title,
+    kind: "theme",
     formations: domaine.courses.map((course) => {
       const recyclage = recyclageFormations.find((r) => course.href.startsWith(r.href));
       return {
@@ -34,6 +36,20 @@ function buildDomaines(): QuestionnaireDomaine[] {
       };
     }),
   }));
+
+  // Entrée par service municipal : les formations listées pour chaque service sur l'accueil
+  // (un lien vers une thématique reprend toutes ses formations).
+  const formations = themes.flatMap((theme) => theme.formations);
+  const services: QuestionnaireDomaine[] = serviceRows.map((row) => ({
+    id: `service-${row.icon}`,
+    title: row.title,
+    kind: "service",
+    formations: row.links
+      .flatMap((link) => formations.filter((formation) => formation.href.startsWith(link.href)))
+      .filter((formation, index, all) => all.indexOf(formation) === index),
+  }));
+
+  return [...services.filter((service) => service.formations.length > 0), ...themes];
 }
 
 export default async function QuelleFormationPage(props: PageProps<"/outils/quelle-formation">) {

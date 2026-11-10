@@ -1,0 +1,250 @@
+.section {
+  background: var(--white);
+}
+
+.alt {
+  background: var(--panel);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+
+.main {
+  min-width: 0;
+}
+
+.head {
+  margin-bottom: 24px;
+}
+
+/* Doublé pour passer devant `.section-head p` (globals.css). */
+.head .eyebrow {
+  margin: 0 0 14px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.text {
+  max-width: 72ch;
+  margin: 0 0 18px;
+  color: var(--text);
+}
+
+.subhead {
+  margin: 32px 0 16px;
+  font-size: clamp(20px, 0.5vw + 17px, 23px);
+}
+
+.bullets {
+  margin: 0 0 18px;
+  padding-left: 1.2em;
+  color: var(--text);
+}
+
+.bullets li + li {
+  margin-top: 6px;
+}
+
+.tableScroll {
+  overflow-x: auto;
+  margin: 8px 0 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: var(--small-size);
+}
+
+.table th {
+  padding: 14px 18px;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--font-title);
+  font-weight: 700;
+  text-align: left;
+}
+
+.table td {
+  padding: 14px 18px;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--text);
+}
+
+.table tbody tr:nth-child(even) td {
+  background: var(--panel);
+}
+
+.table td:first-child {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cellList {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.cards {
+  list-style: none;
+  margin: 8px 0 24px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--blue);
+  border-radius: var(--radius);
+}
+
+.alt .card {
+  background: var(--white);
+}
+
+.section:not(.alt) .card {
+  background: var(--panel);
+}
+
+.card p {
+  margin: 0 0 10px;
+  font-size: var(--small-size);
+  color: var(--muted-strong);
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.steps .card {
+  position: relative;
+  border-top-width: 1px;
+}
+
+.stepNumber {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.aside {
+  padding: 28px;
+  background: var(--blue);
+  border-radius: var(--radius);
+  color: #e8effa;
+}
+
+.asideTitle {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 22px;
+}
+
+.aside p {
+  margin: 0 0 14px;
+  font-size: var(--small-size);
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 32px;
+  color: #fff;
+  font-size: var(--small-size);
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 900px;
+}
+
+.faqItem {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.faqItem summary {
+  cursor: pointer;
+  padding: 18px 22px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.faqItem summary:hover {
+  color: var(--blue);
+}
+
+.faqItem[open] summary {
+  color: var(--blue);
+}
+
+.faqItem p {
+  margin: 0;
+  padding: 0 22px 18px;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

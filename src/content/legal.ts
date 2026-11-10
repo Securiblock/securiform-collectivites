@@ -38,12 +38,14 @@ export const mentionsLegalesSections: LegalSection[] = [
   {
     title: "Éditeur du site",
     paragraphs: [
-      "SECURIFORM© COLLECTIVITES, département de SECURIFORM.",
-      "Siège social : 17 rue du Carillon, 59650 Villeneuve d'Ascq.",
-      "Capital social : 4 500 euros.",
+      "SECURIFORM© COLLECTIVITES, département de la société SECURIFORM, Société par Actions Simplifiée (SAS) au capital social de 4 500 €, immatriculée au Registre du Commerce et des Sociétés de Lille Métropole sous le numéro 502 015 787.",
+      "Siège social : 17 rue du Carillon, 59650 Villeneuve-d'Ascq, France.",
+      "SIREN : 502 015 787",
+      "SIRET (siège) : 502 015 787 00034",
+      "Numéro de TVA intracommunautaire : FR56502015787",
       "Téléphone : 03 20 67 34 90 — Email : contact@securiform.fr",
-      "SIRET : [À COMPLÉTER : numéro SIRET]",
-      "RCS : [À COMPLÉTER : numéro RCS et ville d'immatriculation]",
+      "Représentant légal : LOVIJEC, Président.",
+      "SECURIFORM est un organisme de formation certifié Qualiopi.",
       "Directeur de la publication : M. Jérôme Cailliez.",
     ],
   },
@@ -57,15 +59,16 @@ export const mentionsLegalesSections: LegalSection[] = [
     title: "Hébergement",
     paragraphs: [
       "Le site est hébergé par Vercel Inc.",
-      "Adresse : [À COMPLÉTER : adresse postale de Vercel Inc., à reprendre sur vercel.com/legal]",
-      "Téléphone : [À COMPLÉTER : numéro de téléphone de Vercel Inc.]",
+      "Adresse : 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis.",
+      "Politique de confidentialité de l'hébergeur : vercel.com/legal/privacy-notice",
       "Le nom de domaine et la messagerie sont gérés par OVH SAS, 140 Quai du Sartel, 59100 Roubaix, France.",
     ],
   },
   {
     title: "Propriété intellectuelle",
     paragraphs: [
-      "L'ensemble des contenus présents sur ce site (textes, images, logos, graphismes) est la propriété exclusive de SECURIFORM, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable est interdite.",
+      "L'ensemble des éléments présents sur ce site (textes, images, logos, marques, chartes graphiques, code source) est protégé par le droit d'auteur et la législation applicable à la propriété intellectuelle. Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de SECURIFORM.",
+      "La marque SECURISTORE (n°FR4557592), exploitée par SECURIFORM, est déposée à l'Institut National de la Propriété Industrielle (INPI).",
     ],
   },
 ];

@@ -4,6 +4,9 @@ import { CtaBand } from "@/src/components/home/CtaBand";
 import { ToolCallout, type ToolLink } from "@/src/components/outils/ToolCallout";
 import { siteConfig } from "@/src/content/home";
 import type { Crumb, CourseContent } from "@/src/content/formations-catalog";
+import type { FormationDetail } from "@/src/content/formations-details";
+import { FormationDetails } from "./FormationDetails";
+import { INCONTOURNABLE_LABEL, agentsConcernes, isIncontournable } from "@/src/content/communes";
 import { breadcrumbJsonLd, courseJsonLd, serializeJsonLd } from "@/src/lib/json-ld";
 import styles from "./CourseLeaf.module.css";
 
@@ -12,6 +15,7 @@ type CourseLeafProps = {
   title: string;
   content: CourseContent;
   tool?: ToolLink;
+  detail?: FormationDetail;
 };
 
 const INTERVENTION = "Directement dans vos services, dans le nord de la France.";
@@ -24,19 +28,21 @@ function CheckIcon() {
   );
 }
 
-export function CourseLeaf({ trail, title, content, tool }: CourseLeafProps) {
+export function CourseLeaf({ trail, title, content, tool, detail }: CourseLeafProps) {
   const ancestors = trail.slice(0, -1);
   const parent = ancestors[ancestors.length - 1];
+  const href = trail[trail.length - 1].href;
   const contactHref = `/contact/?formation=${encodeURIComponent(title)}#formulaire`;
 
   const facts = [
+    { label: "Agents concernés", value: agentsConcernes(href) },
     { label: "Durée", value: content.duration },
     { label: "Effectif", value: content.groupSize },
     { label: "Intervention", value: INTERVENTION },
     { label: "Validation", value: content.validation },
   ].filter((fact): fact is { label: string; value: string } => Boolean(fact.value));
 
-  const jsonLd = [breadcrumbJsonLd(trail), courseJsonLd(title, content.description, trail[trail.length - 1].href)];
+  const jsonLd = [breadcrumbJsonLd(trail), courseJsonLd(title, content.description, href)];
 
   return (
     <>
@@ -57,8 +63,9 @@ export function CourseLeaf({ trail, title, content, tool }: CourseLeafProps) {
               </span>
             ))}
           </nav>
+          {isIncontournable(href) ? <p className={styles.badge}>{INCONTOURNABLE_LABEL}</p> : null}
           <h1>{title}</h1>
-          <p className={styles.heroText}>{content.description}</p>
+          <p className={styles.heroText}>{detail?.lead ?? content.description}</p>
 
           <ul className={styles.chips}>
             {content.duration && content.duration.length <= 40 ? <li>{content.duration}</li> : null}
@@ -119,6 +126,8 @@ export function CourseLeaf({ trail, title, content, tool }: CourseLeafProps) {
           </aside>
         </div>
       </section>
+
+      {detail ? <FormationDetails sections={detail.sections} /> : null}
 
       <CtaBand />
     </>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { trainingTiles } from "@/src/content/home";
 import { findFormationNode, getAllFormationPaths, type FormationNode, type Crumb } from "@/src/content/formations-catalog";
+import { findFormationDetail } from "@/src/content/formations-details";
 import { CategoryPage } from "@/src/components/formations/CategoryPage";
 import { CourseLeaf } from "@/src/components/formations/CourseLeaf";
 import type { ToolLink } from "@/src/components/outils/ToolCallout";
@@ -49,9 +50,10 @@ export default async function FormationDetailPage(props: PageProps<"/formations/
 
   const { node, trail } = result;
   const href = trail[trail.length - 1].href;
+  const detail = findFormationDetail(slug);
 
   if (node.kind === "course") {
-    return <CourseLeaf trail={trail} title={node.title} content={node.content} tool={courseTool(href, slug[0])} />;
+    return <CourseLeaf trail={trail} title={node.title} content={node.content} tool={courseTool(href, slug[0])} detail={detail} />;
   }
 
   const items = node.children.map((child) => {
@@ -87,6 +89,7 @@ export default async function FormationDetailPage(props: PageProps<"/formations/
       courseCount={countCourses(node)}
       items={items}
       otherThemes={otherThemes}
+      detail={detail}
       tool={{
         icon: "questionnaire",
         title: "Vous hésitez entre ces formations ?",

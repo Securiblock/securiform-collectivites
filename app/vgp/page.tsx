@@ -12,7 +12,9 @@ import {
   vgpItems,
   vgpProcessHead,
   vgpProcessSteps,
+  vgpDetails,
 } from "@/src/content/vgp";
+import { FormationDetails } from "@/src/components/formations/FormationDetails";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -136,6 +138,8 @@ export default function VgpPage() {
           </ol>
         </div>
       </section>
+
+      <FormationDetails sections={vgpDetails} />
 
       <CtaBand />
     </>

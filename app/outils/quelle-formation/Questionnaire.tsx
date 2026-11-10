@@ -17,7 +17,7 @@ import {
 import styles from "./page.module.css";
 
 const QUESTIONS: Record<Exclude<Etape, "resultat">, string> = {
-  domaine: "Dans quel domaine cherchez-vous une formation ?",
+  domaine: "Pour quel service ou dans quel domaine cherchez-vous une formation ?",
   formation: "Pour quelle activité précisément ?",
   type: "S'agit-il d'une première formation ou d'un recyclage ?",
   effectif: "Combien d'agents sont concernés ?",
@@ -72,7 +72,7 @@ export function Questionnaire({ domaines, initialDomaine }: QuestionnaireProps) 
     choix = domaines.map((d) => ({
       id: d.id,
       label: d.title,
-      hint: d.formations.length > 1 ? `${d.formations.length} formations` : "1 formation",
+      hint: `${d.kind === "service" ? "Service" : "Thématique"} · ${d.formations.length > 1 ? `${d.formations.length} formations` : "1 formation"}`,
     }));
   } else if (etape === "formation" && domaine) {
     champ = "formation";

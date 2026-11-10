@@ -16,6 +16,8 @@ export type QuestionnaireFormation = {
 export type QuestionnaireDomaine = {
   id: string;
   title: string;
+  // « service » : entrée par service municipal (espaces verts, voirie…), sinon thématique du catalogue.
+  kind?: "service" | "theme";
   formations: QuestionnaireFormation[];
 };
 

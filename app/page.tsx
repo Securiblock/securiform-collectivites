@@ -3,6 +3,7 @@ import { Media } from "@/src/components/ui/Media";
 import { HeroSlider, type HeroSliderSlide } from "@/src/components/home/HeroSlider";
 import { StatsBand } from "@/src/components/home/StatsBand";
 import { About } from "@/src/components/home/About";
+import { Essentials } from "@/src/components/home/Essentials";
 import { TrainingTiles } from "@/src/components/home/TrainingTiles";
 import { TrainingsByService } from "@/src/components/home/TrainingsByService";
 import { Commitments } from "@/src/components/home/Commitments";
@@ -140,6 +141,7 @@ export default function HomePage() {
       <HeroSlider heroH1={heroH1} slides={slides} />
       <StatsBand />
       <About />
+      <Essentials compactTop />
       <TrainingTiles />
       <ToolsBand />
       <TrainingsByService />

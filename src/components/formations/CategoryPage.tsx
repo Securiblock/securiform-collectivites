@@ -5,6 +5,9 @@ import { CtaBand } from "@/src/components/home/CtaBand";
 import { ToolCallout, type ToolLink } from "@/src/components/outils/ToolCallout";
 import { siteConfig } from "@/src/content/home";
 import type { Crumb } from "@/src/content/formations-catalog";
+import type { FormationDetail } from "@/src/content/formations-details";
+import { FormationDetails } from "./FormationDetails";
+import { INCONTOURNABLE_LABEL, isIncontournable } from "@/src/content/communes";
 import { breadcrumbJsonLd, serializeJsonLd } from "@/src/lib/json-ld";
 import styles from "./CategoryPage.module.css";
 
@@ -30,9 +33,10 @@ type CategoryPageProps = {
   items: CategoryItem[];
   otherThemes: ThemeLink[];
   tool?: ToolLink;
+  detail?: FormationDetail;
 };
 
-export function CategoryPage({ trail, title, description, image, courseCount, items, otherThemes, tool }: CategoryPageProps) {
+export function CategoryPage({ trail, title, description, image, courseCount, items, otherThemes, tool, detail }: CategoryPageProps) {
   const ancestors = trail.slice(0, -1);
   const plural = courseCount > 1 ? "s" : "";
 
@@ -56,8 +60,9 @@ export function CategoryPage({ trail, title, description, image, courseCount, it
             ))}
           </nav>
           <p className={styles.eyebrow}>Thématique</p>
+          {isIncontournable(trail[trail.length - 1].href) ? <p className={styles.badge}>{INCONTOURNABLE_LABEL}</p> : null}
           <h1>{title}</h1>
-          <p className={styles.heroText}>{description}</p>
+          <p className={styles.heroText}>{detail?.lead ?? description}</p>
 
           <ul className={styles.heroFigures}>
             <li>
@@ -131,6 +136,8 @@ export function CategoryPage({ trail, title, description, image, courseCount, it
           {tool ? <ToolCallout {...tool} className={styles.listTool} /> : null}
         </div>
       </section>
+
+      {detail ? <FormationDetails sections={detail.sections} /> : null}
 
       <Commitments />
 

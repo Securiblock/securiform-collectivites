@@ -1,3 +1,5 @@
+import type { DetailSection } from "@/src/content/formations-details";
+
 export type VgpItem = {
   title: string;
   description: string;
@@ -86,18 +88,106 @@ export const vgpProcessHead = {
 export const vgpProcessSteps: ProcessStep[] = [
   {
     title: "Prise de contact",
-    description: "Vous nous transmettez la liste et la localisation des équipements à vérifier.",
+    description: "Nous recensons avec vous les équipements concernés et convenons d'une date d'intervention."
   },
   {
-    title: "Intervention sur site",
-    description: "Un vérificateur se déplace dans vos services pour contrôler chaque équipement.",
+    title: "Inspection sur site",
+    description: "Notre vérificateur contrôle l'équipement dans vos locaux : pièces critiques, sécurités, état d'usure."
   },
   {
     title: "Rapport détaillé",
-    description: "Vous recevez un rapport avec les observations et les éventuelles non-conformités à traiter.",
+    description: "Vous recevez un rapport de vérification écrit, mentionnant les observations et éventuelles réserves."
   },
   {
-    title: "Suivi dans le temps",
-    description: "Nous vous alertons avant chaque échéance pour planifier la vérification suivante.",
+    title: "Suivi",
+    description: "Nous vous accompagnons sur la levée des réserves et planifions la prochaine échéance."
+  }
+];
+
+// Sections reprises à l'identique de la page VGP de securiform.fr.
+export const vgpDetails: DetailSection[] = [
+  {
+    eyebrow: "Une obligation réglementaire",
+    title: "Qu'est-ce qu'une VGP ?",
+    blocks: [
+      {
+        type: "p",
+        text: "La Vérification Générale Périodique est un contrôle obligatoire des équipements de levage et de manutention, encadré par l'arrêté du 5 mars 1993 modifié par l'arrêté du 4 juin 1993 et par le décret n°2006-1033 du 22 août 2006. Elle vise à s'assurer que vos machines restent conformes aux exigences de sécurité tout au long de leur utilisation, en examinant leurs pièces critiques, leurs dispositifs de sécurité et leur état d'usure. Selon le type d'équipement, elle doit être renouvelée tous les 6 ou 12 mois."
+      }
+    ]
   },
+  {
+    eyebrow: "Une question fréquente",
+    title: "Les poids de test, à quoi servent-ils ?",
+    blocks: [
+      {
+        type: "p",
+        text: "Lors de certaines VGP, le vérificateur utilise des masses d'essai calibrées, appelées poids de test, pour valider en conditions réelles la capacité de charge annoncée par le fabricant de l'équipement."
+      },
+      {
+        type: "p",
+        text: "Cette étape permet de s'assurer que les dispositifs de sécurité (limiteurs de charge, systèmes de freinage) réagissent correctement lorsque l'équipement est sollicité à sa charge nominale."
+      },
+      {
+        type: "aside",
+        title: "À retenir",
+        items: [
+          "Masses calibrées, adaptées à la charge nominale de l'équipement",
+          "Utilisées pour tester les dispositifs de sécurité en charge",
+          "Apportées par nos vérificateurs le jour de l'intervention"
+        ]
+      }
+    ]
+  },
+  {
+    eyebrow: "Notre zone d'intervention",
+    title: "Des VGP réalisées dans les Hauts-de-France",
+    blocks: [
+      {
+        type: "p",
+        text: "Nos vérificateurs interviennent sur l'ensemble de la région Hauts-de-France : Lille, Roubaix, Tourcoing, Villeneuve-d'Ascq, Douai, Valenciennes, Lens, Béthune, Arras, Cambrai, Dunkerque, Calais, Saint-Omer, Boulogne-sur-Mer et Amiens, ainsi que les communes environnantes. Pour vos formations, SECURIFORM reste par ailleurs à votre service sur toute la moitié nord de la France."
+      }
+    ]
+  },
+  {
+    eyebrow: "Questions fréquentes",
+    title: "Vous vous posez des questions ?",
+    blocks: [
+      {
+        type: "faq",
+        items: [
+          {
+            q: "La VGP est-elle vraiment obligatoire ?",
+            a: [
+              "Oui, dès lors que votre entreprise utilise des équipements de levage ou de manutention couverts par la réglementation. C'est une obligation de l'employeur au titre de la sécurité de ses salariés et des tiers."
+            ]
+          },
+          {
+            q: "Que se passe-t-il si une non-conformité est détectée ?",
+            a: [
+              "Le rapport de vérification mentionne une réserve. Selon sa gravité, l'équipement peut continuer à être utilisé le temps de la remise en conformité, ou son usage doit être suspendu jusqu'à correction. SECURIFORM vous accompagne dans cette démarche."
+            ]
+          },
+          {
+            q: "Qui peut réaliser une VGP ?",
+            a: [
+              "La vérification doit être réalisée par une personne compétente, formée à cet effet, disposant des connaissances techniques et réglementaires nécessaires : c'est le rôle de nos vérificateurs."
+            ]
+          },
+          {
+            q: "Quelle est la différence entre CACES® et VGP ?",
+            a: [
+              "Le CACES® atteste de la compétence du conducteur à utiliser un engin en sécurité. La VGP, elle, contrôle l'état et la conformité de l'équipement lui-même. Les deux sont complémentaires et souvent nécessaires pour la même machine."
+            ]
+          },
+          {
+            q: "Intervenez-vous en dehors des Hauts-de-France ?",
+            a: [
+              "Nos VGP sont principalement réalisées dans les Hauts-de-France. Pour vos besoins de formation (CACES®, habilitation électrique, secourisme…), SECURIFORM intervient en revanche sur toute la moitié nord de la France : n'hésitez pas à nous consulter."
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ];

@@ -231,6 +231,26 @@
   margin-top: 20px;
 }
 
+/* Badge « incontournable pour les communes ». */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--blue-dark);
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.badge::before {
+  content: "★";
+  color: var(--red);
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;

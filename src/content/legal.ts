@@ -43,7 +43,7 @@ export const mentionsLegalesSections: LegalSection[] = [
       "SIREN : 502 015 787",
       "SIRET (siège) : 502 015 787 00034",
       "Numéro de TVA intracommunautaire : FR56502015787",
-      "Téléphone : 03 20 67 34 90 — Email : henri@securiblock.fr",
+      "Téléphone : 03 20 67 34 90 — Email : contact@securiform.fr",
       "Représentant légal : LOVIJEC, Président.",
       "SECURIFORM est un organisme de formation certifié Qualiopi.",
       "Directeur de la publication : M. Jérôme Cailliez.",

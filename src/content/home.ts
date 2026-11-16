@@ -100,7 +100,7 @@ export const siteConfig = {
   url: "https://www.securiform-collectivites.fr",
   phone: "03 20 67 34 90",
   phoneHref: "tel:+33320673490",
-  email: "contact@securiform.fr",
+  email: "henri@securiblock.fr",
   address: {
     streetAddress: "17 rue du Carillon",
     postalCode: "59650",

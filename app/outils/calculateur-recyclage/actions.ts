@@ -9,6 +9,8 @@ import { sql } from "@/src/lib/db";
 import { isRateLimited } from "@/src/lib/rate-limit";
 import { calculerRecyclage } from "@/src/lib/recyclage";
 import { envoyerConfirmation } from "@/src/lib/rappel-emails";
+import { detectSpam } from "@/src/lib/spam";
+import { TURNSTILE_ERROR, verifyTurnstile } from "@/src/lib/turnstile";
 
 export type RappelFormState = {
   status: "idle" | "success" | "error";
@@ -52,6 +54,11 @@ export async function inscrireRappel(_prev: RappelFormState, formData: FormData)
     console.warn("Inscription au rappel ignorée (spam probable : champ piège rempli).");
     return success;
   }
+  const spamReason = detectSpam(formData);
+  if (spamReason) {
+    console.warn(`Inscription au rappel ignorée (spam probable : ${spamReason}).`);
+    return success;
+  }
 
   if (!EMAIL_PATTERN.test(email) || email.length > 254) {
     return error("L'adresse email indiquée n'est pas valide.");
@@ -72,7 +79,14 @@ export async function inscrireRappel(_prev: RappelFormState, formData: FormData)
     return error("Cette formation est déjà arrivée à échéance : contactez-nous pour organiser le recyclage.");
   }
 
-  if (isRateLimited(await clientIp(), RATE_LIMITS)) {
+  // Captcha raté : erreur visible, rien n'est enregistré ni envoyé.
+  const ip = await clientIp();
+  if ((await verifyTurnstile(formData, ip)) === "refuse") {
+    console.warn("Inscription au rappel refusée (captcha).");
+    return error(TURNSTILE_ERROR);
+  }
+
+  if (isRateLimited(ip, RATE_LIMITS)) {
     return error("Trop de demandes en peu de temps. Merci de réessayer plus tard.");
   }
 

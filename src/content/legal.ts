@@ -147,7 +147,7 @@ export const donneesPersonnellesSections: LegalSection[] = [
     title: "Vos droits",
     paragraphs: [
       "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de portabilité et de limitation sur vos données personnelles.",
-      "Pour exercer ces droits, contactez-nous à l'adresse contact@securiform.fr ou par courrier à l'adresse du siège social.",
+      "Pour exercer ces droits, contactez-nous à l'adresse henri@securiblock.fr ou par courrier à l'adresse du siège social.",
     ],
   },
   {
@@ -180,7 +180,7 @@ export const politiqueConfidentialiteSections: LegalSection[] = [
   {
     title: "Contact",
     paragraphs: [
-      "Pour toute question relative à cette politique de confidentialité, contactez-nous à l'adresse contact@securiform.fr.",
+      "Pour toute question relative à cette politique de confidentialité, contactez-nous à l'adresse henri@securiblock.fr.",
     ],
   },
 ];

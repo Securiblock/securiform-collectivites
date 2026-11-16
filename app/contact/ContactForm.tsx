@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { CourseGroup } from "@/src/content/formations-catalog";
 import { sendContactMessage, type ContactFormState } from "./actions";
 import { HONEYPOT_FIELD, RENDERED_AT_FIELD } from "@/src/lib/anti-spam";
+import { Turnstile } from "@/src/components/forms/Turnstile";
 import styles from "./page.module.css";
 
 const initialState: ContactFormState = { status: "idle", message: "" };
@@ -90,7 +91,11 @@ export function ContactForm({ courseGroups, defaultFormation = "", defaultMessag
         />
       </div>
 
-      <SubmitButton />
+      <div className="form-submit">
+        {/* Un jeton ne sert qu'une fois : il est régénéré après chaque réponse du serveur. */}
+        <Turnstile resetKey={state} />
+        <SubmitButton />
+      </div>
 
       <p className={styles.formNotice}>
         Les informations recueillies via ce formulaire sont utilisées uniquement pour traiter votre demande. En
@@ -98,8 +103,8 @@ export function ContactForm({ courseGroups, defaultFormation = "", defaultMessag
         <Link href="/politique-de-confidentialite/">politique de confidentialité</Link>.
       </p>
 
-      {state.status !== "idle" ? (
-        <p className={state.status === "success" ? styles.formSuccess : styles.formError} role="status">
+      {state.status === "error" ? (
+        <p className={styles.formError} role="alert">
           {state.message}
         </p>
       ) : null}

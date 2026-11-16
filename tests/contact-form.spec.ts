@@ -21,7 +21,7 @@ test.describe("Formulaire de contact", () => {
 
     // La validation du navigateur empêche l'envoi : aucun message de retour n'apparaît.
     await expect(page.getByLabel(/^Nom/)).toBeFocused();
-    await expect(page.getByRole("status")).toHaveCount(0);
+    await expect(page).toHaveURL(/\/contact\/$/);
   });
 
   test("préremplit la formation depuis une fiche formation", async ({ page }) => {
@@ -45,8 +45,17 @@ test.describe("Formulaire de contact", () => {
     );
     // L'anti-spam ignore silencieusement les envois faits moins de 3 s après l'affichage.
     await page.waitForTimeout(4_000);
+    // Captcha Turnstile : le jeton doit être arrivé dans le champ caché avant l'envoi.
+    // (Pas de widget si le site testé n'a pas de clés Turnstile : rien à attendre.)
+    if ((await page.locator("#formulaire .turnstile-widget").count()) > 0) {
+      await expect(page.locator('#formulaire input[name="cf-turnstile-response"]')).toHaveValue(/.+/, {
+        timeout: 20_000,
+      });
+    }
     await page.getByRole("button", { name: "Envoyer le message" }).click();
 
-    await expect(page.getByRole("status")).toHaveText(/bien été envoyé/, { timeout: 30_000 });
+    // Un envoi réussi redirige vers la page de confirmation.
+    await expect(page).toHaveURL(/\/contact\/merci\/$/, { timeout: 30_000 });
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(/demande est bien arrivée/);
   });
 });

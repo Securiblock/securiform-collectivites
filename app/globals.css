@@ -213,6 +213,25 @@ p {
   box-shadow: none;
 }
 
+/* Captcha Turnstile + bouton d'envoi d'un formulaire. Le widget est invisible (hauteur nulle)
+   sauf si Cloudflare demande une vérification : la marge n'existe que dans ce cas. */
+.form-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.turnstile-widget[data-interactive] {
+  margin-bottom: 16px;
+}
+
+/* Bouton pendant l'envoi d'un formulaire (anti double clic, src/components/forms/Turnstile.tsx). */
+.btn[aria-busy="true"] {
+  opacity: 0.6;
+  cursor: wait;
+  pointer-events: none;
+}
+
 /* Bouton principal sur fond clair : le rouge signale l'action. */
 .btn-primary {
   background: var(--red);

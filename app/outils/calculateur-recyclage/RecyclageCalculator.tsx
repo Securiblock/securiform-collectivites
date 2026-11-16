@@ -4,6 +4,7 @@ import { useActionState, useId, useState } from "react";
 import { useFormStatus } from "react-dom";
 import Link from "next/link";
 import { HONEYPOT_FIELD } from "@/src/lib/anti-spam";
+import { Turnstile } from "@/src/components/forms/Turnstile";
 import { formatDateFr, isIsoDate } from "@/src/lib/dates";
 import { buildIcs, downloadIcs } from "@/src/lib/ics";
 import { calculerRecyclage, type RecyclageFormation, type RecyclageStatut } from "@/src/lib/recyclage";
@@ -202,7 +203,11 @@ function RappelForm({ formation, dateFormation, dateRappel }: RappelFormProps) {
         </label>
       </div>
 
-      <SubmitButton />
+      <div className="form-submit">
+        {/* Un jeton ne sert qu'une fois : il est régénéré après chaque réponse du serveur. */}
+        <Turnstile resetKey={state} />
+        <SubmitButton />
+      </div>
 
       {state.status === "error" ? (
         <p className={styles.formError} role="status">

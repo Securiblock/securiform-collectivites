@@ -411,4 +411,8 @@ a.channel:hover {
   .form button {
     align-self: stretch;
   }
+
+  .form :global(.form-submit) {
+    align-items: stretch;
+  }
 }

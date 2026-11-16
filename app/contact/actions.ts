@@ -6,6 +6,8 @@ import { Resend } from "resend";
 import { isKnownCourseTitle } from "@/src/content/formations-catalog";
 import { isRateLimited } from "@/src/lib/rate-limit";
 import { HONEYPOT_FIELD, RENDERED_AT_FIELD } from "@/src/lib/anti-spam";
+import { detectSpam } from "@/src/lib/spam";
+import { TURNSTILE_ERROR, verifyTurnstile } from "@/src/lib/turnstile";
 
 export type ContactFormState = {
   status: "idle" | "error";
@@ -43,7 +45,8 @@ function spamReason(formData: FormData, message: string): string | null {
     return "trop de liens";
   }
 
-  return null;
+  // Règles communes : lien dans le nom ou le téléphone, email à points multiples, téléphone invalide.
+  return detectSpam(formData);
 }
 
 async function clientIp(): Promise<string> {
@@ -88,7 +91,15 @@ export async function sendContactMessage(
     redirect(MERCI_PATH);
   }
 
-  if (isRateLimited(await clientIp(), RATE_LIMITS)) {
+  // Captcha raté : erreur visible (pas une fausse confirmation), car un vrai visiteur
+  // dont le jeton a expiré doit savoir que sa demande n'est pas partie.
+  const ip = await clientIp();
+  if ((await verifyTurnstile(formData, ip)) === "refuse") {
+    console.warn("Message de contact refusé (captcha).");
+    return { status: "error", message: TURNSTILE_ERROR };
+  }
+
+  if (isRateLimited(ip, RATE_LIMITS)) {
     return {
       status: "error",
       message: "Vous avez envoyé plusieurs messages en peu de temps. Merci de réessayer plus tard ou de nous appeler directement.",
@@ -105,12 +116,14 @@ export async function sendContactMessage(
 
   const { error } = await resend.emails.send({
     from: `Site SECURIFORM Collectivités <${process.env.CONTACT_EMAIL_FROM ?? "onboarding@resend.dev"}>`,
-    to: process.env.CONTACT_EMAIL_TO ?? "contact@securiform.fr",
+    to: process.env.CONTACT_EMAIL_TO ?? "henri@securiblock.fr",
     replyTo: email,
     subject: formation
-      ? `Demande pour « ${formation} » de ${nom}`
-      : `Nouvelle demande de contact de ${nom}`,
+      ? `[Collectivités] Demande pour « ${formation} » de ${nom}`
+      : `[Collectivités] Nouvelle demande de contact de ${nom}`,
     text: [
+      "Message envoyé depuis le site SECURIFORM Collectivités (formulaire de contact).",
+      "",
       `Nom : ${nom}`,
       `Email : ${email}`,
       telephone ? `Téléphone : ${telephone}` : null,

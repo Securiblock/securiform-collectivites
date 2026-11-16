@@ -43,7 +43,7 @@ export const mentionsLegalesSections: LegalSection[] = [
       "SIREN : 502 015 787",
       "SIRET (siège) : 502 015 787 00034",
       "Numéro de TVA intracommunautaire : FR56502015787",
-      "Téléphone : 03 20 67 34 90 — Email : contact@securiform.fr",
+      "Téléphone : 03 20 67 34 90 — Email : henri@securiblock.fr",
       "Représentant légal : LOVIJEC, Président.",
       "SECURIFORM est un organisme de formation certifié Qualiopi.",
       "Directeur de la publication : M. Jérôme Cailliez.",
@@ -147,7 +147,7 @@ export const donneesPersonnellesSections: LegalSection[] = [
     title: "Vos droits",
     paragraphs: [
       "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de portabilité et de limitation sur vos données personnelles.",
-      "Pour exercer ces droits, contactez-nous à l'adresse contact@securiform.fr ou par courrier à l'adresse du siège social.",
+      "Pour exercer ces droits, contactez-nous à l'adresse henri@securiblock.fr ou par courrier à l'adresse du siège social.",
     ],
   },
   {
@@ -180,7 +180,7 @@ export const politiqueConfidentialiteSections: LegalSection[] = [
   {
     title: "Contact",
     paragraphs: [
-      "Pour toute question relative à cette politique de confidentialité, contactez-nous à l'adresse contact@securiform.fr.",
+      "Pour toute question relative à cette politique de confidentialité, contactez-nous à l'adresse henri@securiblock.fr.",
     ],
   },
 ];
